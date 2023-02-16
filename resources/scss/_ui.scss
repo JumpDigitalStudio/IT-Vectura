@@ -1,3 +1,4 @@
+// Text
 h1,
 h2,
 h3,
@@ -6,52 +7,53 @@ p,
 a {
 	margin: 0;
 	padding: 0;
-	font-weight: 400;
+
 	font-family: 'Montserrat', sans-serif;
+	line-height: 140%;
+	font-weight: 400;
+
 	color: $BLA;
 
-	line-height: 140%;
-
 	// Font weight
-	&.w-sb {
+	&.wsb {
 		font-weight: 500;
 	}
 
-	&.w-m {
+	&.wm {
 		font-weight: 600;
 	}
 
-	&.w-b {
+	&.wb {
 		font-weight: 700;
 	}
 
 	// Text color
-	&.c-bll {
+	&.cbl {
 		color: $BLL;
 	}
 
-	&.c-blm {
+	&.cbm {
 		color: $BLM;
 	}
 
-	&.c-wht {
+	&.cw {
 		color: $WHT;
 	}
 
 	// Font size
-	&.fs-s {
+	&.fs {
 		font-size: 13px;
 	}
 
-	&.fs-xs {
+	&.fxs {
 		font-size: 16px;
 	}
 
-	&.fs-m {
+	&.fm {
 		font-size: 18px;
 	}
 
-	&.fs-l {
+	&.fl {
 		font-size: 20px;
 	}
 
@@ -75,11 +77,9 @@ h2 {
 }
 
 h1 {
-	// font-size: 40px;
-	font-size: 38px;
+	font-size: 36px;
+	line-height: 120%;
 	color: $WHT;
-
-	line-height: 110%;
 
 	&>.span {
 		color: $BLL;
@@ -87,13 +87,7 @@ h1 {
 }
 
 h2 {
-	// font-size: 35px;
-	font-size: 32px;
-}
-
-h3 {
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 30px;
 }
 
 .title {
@@ -106,35 +100,43 @@ h3 {
 	}
 }
 
+// Buttons and inputs
+// Common settings
 .button,
 .button-border,
 .button-fill {
-	border-radius: $radius-s;
-	max-width: 100%;
-	padding: 0;
-	margin: 0;
-
-	outline: none;
-
-	cursor: pointer;
-	transition: all .2s ease-in-out 0s;
-
 	position: relative;
 	overflow: hidden;
 
-	font-size: 16px;
-	font-weight: 500;
-	color: $WHT;
-
 	@include flex(center, center, row);
 
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+
+	border-radius: $radius-s;
+	outline: none;
+
+	cursor: pointer;
+	will-change: border-radius, background-color;
+	transition: border-radius .2s ease-in-out 0s, background-color .2s ease-in-out 0s;
+
+	color: $WHT;
+	font-size: 16px;
+	font-weight: 500;
+
 	&:hover {
-		border-radius: $radius-m;
+		border-radius: $radius-l;
 	}
 }
 
+// Buttons
+.button,
+.button-fill {
+	border: none;
+}
+
 .button {
-	border: 0px;
 	background: $btn-gradient;
 
 	width: 270px;
@@ -147,20 +149,13 @@ h3 {
 	width: 290px;
 	height: 44px;
 
-	&.demo {
-		&::before {
-
-			@include pseudo('Запросить демонстрацию');
-		}
+	&>.text {
+		z-index: 2;
+		pointer-events: none;
 	}
 
 	&::before {
-		color: $WHT;
-		@include pseudo('Смотреть презентацию');
-		@include flex(center, center, row);
-		transition: all .2s ease-in-out 0s;
-
-		cursor: pointer;
+		@include pseudo;
 
 		left: 0;
 		top: 0;
@@ -170,7 +165,8 @@ h3 {
 		width: 100%;
 		height: 100%;
 
-		background: rgba(236, 236, 236, 0.2);
+		transition: all .2s ease-in-out 0s;
+		background: rgba(236, 236, 236, 0.1);
 		backdrop-filter: blur(10px);
 	}
 
@@ -182,8 +178,7 @@ h3 {
 }
 
 .button-fill {
-	border: 0px;
-	background: $ACM;
+	background-color: $ACM;
 
 	width: 100%;
 	height: 50px;
@@ -193,10 +188,11 @@ h3 {
 	}
 }
 
+// Inputs
 .input {
+	background-color: transparent;
 	border-radius: $radius-s;
 	border: $bla-border;
-
 	outline: none;
 
 	height: 50px;
@@ -204,7 +200,6 @@ h3 {
 
 	font-size: 16px;
 	color: $BLA;
-	background-color: transparent;
 
 	&::placeholder {
 		color: $BLA;

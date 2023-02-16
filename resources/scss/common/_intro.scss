@@ -40,7 +40,6 @@
 
 		&.product {
 			@include gap(90px, 0);
-			max-width: 700px;
 		}
 	}
 
@@ -67,11 +66,11 @@
 
 		&>img {
 			position: absolute;
-			top: 50%;
+			top: 55%;
 			left: 50%;
 			transform: translate(-50%, -53%);
 
-			width: 750px;
+			width: 680px;
 			object-fit: contain;
 		}
 	}

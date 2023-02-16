@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
+// Settings and values
 @import '_variables';
 @import '_mixins';
 @import '_ui';
 
+// Mobile plug
 @import '_plug';
 
-// Default page settings
+// Main settings
 html {
 	height: 100%;
 	padding: 0;
@@ -80,7 +82,8 @@ html {
 
 		&.stick-light {
 			height: 80px;
-			background: rgba(236, 236, 236, 0.53);
+			backdrop-filter: none;
+			background: $GRY;
 			border-bottom: $bla-border;
 		}
 	}
@@ -136,8 +139,9 @@ html {
 }
 
 // Components
-@import '_header';
-@import '_modal';
+@import 'common/_header';
+@import 'common/_modal';
+@import 'common/_footer';
 
 // Content
 .content {
@@ -169,17 +173,15 @@ html {
 	}
 }
 
-// Main page content
-@import '_intro';
-@import '_about';
-@import '_features';
-@import '_cards';
-@import '_logistics-management-system';
-@import '_features-of-solutions';
-@import '_request';
-@import '_contacts';
+// Main content
+@import 'common/_intro';
+@import 'main-page/_about';
+@import 'main-page/_features';
+@import 'main-page/_cards';
+@import 'main-page/_logistics-management-system';
+@import 'main-page/_features-of-solutions';
+@import 'common/_request';
+@import 'main-page/_contacts';
 
-@import '_footer';
-
-// Products pages content
-@import '_general-functionality';
+// Products content
+@import 'products/_general-functionality';

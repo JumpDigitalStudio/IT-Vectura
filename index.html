@@ -8,8 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Styles links -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="stylesheet" href="/resources/css/normalize.css?1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="stylesheet" href="/resources/css/iziModal.min.css">
 	<!-- Main -->
 	<link rel="stylesheet" href="/resources/css/style.css?1">
@@ -59,8 +59,8 @@
 				<h2>Сайт в разработке</h2>
 			</div>
 			<div class="plug__text">
-				<p class="fs-m">Мобильная версия сайта в стадии разработки.</p>
-				<p class="fs-m">Вы можете ознакомиться с нашими продуктами в Desktop-версии.</p>
+				<p class="fm">Мобильная версия сайта в стадии разработки.</p>
+				<p class="fm">Вы можете ознакомиться с нашими продуктами в Desktop-версии.</p>
 			</div>
 		</div>
 	</div>
@@ -76,63 +76,65 @@
 				<ul class="header__main-list scr-list">
 					<!-- About -->
 					<li class="header__main-link">
-						<a href="#about" class="scr-link fs-xs w-sb c-wht">О нас</a>
+						<a href="#about" class="scr-link fxs wm cw">О нас</a>
 					</li>
 					<!-- Logistics management system -->
 					<li class="header__main-link">
-						<a href="#logistic-system" class="scr-link fs-xs w-sb c-wht">Возможности</a>
+						<a href="#logistic-system" class="scr-link fxs wm cw">Возможности</a>
 					</li>
 					<!-- Products -->
-					<li class="header__main-link sub">
+					<li class="header__main-link sub-link">
 						<!-- Main link to Products -->
-						<p class="fs-xs w-sb c-wht sub"><span class="header__open"></span>Продукты</p>
+						<p class="fxs wm cw sub"><span class="header__open"></span>Продукты</p>
 						<!-- Our products -->
-						<ul class="header__sub-list sub-list">
-							<div class="sub-list__header">
-								<a href="#" class="fs-xs c-wht">Управление цепочками поставок</a>
+						<ul class="header__sub-list">
+							<div class="header__sub-link sub-title">
+								<a href="#" class="fxs cw wm">Управление цепочками поставок</a>
 							</div>
-							<li class="header__sub-link sub-list__link">
-								<a href="/products/transport-management/" class="fs-xs c-wht">Transport Management</a>
+							<li class="header__sub-link">
+								<a href="/products/transport-management/" class="fxs cw">Transport Management</a>
 							</li>
-							<li class="header__sub-link sub-list__link">
-								<a href="/products/warehouse-management/" class="fs-xs c-wht">Warehouse Management</a>
+							<li class="header__sub-link">
+								<a href="/products/warehouse-management/" class="fxs cw">Warehouse Management</a>
 							</li>
-							<li class="header__sub-link sub-list__link">
-								<a href="/products/yard-logistic/" class="fs-xs c-wht">Yard Logistic</a>
+							<li class="header__sub-link">
+								<a href="/products/yard-logistic/" class="fxs cw">Yard Logistic</a>
 							</li>
 						</ul>
 					</li>
 					<!-- Contacts -->
 					<li class="header__main-link">
-						<a href="#contacts" class="scr-link fs-xs w-sb c-wht">Контакты</a>
+						<a href="#contacts" class="scr-link fxs wm cw">Контакты</a>
 					</li>
 				</ul>
 			</nav>
 			<!-- Contacts -->
 			<div class="header__contacts">
-				<a href="tel:+7(800)101-26-96" class="fs-l c-wht w-sb">8 (800) 101-26-96</a>
-				<a href="mailto:info@itvectura.com" class="fs-xs c-wht">info@itvectura.com</a>
+				<a href="tel:+7(800)101-26-96" class="fl cw wm">8 (800) 101-26-96</a>
+				<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 			</div>
 		</div>
 	</header>
 
 	<!-- Content -->
 	<main class="page__content content">
+
 		<!-- Intro -->
 		<section class="content__intro intro" id="intro">
-			<!-- Main content -->
+			<!-- Main -->
 			<div class="intro__main container">
+				<!-- Content -->
 				<div class="intro__content wow animate__animated animate__backInLeft">
 					<div class="intro__text">
 						<div class="intro__title">
 							<h1>Повысим прозрачность и эффективность Вашей логистики</h1>
 						</div>
 						<div class="intro__description">
-							<p class="fs-m c-wht ">
+							<p class="fm cw ">
 								Система управления логистикой IT VECTURA включает в себя модули управления транспортной, складской и
 								внутренней логистикой.
 							</p>
-							<p class="fs-m c-wht ">
+							<p class="fm cw ">
 								IT Vectura автоматизирует процессы компаний экспедиторов и грузоотправителей, сокращает издержки
 								перевозок
 								и
@@ -142,9 +144,12 @@
 					</div>
 					<div class="intro__buttons">
 						<button class="button req-btn">Связаться с нами</button>
-						<a href="/documents/it-vectura_presentation_ru.pdf" target="_blank" class="button-border"></a>
+						<a href="/documents/it-vectura_presentation_ru.pdf" target="_blank" class="button-border">
+							<div class="text">Смотреть презентацию</div>
+						</a>
 					</div>
 				</div>
+				<!-- Background -->
 				<div class="intro__pic wow animate__animated animate__backInRight">
 					<img src="/resources/images/intro/planet.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
 				</div>
@@ -155,41 +160,42 @@
 					<div class="intro__card">
 						<img src="/resources/images/intro/features-30.svg" alt="30%"
 							class="wow animate__animated animate__fadeInBottomRight" data-wow-duration=".5s">
-						<h2 class="fs-s c-wht w-sb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
+						<h2 class="fs cw wsb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
 							Сократит операционные затраты
 						</h2>
 					</div>
 					<div class="intro__card">
 						<img src="/resources/images/intro/features-50.svg" alt="50%"
 							class="wow animate__animated animate__fadeInBottomRight" data-wow-duration=".5s">
-						<h2 class="fs-s c-wht w-sb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
+						<h2 class="fs cw wsb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
 							Снизит затраты на ГСМ и штрафы
 						</h2>
 					</div>
 					<div class="intro__card">
 						<img src="/resources/images/intro/features-40.svg" alt="40%"
 							class="wow animate__animated animate__fadeInBottomRight" data-wow-duration=".5s">
-						<h2 class="fs-s c-wht w-sb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
+						<h2 class="fs cw wsb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
 							Увеличит оборачиваемость ТС
 						</h2>
 					</div>
 					<div class="intro__card">
 						<img src="/resources/images/intro/features-10.svg" alt="10%"
 							class="wow animate__animated animate__fadeInBottomRight" data-wow-duration=".5s">
-						<h2 class="fs-s c-wht w-sb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
+						<h2 class="fs cw wsb up wow animate__animated animate__fadeInLeft" data-wow-duration=".5s">
 							Повысит грузооборот
 						</h2>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<!-- About -->
 		<section class="content__about about" id="about">
 			<!-- Title -->
 			<div class="about__title title container">
 				<h2 class="wow animate__animated animate__fadeInUp">О компании</h2>
 				<div class="title__hr"></div>
-				<p class="fs-m wow animate__animated animate__fadeInDown">
+				<p class="fm wow animate__animated animate__fadeInDown">
 					IT Vectura предоставляет услуги по оптимизации, автоматизации и трансформации логистических
 					бизнес-процессов,
 					используя собственные разработки, решения SAP и 1С.
@@ -204,21 +210,21 @@
 					<div class="about__text title wow animate__animated animate__fadeInLeft">
 						<h3>Принципы</h3>
 						<div class="title__hr"></div>
-						<p class="fs-xs">
+						<p class="fxs">
 							Мы следуем тенденциям развития современных технологий, чтобы привести клиентов в цифровое будущее
 						</p>
 					</div>
 					<div class="about__text short title wow animate__animated animate__fadeInLeft">
 						<h3>Ценности</h3>
 						<div class="title__hr"></div>
-						<p class="fs-xs">
+						<p class="fxs">
 							Наша команда несет ответственность за проделанную работу и достижение поставленных целей и задач
 						</p>
 					</div>
 					<div class="about__text title wow animate__animated animate__fadeInLeft">
 						<h3>Миссия</h3>
 						<div class="title__hr"></div>
-						<p class="fs-xs">
+						<p class="fxs">
 							Мы стремимся раскрыть потенциал наших клиентов через инновационные решения, которые закрывают сложнейшие
 							бизнес-задачи
 						</p>
@@ -226,68 +232,71 @@
 				</div>
 			</div>
 		</section>
+
 		<!-- Features -->
 		<div class="content__features features">
 			<div class="features__main container">
 				<div class="features__hexagon wow animate__animated animate__slideInUp" data-wow-delay=".1s">
 					<div class="features__text">
 						<img src="/resources/images/features/digitalization.svg" alt="Цифровизация логистики">
-						<p class="fs-m c-wht">Цифровизация логистики</p>
+						<p class="fm cw">Цифровизация логистики</p>
 					</div>
 				</div>
 				<div class="features__hexagon wow animate__animated animate__slideInUp" data-wow-delay=".2s">
 					<div class="features__text">
 						<img src="/resources/images/features/development.svg" alt="Разработка">
-						<p class="fs-m c-wht">Разработка</p>
+						<p class="fm cw">Разработка</p>
 					</div>
 				</div>
 				<div class="features__hexagon wow animate__animated animate__slideInUp" data-wow-delay=".3s">
 					<div class="features__text">
 						<img src="/resources/images/features/learning.svg" alt="Обучение">
-						<p class="fs-m c-wht">Обучение</p>
+						<p class="fm cw">Обучение</p>
 					</div>
 				</div>
 				<div class="features__hexagon wow animate__animated animate__slideInUp" data-wow-delay=".4s">
 					<div class="features__text">
 						<img src="/resources/images/features/mobile.svg" alt="Мобильные приложения">
-						<p class="fs-m c-wht">Мобильные приложения</p>
+						<p class="fm cw">Мобильные приложения</p>
 					</div>
 				</div>
 				<div class="features__hexagon wow animate__animated animate__slideInUp" data-wow-delay=".5s">
 					<div class="features__text">
 						<img src="/resources/images/features/support.svg" alt="Поддержка">
-						<p class="fs-m c-wht">Поддержка</p>
+						<p class="fm cw">Поддержка</p>
 					</div>
 				</div>
 				<div class="features__hexagon wow animate__animated animate__slideInUp" data-wow-delay=".6s">
 					<div class="features__text">
 						<img src="/resources/images/features/integration.svg" alt="Интеграция">
-						<p class="fs-m c-wht">Интеграция</p>
+						<p class="fm cw">Интеграция</p>
 					</div>
 				</div>
 			</div>
 		</div>
+
 		<!-- Cards -->
 		<div class="content__cards cards">
 			<div class="cards__main container">
 				<div class="cards__card blue wow animate__animated animate__fadeInLeft">
-					<h3 class="c-wht">Сопровождение и развитие системы</h3>
-					<p class="fs-m c-wht">Регулярный выход новых релизов и улучшений ПО</p>
+					<h3 class="cw">Сопровождение и развитие системы</h3>
+					<p class="fm cw">Регулярный выход новых релизов и улучшений ПО</p>
 				</div>
 				<div class="cards__card blue-dark wow animate__animated animate__fadeInLeft">
-					<h3 class="c-wht">Комплексная адаптация</h3>
-					<p class="fs-m c-wht">Гибкий выбор функционала</p>
+					<h3 class="cw">Комплексная адаптация</h3>
+					<p class="fm cw">Гибкий выбор функционала</p>
 				</div>
 				<div class="cards__card purple wow animate__animated animate__fadeInRight">
-					<h3 class="c-wht">Выбор решения за вами</h3>
-					<p class="fs-m c-wht">SaaS или On-Premise</p>
+					<h3 class="cw">Выбор решения за вами</h3>
+					<p class="fm cw">SaaS или On-Premise</p>
 				</div>
 				<div class="cards__card pink wow animate__animated animate__fadeInRight">
-					<h3 class="c-wht">ITV Support Portal</h3>
-					<p class="fs-m c-wht">Портал поддержки платформы ITV в формате 24/7</p>
+					<h3 class="cw">ITV Support Portal</h3>
+					<p class="fm cw">Портал поддержки платформы ITV в формате 24/7</p>
 				</div>
 			</div>
 		</div>
+
 		<!-- Logistics management system -->
 		<section class="content__logistic-system logistic-system" id="logistic-system">
 			<!-- Title -->
@@ -299,60 +308,61 @@
 			<div class="logistic-system__main container">
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape orange first"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Централизованный подход к развитию управления транспортом, двором и складом
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape blue"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Создание и реализация инфраструктурной модели транспортной логистики
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape purple"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Оперативный мониторинг ситуации на складе и транспортной площадке
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape pink"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Оперативный и прозрачный контроль исполнения в единой системе
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape purple"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Управление парком собственного и привлеченного транспорта
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape blue"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Автоматическое планирование и расчет стоимости перевозок
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape orange"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Повышение эффективности взаимодействия с партнерами
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape blue"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Сквозная отчетность по всем процессам логистики
 					</p>
 				</div>
 				<div class="logistic-system__item">
 					<div class="logistic-system__shape purple last"></div>
-					<p class="fs-m w-sb wow animate__animated animate__fadeInRight">
+					<p class="fm wsb wow animate__animated animate__fadeInRight">
 						Сокращение операционных затрат
 					</p>
 				</div>
 			</div>
 		</section>
+
 		<!-- Geatures of solutions -->
 		<section class="content__solutions solutions">
 			<!-- Title -->
@@ -363,8 +373,8 @@
 			<!-- Features -->
 			<div class="solutions__hangs hangs container">
 				<div class="hangs__row">
-					<p class="fs-m w-sb wow animate__animated animate__fadeIn" data-wow-delay=".1s">Запуск за 2 недели</p>
-					<p class="fs-m w-sb wow animate__animated animate__fadeIn" data-wow-delay=".5s">Гибкая система скидок при
+					<p class="fm wsb wow animate__animated animate__fadeIn" data-wow-delay=".1s">Запуск за 2 недели</p>
+					<p class="fm wsb wow animate__animated animate__fadeIn" data-wow-delay=".5s">Гибкая система скидок при
 						комплексной покупке
 						решения</p>
 				</div>
@@ -372,8 +382,8 @@
 					<img src="/resources/images/solutions/shape.svg" alt="" class="hangs__shape">
 				</div>
 				<div class="hangs__row">
-					<p class="fs-m w-sb wow animate__animated animate__fadeIn" data-wow-delay=".3s">Для любого вида перевозок</p>
-					<p class="fs-m w-sb wow animate__animated animate__fadeIn" data-wow-delay=".7s">Решение-конструктор</p>
+					<p class="fm wsb wow animate__animated animate__fadeIn" data-wow-delay=".3s">Для любого вида перевозок</p>
+					<p class="fm wsb wow animate__animated animate__fadeIn" data-wow-delay=".7s">Решение-конструктор</p>
 				</div>
 			</div>
 			<!-- Content -->
@@ -382,11 +392,11 @@
 					<!-- Solution card -->
 					<div class="solutions__card solution base wow animate__animated animate__backInLeft">
 						<div class="solution__row base">
-							<div class="solution__title c-wht base">Base</div>
-							<p class="fs-xs w-sb c-wht">Подробнее</p>
+							<div class="solution__title cw base">Base</div>
+							<p class="fxs wsb cw">Подробнее</p>
 						</div>
 						<div class="solution__row">
-							<p class="fs-l w-b c-wht">Решение для малого бизнеса</p>
+							<p class="fl wb cw">Решение для малого бизнеса</p>
 							<img src="/resources/images/bottom-button.svg" class="solution__button" alt="Подробнее">
 						</div>
 					</div>
@@ -400,7 +410,7 @@
 							<div class="solution__title">Advanced</div>
 						</div>
 						<div class="solution__row">
-							<p class="fs-l w-b">Решение для среднего бизнеса</p>
+							<p class="fl wb">Решение для среднего бизнеса</p>
 							<img src="/resources/images/bottom-button-dark.svg" class="solution__button" alt="Подробнее">
 						</div>
 					</div>
@@ -412,7 +422,7 @@
 							<div class="solution__title">Enterprise</div>
 						</div>
 						<div class="solution__row">
-							<p class="fs-l w-b">Решение для крупного бизнеса</p>
+							<p class="fl wb">Решение для крупного бизнеса</p>
 							<img src="/resources/images/bottom-button-dark.svg" class="solution__button" alt="Подробнее">
 						</div>
 					</div>
@@ -420,13 +430,14 @@
 				</div>
 			</div>
 		</section>
+
 		<!-- Request -->
 		<article class="content__request request">
 			<!-- Title -->
 			<div class="request__title title container">
 				<h2 class="wow animate__animated animate__fadeInUp">Свяжитесь с нами</h2>
 				<div class="title__hr"></div>
-				<p class="fs-l wow animate__animated animate__fadeInDown">
+				<p class="fl wow animate__animated animate__fadeInDown">
 					Будем рады ответить на ваш вопрос.
 				</p>
 			</div>
@@ -438,12 +449,13 @@
 					<input type="text" class="input" placeholder="Ваш вопрос">
 				</div>
 				<input type="submit" value="Отправить" class="button-fill">
-				<p class="fs-s">
+				<p class="fs">
 					Нажимая на кнопку *Отправить*, даю согласие на
 					<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
 				</p>
 			</form>
 		</article>
+
 		<!-- Contacts -->
 		<article class="content__contacts contacts" id="contacts">
 			<!-- Title -->
@@ -465,31 +477,31 @@
 					<div class="props__main">
 						<div class="props__row">
 							<div class="props__item">
-								<p class="fs-m w-sb c-blm">ИНН</p>
-								<p class="fs-xs">9701217858</p>
+								<p class="fm wsb cbm">ИНН</p>
+								<p class="fxs">9701217858</p>
 							</div>
 							<div class="props__item">
-								<p class="fs-m w-sb c-blm">КПП</p>
-								<p class="fs-xs">770101001</p>
+								<p class="fm wsb cbm">КПП</p>
+								<p class="fxs">770101001</p>
 							</div>
 							<div class="props__item">
-								<p class="fs-m w-sb c-blm">ОГРН</p>
-								<p class="fs-xs">1227700541518</p>
+								<p class="fm wsb cbm">ОГРН</p>
+								<p class="fxs">1227700541518</p>
 							</div>
 							<div class="props__item">
-								<p class="fs-m w-sb c-blm">ОКВЭД</p>
-								<p class="fs-xs">62.01 Разработка компьютерного программного обеспечения</p>
+								<p class="fm wsb cbm">ОКВЭД</p>
+								<p class="fxs">62.01 Разработка компьютерного программного обеспечения</p>
 							</div>
 						</div>
 						<div class="props__row">
 							<div class="props__item">
-								<p class="fs-m w-sb c-blm">Юридический адрес</p>
-								<p class="fs-xs">105066, город Москва, Нижняя Красносельская ул, д. 40/12 к. 20, офис 710
+								<p class="fm wsb cbm">Юридический адрес</p>
+								<p class="fxs">105066, город Москва, Нижняя Красносельская ул, д. 40/12 к. 20, офис 710
 								</p>
 							</div>
 							<div class="props__item">
-								<p class="fs-m w-sb c-blm">ЕГРЮЛ</p>
-								<a href="/documents/it-vectura_egrul.pdf" target="_blank" class="fs-xs link">
+								<p class="fm wsb cbm">ЕГРЮЛ</p>
+								<a href="/documents/it-vectura_egrul.pdf" target="_blank" class="fxs link">
 									Смотреть документ (PDF)
 								</a>
 							</div>
@@ -498,6 +510,7 @@
 				</div>
 			</div>
 		</article>
+
 	</main>
 
 	<!-- Footer -->
@@ -507,30 +520,30 @@
 			<!-- Logo + copyright -->
 			<div class="footer__col commerce">
 				<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura">
-				<p class="fs-xs c-bll">&#169 ITVECTURA 2023</p>
+				<p class="fxs cbl">&#169 ITVECTURA 2023</p>
 			</div>
 			<!-- Contacts + navigation -->
 			<div class="footer__content">
 				<!-- Contacts -->
 				<div class="footer__col">
-					<a class="fs-xs c-wht"
+					<a class="fxs cw"
 						href="https://www.google.ru/maps/place/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F%D1%8F+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+40%2F12,+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81+20,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+105066/@55.7741802,37.6698747,17z/data=!3m1!4b1!4m5!3m4!1s0x46b54a8026721307:0x182793958dcfda5e!8m2!3d55.7741802!4d37.6720687?hl=ru&coh=164777&entry=tt"
 						target="_blank">
 						105066, г. Москва, ул. Нижняя Красносельская 40/12 к.20
 					</a>
-					<a href="tel:+7(499)673-32-73" class="fs-xs c-wht">+7 (499) 673-32-73</a>
-					<a href="mailto:info@itvectura.com" class="fs-xs c-wht">info@itvectura.com</a>
+					<a href="tel:+7(499)673-32-73" class="fxs cw">+7 (499) 673-32-73</a>
+					<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 				</div>
 				<!-- Mavigation -->
 				<div class="footer__col">
 					<!-- Logistics management system -->
-					<a href="#logistic-system" class="fs-xs c-wht">Возможности</a>
+					<a href="#logistic-system" class="fxs cw">Возможности</a>
 					<!-- Contacts -->
-					<a href="#contacts" class="fs-xs c-wht">Контакты</a>
+					<a href="#contacts" class="fxs cw">Контакты</a>
 					<!-- Main link to Products -->
-					<a href="/products/" class="fs-xs c-wht">Продукты</a>
+					<a href="/products/" class="fxs cw">Продукты</a>
 					<!-- About -->
-					<a href="#about" class="fs-xs c-wht">О нас</a>
+					<a href="#about" class="fxs cw">О нас</a>
 				</div>
 			</div>
 		</div>
@@ -552,7 +565,7 @@
 					<img src="/resources/images/close.svg" alt="Закрыть">
 				</div>
 			</div>
-			<p class="fs-l w-sb">Будем рады ответить на ваш вопрос</p>
+			<p class="fl wsb">Будем рады ответить на ваш вопрос</p>
 		</div>
 		<!-- Modal content -->
 		<form class="mod__main">
@@ -562,7 +575,7 @@
 			</div>
 			<input type="text" class="input" placeholder="Ваш вопрос">
 			<input type="submit" value="Отправить" class="button-fill">
-			<p class="fs-s">
+			<p class="fs">
 				Нажимая на кнопку *Отправить*, даю согласие на
 				<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
 			</p>

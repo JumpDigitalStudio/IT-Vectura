@@ -59,8 +59,8 @@
 				<h2>Сайт в разработке</h2>
 			</div>
 			<div class="plug__text">
-				<p class="fs-m">Мобильная версия сайта в стадии разработки.</p>
-				<p class="fs-m">Вы можете ознакомиться с нашими продуктами в Desktop-версии.</p>
+				<p class="fm">Мобильная версия сайта в стадии разработки.</p>
+				<p class="fm">Вы можете ознакомиться с нашими продуктами в Desktop-версии.</p>
 			</div>
 		</div>
 	</div>
@@ -76,42 +76,38 @@
 				<ul class="header__main-list scr-list">
 					<!-- About -->
 					<li class="header__main-link">
-						<a href="/" class="fs-xs w-sb c-wht">О нас</a>
-					</li>
-					<!-- Logistics management system -->
-					<li class="header__main-link">
-						<a href="/" class="fs-xs w-sb c-wht">Возможности</a>
+						<a href="/" class="fxs wm cw">Главная</a>
 					</li>
 					<!-- Products -->
-					<li class="header__main-link sub">
+					<li class="header__main-link sub-link">
 						<!-- Main link to Products -->
-						<p class="fs-xs w-sb c-wht sub"><span class="header__open"></span>Продукты</p>
+						<p class="fxs wm cw sub"><span class="header__open"></span>Продукты</p>
 						<!-- Our products -->
-						<ul class="header__sub-list sub-list">
-							<div class="sub-list__header">
-								<a href="#" class="fs-xs c-wht">Управление цепочками поставок</a>
+						<ul class="header__sub-list">
+							<div class="header__sub-link sub-title">
+								<a href="#" class="fxs cw wm">Управление цепочками поставок</a>
 							</div>
-							<li class="header__sub-link sub-list__link">
-								<a href="/products/transport-management/" class="fs-xs c-wht">Transport Management</a>
+							<li class="header__sub-link">
+								<a href="/products/transport-management/" class="fxs cw">Transport Management</a>
 							</li>
-							<li class="header__sub-link sub-list__link">
-								<a href="/products/warehouse-management/" class="fs-xs c-wht">Warehouse Management</a>
+							<li class="header__sub-link">
+								<a href="/products/warehouse-management/" class="fxs cw">Warehouse Management</a>
 							</li>
-							<li class="header__sub-link sub-list__link">
-								<a href="/products/yard-logistic/" class="fs-xs c-wht">Yard Logistic</a>
+							<li class="header__sub-link">
+								<a href="/products/yard-logistic/" class="fxs cw">Yard Logistic</a>
 							</li>
 						</ul>
 					</li>
 					<!-- Contacts -->
 					<li class="header__main-link">
-						<a href="/" class="fs-xs w-sb c-wht">Контакты</a>
+						<a href="#request" class="scr-link fxs wm cw">Связаться с нами</a>
 					</li>
 				</ul>
 			</nav>
 			<!-- Contacts -->
 			<div class="header__contacts">
-				<a href="tel:+7(800)101-26-96" class="fs-l c-wht w-sb">8 (800) 101-26-96</a>
-				<a href="mailto:info@itvectura.com" class="fs-xs c-wht">info@itvectura.com</a>
+				<a href="tel:+7(800)101-26-96" class="fl cw wm">8 (800) 101-26-96</a>
+				<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 			</div>
 		</div>
 	</header>
@@ -121,26 +117,33 @@
 
 		<!-- Intro -->
 		<section class="content__intro intro intro-product" id="intro">
-			<!-- Main content -->
 			<div class="intro__main container">
+				<!-- Content -->
 				<div class="intro__content product wow animate__animated animate__backInLeft">
 					<div class="intro__text">
 						<div class="intro__title">
 							<h1>РЕШЕНИЕ IT VECTURA <span class="span">YARD LOGISTIC</span> ДЛЯ УПРАВЛЕНИЯ ВНУТРЕННИМ ДВОРОМ</h1>
 						</div>
 						<div class="intro__description">
-							<p class="fs-m c-wht ">
+							<p class="fm cw ">
 								Инфраструктурное отображение внутреннего двора с динамическим планированием использования мощности
 								погрузочно-разгрузочных зон.
 							</p>
 						</div>
 					</div>
 					<div class="intro__buttons">
-						<a target="_blank" class="button-border demo req-btn"></a>
+						<a target="_blank" class="button-border req-btn">
+							<div class="text">Запросить демонстрацию</div>
+						</a>
 					</div>
+				</div>
+				<!-- Background -->
+				<div class="intro__pic wow animate__animated animate__backInRight">
+					<img src="/resources/images/intro/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
 				</div>
 			</div>
 		</section>
+
 		<!-- General functionality -->
 		<section class="content__functionality functionality">
 			<!-- Title -->
@@ -154,60 +157,64 @@
 				<div class="functionality__sidebar sidebar">
 					<div class="sidebar__row active">
 						<img src="/resources/images/products-icons/yard.svg" alt="Двор">
-						<p class="fs-xs w-m">Управление двором</p>
+						<p class="fxs wm">Управление двором</p>
 					</div>
 					<a href="/products/transport-management/" class="sidebar__row">
 						<img src="/resources/images/products-icons/transport.svg" alt="Двор">
-						<p class="fs-xs w-m">Управление транспортом</p>
+						<p class="fxs wm">Управление транспортом</p>
 					</a>
 					<a href="/products/warehouse-management/" class="sidebar__row">
 						<img src="/resources/images/products-icons/warehouse.svg" alt="Двор">
-						<p class="fs-xs w-m">Управление складом</p>
+						<p class="fxs wm">Управление складом</p>
 					</a>
 				</div>
 				<!-- Functionality content -->
 				<div class="functionality__func func">
 					<!-- Title -->
 					<div class="func__title title">
-						<h3 class="w-m up">Общая функциональность IT Vectura Yard Logistic</h3>
+						<h3 class="wm up">Общая функциональность IT Vectura Yard Logistic</h3>
 						<div class="title__hr"></div>
 					</div>
 					<!-- Content -->
 					<div class="func__blocks">
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg">
-								<h4 class="fs-m w-b">Мастер данные</h4>
+								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+									data-wow-delay=".2s">
+								<h4 class="fm wb">Мастер данные</h4>
 							</div>
-							<p class="fs-xs">
+							<p class="fxs">
 								Ведение мастер данных, обеспечивающих информационное наполнение бизнесс-объектов, которые участвуют в
 								процессах управления транспортом
 							</p>
 						</div>
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg">
-								<h4 class="fs-m w-b">Квоты</h4>
+								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+									data-wow-delay=".2s">
+								<h4 class="fm wb">Квоты</h4>
 							</div>
-							<p class="fs-xs">
+							<p class="fxs">
 								Управление процессами планирования доступности мощностей погрузочно-разгрузочных зон
 							</p>
 						</div>
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg">
-								<h4 class="fs-m w-b">Заявка на обработку</h4>
+								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+									data-wow-delay=".2s">
+								<h4 class="fm wb">Заявка на обработку</h4>
 							</div>
-							<p class="fs-xs">
+							<p class="fxs">
 								Управление входящими и исходящими транспортными потоками
 							</p>
 						</div>
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg">
-								<h4 class="fs-m w-b">Задачи выполения</h4>
+								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+									data-wow-delay=".2s">
+								<h4 class="fm wb">Задачи выполения</h4>
 							</div>
-							<p class="fs-xs">
+							<p class="fxs">
 								Управление и контроль исполнения погрузочно-разгрузочных работ и регистрационных процедур с
 								использованием статусных схем
 							</p>
@@ -215,10 +222,11 @@
 					</div>
 					<div class="func__item full">
 						<div class="func__item-head">
-							<img src="/resources/images/green-point.svg">
-							<h4 class="fs-m w-b">Отчетность</h4>
+							<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+								data-wow-delay=".2s">
+							<h4 class="fm wb">Отчетность</h4>
 						</div>
-						<p class="fs-xs">
+						<p class="fxs">
 							План-факт отчетность, монитор диспетчера, интеграционные потоки с системами отчетности
 						</p>
 					</div>
@@ -232,13 +240,14 @@
 				</div>
 			</div>
 		</section>
+
 		<!-- Request -->
-		<article class="content__request modal request container">
+		<article class="content__request modal request container" id="request">
 			<!-- Title -->
 			<div class="request__title title">
 				<h2 class="wow animate__animated animate__fadeInUp">Свяжитесь с нами</h2>
 				<div class="title__hr"></div>
-				<p class="fs-l wow animate__animated animate__fadeInDown">
+				<p class="fl wow animate__animated animate__fadeInDown">
 					Будем рады ответить на ваш вопрос.
 				</p>
 			</div>
@@ -250,7 +259,7 @@
 					<input type="text" class="input" placeholder="Ваш вопрос">
 				</div>
 				<input type="submit" value="Отправить" class="button-fill">
-				<p class="fs-s">
+				<p class="fs">
 					Нажимая на кнопку *Отправить*, даю согласие на
 					<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
 				</p>
@@ -266,30 +275,30 @@
 			<!-- Logo + copyright -->
 			<div class="footer__col commerce">
 				<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura">
-				<p class="fs-xs c-bll">&#169 ITVECTURA 2023</p>
+				<p class="fxs cbl">&#169 ITVECTURA 2023</p>
 			</div>
 			<!-- Contacts + navigation -->
 			<div class="footer__content">
 				<!-- Contacts -->
 				<div class="footer__col">
-					<a class="fs-xs c-wht"
+					<a class="fxs cw"
 						href="https://www.google.ru/maps/place/%D0%9D%D0%B8%D0%B6%D0%BD%D1%8F%D1%8F+%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+40%2F12,+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81+20,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+105066/@55.7741802,37.6698747,17z/data=!3m1!4b1!4m5!3m4!1s0x46b54a8026721307:0x182793958dcfda5e!8m2!3d55.7741802!4d37.6720687?hl=ru&coh=164777&entry=tt"
 						target="_blank">
 						105066, г. Москва, ул. Нижняя Красносельская 40/12 к.20
 					</a>
-					<a href="tel:+7(499)673-32-73" class="fs-xs c-wht">+7 (499) 673-32-73</a>
-					<a href="mailto:info@itvectura.com" class="fs-xs c-wht">info@itvectura.com</a>
+					<a href="tel:+7(499)673-32-73" class="fxs cw">+7 (499) 673-32-73</a>
+					<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 				</div>
 				<!-- Mavigation -->
 				<div class="footer__col">
 					<!-- Logistics management system -->
-					<a href="/" class="fs-xs c-wht">Возможности</a>
+					<a href="/" class="fxs cw">Возможности</a>
 					<!-- Contacts -->
-					<a href="/" class="fs-xs c-wht">Контакты</a>
+					<a href="/" class="fxs cw">Контакты</a>
 					<!-- Main link to Products -->
-					<a href="/products/" class="fs-xs c-wht">Продукты</a>
+					<a href="/products/" class="fxs cw">Продукты</a>
 					<!-- About -->
-					<a href="/" class="fs-xs c-wht">О нас</a>
+					<a href="/" class="fxs cw">О нас</a>
 				</div>
 			</div>
 		</div>
@@ -311,7 +320,7 @@
 					<img src="/resources/images/close.svg" alt="Закрыть">
 				</div>
 			</div>
-			<p class="fs-l w-sb">Будем рады ответить на ваш вопрос</p>
+			<p class="fl wsb">Будем рады ответить на ваш вопрос</p>
 		</div>
 		<!-- Modal content -->
 		<form class="mod__main">
@@ -321,7 +330,7 @@
 			</div>
 			<input type="text" class="input" placeholder="Ваш вопрос">
 			<input type="submit" value="Отправить" class="button-fill">
-			<p class="fs-s">
+			<p class="fs">
 				Нажимая на кнопку *Отправить*, даю согласие на
 				<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
 			</p>

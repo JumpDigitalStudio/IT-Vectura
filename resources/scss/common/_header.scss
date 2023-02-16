@@ -1,0 +1,260 @@
+.header {
+
+	// Blocks
+	&__container {
+		@include flex (space-between, center, row);
+	}
+
+	&__logo {
+		height: 55px;
+		width: auto;
+
+		&.light {
+			display: block;
+		}
+
+		&.dark {
+			display: none;
+		}
+	}
+
+	&__nav {
+		@include flex(center, flex-start, row);
+
+		transition: all .2s ease-in-out 0s;
+		min-height: 55px;
+	}
+
+	&__contacts {
+		height: 55px;
+		@include flex(space-between, flex-end, column);
+
+		&>a {
+			@include link-hover($ACM);
+		}
+	}
+
+	// Navigation components
+	&__main-list {
+		@include flex(center, top, row);
+		@include gap(0, 50px);
+	}
+
+	&__sub-list {
+		position: absolute;
+		top: 30px;
+		left: 0;
+
+		overflow: hidden;
+		width: max-content;
+
+		transform: translateZ(0);
+		will-change: opacity;
+		transition: all .2s ease-in-out 0s;
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+
+		border-radius: $radius-s;
+		border: 1px $WHT solid;
+
+		backdrop-filter: blur(10px);
+		background: rgba(236, 236, 236, 0.2);
+	}
+
+	&__main-link {
+		position: relative;
+
+		&.sub-link {
+			&>p {
+				@include link-hover($WHT);
+				@include flex(center, center, row);
+				@include gap(0, 7px);
+
+				position: relative;
+
+				&::after {
+					@include pseudo;
+					top: 100%;
+					left: 0;
+					right: 0;
+
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			&:hover {
+				.header__open {
+					background-color: $WHT;
+
+					-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+					-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+					box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+
+					&::before {
+						opacity: 1;
+						transform: translate(-50%, 50%);
+					}
+				}
+
+				.header__sub-list {
+					opacity: 1;
+					visibility: visible;
+					pointer-events: all;
+				}
+			}
+		}
+
+		&>a {
+			@include link-hover($ACM);
+		}
+	}
+
+	&__sub-link {
+		@include flex(flex-start, center, row);
+
+		will-change: background-color;
+		transition: all .2s ease-in-out 0s;
+
+		&.sub-title {
+			background-color: rgba(236, 236, 236, 0.2);
+			border-bottom: 1px $WHT solid;
+		}
+
+		&>a {
+			width: 100%;
+			padding: 15px;
+		}
+
+		&:hover {
+			background-color: rgba(236, 236, 236, 0.3);
+		}
+	}
+
+	&__open {
+		will-change: background-color, box-shadow;
+		transition: all .2s ease-in-out 0s;
+
+		position: relative;
+
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		border: 1px $WHT solid;
+
+		-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.0);
+		-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.0);
+		box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.0);
+
+		&::before {
+			@include pseudo;
+			top: 50%;
+			left: 50%;
+
+			will-change: opacity;
+			transition: all .2s ease-in-out 0s;
+			transform: translate(-50%, -50%);
+
+			width: 1px;
+			height: 100%;
+
+			opacity: 0;
+			background: $WHT;
+		}
+	}
+
+	// Mods
+	&.stick-dark {
+		.header__sub-list {
+			background: rgba(0, 0, 0, 0.7);
+		}
+
+		.header__sub-link {
+			&.sub-title {
+				background: rgba(0, 0, 0, 0.6);
+			}
+
+			&:hover {
+				background: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+
+	&.stick-light {
+		.header__logo {
+
+			&.light {
+				display: none;
+			}
+
+			&.dark {
+				display: block;
+			}
+		}
+
+		.header__nav {
+			min-height: 0;
+		}
+
+		.header__contacts>a {
+			color: $BLA;
+			@include link-hover($ACM);
+		}
+
+		// Navigation components
+		.header__sub-list {
+			border: $bla-border;
+			background: $GRY;
+		}
+
+		.header__main-link {
+
+			&.sub-link {
+				&>p {
+					@include link-hover($BLA);
+					color: $BLA;
+				}
+
+				&:hover {
+					.header__open {
+						background-color: $BLA;
+
+						-webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0);
+						-moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0);
+						box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0);
+					}
+				}
+			}
+
+			&>a {
+				color: $BLA;
+				@include link-hover($ACM);
+			}
+		}
+
+		.header__sub-link {
+			&.sub-title {
+				background: unset;
+				border-bottom: $bla-border;
+			}
+
+			&>a {
+				color: $BLA;
+			}
+
+			&:hover {
+				background: $WHT;
+			}
+		}
+
+		.header__open {
+			border: 1px $BLA solid;
+
+			&::before {
+				background: $BLA;
+			}
+		}
+	}
+}
