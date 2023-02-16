@@ -159,8 +159,13 @@ html {
 	&__logistic-system,
 	&__solutions,
 	&__request,
-	&__contacts {
+	&__contacts,
+	&__functionality {
 		padding: 60px 0;
+	}
+
+	&__request.modal {
+		margin-bottom: 60px;
 	}
 }
 

@@ -2,6 +2,24 @@
 	@include flex(flex-start, center, column);
 	@include gap(15px, 0);
 
+	&.modal {
+		background: $WHT;
+		border-radius: $radius-m;
+		overflow: hidden;
+
+		max-width: 1140px;
+		padding: 30px;
+
+		.request__title {
+			width: 100%;
+			@include title(15px);
+		}
+
+		.request__main {
+			width: 100%;
+		}
+	}
+
 	&__title {
 		@include title(15px);
 	}

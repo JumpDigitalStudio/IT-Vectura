@@ -1,0 +1,84 @@
+.functionality {
+
+	@include flex(flex-start, center, column);
+	@include gap(40px, 0);
+
+	&__main {
+		@include grid(auto 1fr, 1fr);
+		@include gap(0, 40px);
+	}
+}
+
+.sidebar {
+	@include grid(1fr, repeat(3, 1fr));
+
+	border-radius: $radius-s;
+	border: 1px $BLA solid;
+
+	height: fit-content;
+	width: fit-content;
+
+	overflow: hidden;
+	background: transparent;
+
+	&__row {
+		@include flex(flex-start, center, row);
+		@include gap(0, 15px);
+		padding: 20px 30px;
+
+		transition: background .2s ease 0s;
+
+		&.active {
+			background: $ACM;
+		}
+
+		&:nth-child(2) {
+			border-top: 1px $BLA solid;
+			border-bottom: 1px $BLA solid;
+		}
+	}
+}
+
+.func {
+	@include grid(1fr, auto);
+	@include gap(50px, 0);
+	border-radius: $radius-m;
+
+	height: fit-content;
+	width: calc(100% - 60px);
+
+	overflow: hidden;
+	background: $WHT;
+
+	padding: 30px;
+
+	&__blocks {
+		@include grid(repeat(2, 1fr), repeat(2, 1fr));
+		@include gap(50px, 50px);
+	}
+
+	&__item {
+		@include flex(flex-start, flex-start, column);
+		@include gap(15px, 0);
+
+		&.full {
+			&>p {
+				width: 70%;
+			}
+		}
+	}
+
+	&__item-head {
+		@include flex(flex-start, center, row);
+		@include gap(0, 20px);
+	}
+
+	&__buttons {
+		@include grid(1fr, auto);
+		@include gap(30px, 0);
+	}
+
+	&__button {
+		width: 100%;
+	}
+}
