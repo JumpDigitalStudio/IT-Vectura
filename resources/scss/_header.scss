@@ -5,7 +5,6 @@
 		text-align: center;
 
 		border-bottom: 1px $WHT solid;
-		background: rgba(236, 236, 236, 0.0);
 
 		backdrop-filter: blur(10px);
 
@@ -149,6 +148,7 @@
 		border-radius: $radius-s;
 		border: 1px $WHT solid;
 
+		backdrop-filter: blur(10px);
 		background: rgba(236, 236, 236, 0.2);
 
 		overflow: hidden;
@@ -156,8 +156,6 @@
 
 	&__sub-link {
 		@include flex(flex-start, center, row);
-
-		backdrop-filter: blur(10px);
 		transition: all .2s ease-in-out 0s;
 
 		background: rgba(236, 236, 236, 0.0);
@@ -166,7 +164,9 @@
 			background: rgba(236, 236, 236, 0.3);
 		}
 
-		padding: 15px;
+		&>a {
+			padding: 15px;
+		}
 	}
 
 	&__contacts {
@@ -181,10 +181,12 @@
 	&.stick-dark {
 
 		.sub-list__header {
-			background: rgba(0, 0, 0, 0.83);
+			&>a {
+				background: rgba(0, 0, 0, 0.83);
 
-			&:hover {
-				background: rgba(0, 0, 0, 0.53);
+				&:hover {
+					background: rgba(0, 0, 0, 0.53);
+				}
 			}
 		}
 
@@ -275,12 +277,14 @@
 			border-bottom: 1px $BLA solid;
 
 			&>a {
+				background: $GRY;
 				color: $BLA;
+
+				&:hover {
+					background: $WHT;
+				}
 			}
 
-			&:hover {
-				background: $WHT;
-			}
 		}
 
 		.header__sub-link {

@@ -123,6 +123,9 @@ h1 {
   color: #FFFFFF;
   line-height: 110%;
 }
+h1 > .span {
+  color: #00B2FF;
+}
 
 h2 {
   font-size: 32px;
@@ -186,6 +189,11 @@ h3 {
   border: 2px #FFFFFF solid;
   width: 290px;
   height: 44px;
+}
+.button-border.demo::before {
+  content: "Запросить демонстрацию";
+  display: flex;
+  position: absolute;
 }
 .button-border::before {
   color: #FFFFFF;
@@ -405,7 +413,6 @@ html ::-webkit-scrollbar-thumb {
   flex-direction: row;
   text-align: center;
   border-bottom: 1px #FFFFFF solid;
-  background: rgba(236, 236, 236, 0);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
 }
@@ -552,6 +559,8 @@ html ::-webkit-scrollbar-thumb {
   pointer-events: none;
   border-radius: 10px;
   border: 1px #FFFFFF solid;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   background: rgba(236, 236, 236, 0.2);
   overflow: hidden;
 }
@@ -560,14 +569,14 @@ html ::-webkit-scrollbar-thumb {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
   transition: all 0.2s ease-in-out 0s;
   background: rgba(236, 236, 236, 0);
-  padding: 15px;
 }
 .header__sub-link:hover {
   background: rgba(236, 236, 236, 0.3);
+}
+.header__sub-link > a {
+  padding: 15px;
 }
 .header__contacts {
   height: 55px;
@@ -583,10 +592,10 @@ html ::-webkit-scrollbar-thumb {
 .header__contacts > a:hover {
   color: #4B60CC;
 }
-.header.stick-dark .sub-list__header {
+.header.stick-dark .sub-list__header > a {
   background: rgba(0, 0, 0, 0.83);
 }
-.header.stick-dark .sub-list__header:hover {
+.header.stick-dark .sub-list__header > a:hover {
   background: rgba(0, 0, 0, 0.53);
 }
 .header.stick-dark .header__sub-link {
@@ -658,9 +667,10 @@ html ::-webkit-scrollbar-thumb {
   border-bottom: 1px #232323 solid;
 }
 .header.stick-light .sub-list__header > a {
+  background: #ECECEC;
   color: #232323;
 }
-.header.stick-light .sub-list__header:hover {
+.header.stick-light .sub-list__header > a:hover {
   background: #FFFFFF;
 }
 .header.stick-light .header__sub-link {
@@ -745,6 +755,9 @@ html ::-webkit-scrollbar-thumb {
   background-position: bottom;
   background-size: cover;
 }
+.intro.intro-product {
+  background-position: center;
+}
 .intro::before {
   content: "";
   display: flex;
@@ -774,6 +787,12 @@ html ::-webkit-scrollbar-thumb {
   -moz-column-gap: 0;
        column-gap: 0;
   max-width: 630px;
+}
+.intro__content.product {
+  row-gap: 90px;
+  -moz-column-gap: 0;
+       column-gap: 0;
+  max-width: 700px;
 }
 .intro__text {
   display: flex;
