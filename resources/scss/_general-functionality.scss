@@ -53,7 +53,7 @@
 	padding: 30px;
 
 	&__blocks {
-		@include grid(repeat(2, 1fr), repeat(2, 1fr));
+		@include grid(repeat(2, 1fr), repeat(2, auto));
 		@include gap(50px, 50px);
 	}
 
@@ -61,9 +61,15 @@
 		@include flex(flex-start, flex-start, column);
 		@include gap(15px, 0);
 
-		&.full {
+		&.half {
 			&>p {
 				width: 70%;
+			}
+		}
+
+		&.full {
+			&>p {
+				width: 73%;
 			}
 		}
 	}

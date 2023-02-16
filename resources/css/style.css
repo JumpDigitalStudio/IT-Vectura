@@ -1488,7 +1488,7 @@ html ::-webkit-scrollbar-thumb {
 .func__blocks {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
   row-gap: 50px;
   -moz-column-gap: 50px;
        column-gap: 50px;
@@ -1502,8 +1502,11 @@ html ::-webkit-scrollbar-thumb {
   -moz-column-gap: 0;
        column-gap: 0;
 }
-.func__item.full > p {
+.func__item.half > p {
   width: 70%;
+}
+.func__item.full > p {
+  width: 73%;
 }
 .func__item-head {
   display: flex;
