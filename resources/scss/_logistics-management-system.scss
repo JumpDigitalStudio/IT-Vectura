@@ -1,0 +1,88 @@
+.logistic-system {
+
+	@include flex(flex-start, center, column);
+	@include gap(30px, 0);
+
+	&__main {
+		@include flex(flex-start, flex-start, column);
+	}
+
+	&__item {
+		@include flex(flex-start, center, row);
+		flex-wrap: nowrap;
+		@include gap(0, 60px);
+		min-height: 60px;
+		height: 100%;
+	}
+
+	&__shape {
+		min-height: 60px;
+		width: 21px;
+
+		position: relative;
+
+		&::before {
+			@include pseudo;
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%);
+			width: 11px;
+			height: 11px;
+
+			border-radius: 50%;
+
+			z-index: 2;
+		}
+
+		&::after {
+			@include pseudo;
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%);
+			width: 1px;
+			height: 100%;
+
+			background: $BLA;
+		}
+
+		&.first::after {
+			bottom: 0;
+			height: 50%;
+
+			transform: translate(-50%, 0);
+		}
+
+		&.last::after {
+			top: 0;
+			height: 50%;
+
+			transform: translate(-50%, 0);
+		}
+
+		&.first,
+		&.last {
+			&::before {
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		&.orange::before {
+			background: $ORN;
+		}
+
+		&.blue::before {
+			background: $ACD;
+		}
+
+		&.purple::before {
+			background: $PRD;
+		}
+
+		&.pink::before {
+			background: $PND;
+		}
+	}
+}

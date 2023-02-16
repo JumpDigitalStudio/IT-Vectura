@@ -1,0 +1,39 @@
+.mod {
+
+	&__header {
+		@include flex(center, flex-start, column);
+		@include gap(15px, 0);
+		margin-bottom: 30px;
+	}
+
+	&__title {
+		@include flex(space-between, center, row);
+		width: 100%;
+
+		padding-bottom: 15px;
+		border-bottom: 1px $BLA solid;
+
+		&>h1 {
+			color: $BLA;
+		}
+	}
+
+	&__close {
+		cursor: pointer;
+	}
+
+	&__main {
+		@include flex(center, flex-start, column);
+		@include gap(15px, 0);
+
+		&>.input {
+			width: 100%;
+		}
+	}
+
+	&__inputs {
+		@include grid(repeat(2, 1fr), 1fr);
+		@include gap(0, 15px);
+		width: 100%;
+	}
+}

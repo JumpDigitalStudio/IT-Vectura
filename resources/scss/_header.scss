@@ -1,0 +1,298 @@
+.sub-list {
+
+	&__header {
+		@include flex(flex-start, center, row);
+		text-align: center;
+
+		border-bottom: 1px $WHT solid;
+		background: rgba(236, 236, 236, 0.0);
+
+		backdrop-filter: blur(10px);
+
+		&>a {
+			padding: 15px;
+
+			transition: all .2s ease-in-out 0s;
+
+			&:hover {
+				background: rgba(236, 236, 236, 0.3);
+			}
+		}
+	}
+}
+
+.header {
+
+	&__container {
+		@include flex (space-between, center, row);
+	}
+
+	&__logo {
+		height: 55px;
+		width: auto;
+
+		&.light {
+			display: block;
+		}
+
+		&.dark {
+			display: none;
+		}
+	}
+
+	&__nav {
+		@include flex(center, flex-start, row);
+
+		transition: all .3s ease-in-out 0s;
+		min-height: 55px;
+	}
+
+	&__main-list {
+		@include flex(center, top, row);
+		@include gap(0, 50px);
+	}
+
+	&__main-link {
+		height: fit-content;
+		position: relative;
+
+		&.sub {
+			@include link-hover($WHT);
+
+			&::before {
+				@include pseudo;
+				bottom: -50%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			&:hover {
+				.header__open {
+					background: $WHT;
+
+					-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+					-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+					box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+
+					&::before {
+						opacity: 1;
+						transform: translate(-50%, 50%);
+					}
+				}
+
+				.header__sub-list {
+					opacity: 1;
+
+					visibility: visible;
+					pointer-events: all;
+				}
+			}
+		}
+
+		&>a {
+			@include link-hover($ACM);
+			@include flex(center, center, row);
+			@include gap(0, 15px);
+
+			&.sub {
+				@include link-hover($WHT);
+			}
+		}
+
+		&>p {
+			@include link-hover($WHT);
+			@include flex(center, center, row);
+			@include gap(0, 15px);
+		}
+	}
+
+	&__open {
+		transition: all .2s ease-in-out 0s;
+
+		position: relative;
+
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		border: 1px $WHT solid;
+
+		&::before {
+			@include pseudo;
+			top: 50%;
+			left: 50%;
+
+			transition: all .2s ease-in-out 0s;
+			transform: translate(-50%, -50%);
+
+			width: 1px;
+			height: 100%;
+
+			opacity: 0;
+			background: $WHT;
+		}
+	}
+
+	&__sub-list {
+		position: absolute;
+		top: 31px;
+		left: 0;
+
+		width: max-content;
+
+		transition: all .2s ease-in-out 0s;
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+
+		border-radius: $radius-s;
+		border: 1px $WHT solid;
+
+		background: rgba(236, 236, 236, 0.2);
+
+		overflow: hidden;
+	}
+
+	&__sub-link {
+		@include flex(flex-start, center, row);
+
+		backdrop-filter: blur(10px);
+		transition: all .2s ease-in-out 0s;
+
+		background: rgba(236, 236, 236, 0.0);
+
+		&:hover {
+			background: rgba(236, 236, 236, 0.3);
+		}
+
+		padding: 15px;
+	}
+
+	&__contacts {
+		height: 55px;
+		@include flex(space-between, flex-end, column);
+
+		&>a {
+			@include link-hover($ACM);
+		}
+	}
+
+	&.stick-dark {
+
+		.sub-list__header {
+			background: rgba(0, 0, 0, 0.83);
+
+			&:hover {
+				background: rgba(0, 0, 0, 0.53);
+			}
+		}
+
+		.header__sub-link {
+			background: rgba(0, 0, 0, 0.83);
+
+			&:hover {
+				background: rgba(0, 0, 0, 0.53);
+			}
+		}
+	}
+
+	&.stick-light {
+
+		.header__logo {
+
+			&.light {
+				display: none;
+			}
+
+			&.dark {
+				display: block;
+			}
+		}
+
+		.header__nav {
+			min-height: 0;
+		}
+
+		.header__main-link {
+			&>a {
+				color: $BLA;
+				@include link-hover($BLD);
+			}
+		}
+
+		.header__contacts {
+			&>a {
+				color: $BLA;
+				@include link-hover($BLD);
+			}
+		}
+
+
+		.header__main-link {
+
+			&.sub {
+				@include link-hover($BLA);
+
+				&:hover {
+					.header__open {
+						background: $BLA;
+
+						-webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.3);
+						-moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.3);
+						box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.3);
+					}
+
+					.header__sub-list {
+						opacity: 1;
+
+						visibility: visible;
+						pointer-events: all;
+					}
+				}
+			}
+
+			&>p {
+				@include link-hover($BLA);
+				color: $BLA;
+			}
+		}
+
+		.header__open {
+			border: 1px $BLA solid;
+
+			&::before {
+				background: $BLA;
+			}
+		}
+
+		.header__sub-list {
+			border: 1px $BLA solid;
+		}
+
+		.sub-list__header {
+			background: $GRY;
+			border-bottom: 1px $BLA solid;
+
+			&>a {
+				color: $BLA;
+			}
+
+			&:hover {
+				background: $WHT;
+			}
+		}
+
+		.header__sub-link {
+			background: $GRY;
+
+			&>a {
+				color: $BLA;
+			}
+
+			&:hover {
+				background: $WHT;
+			}
+		}
+	}
+}

@@ -1,0 +1,132 @@
+.solutions {
+	@include flex(flex-start, center, column);
+	@include gap(50px, 0);
+
+	&__main {
+		@include flex(flex-start, center, column);
+		@include gap(30px, 0);
+	}
+
+	&__item {
+		width: 100%;
+		@include flex(space-between, center, row);
+		@include gap(0, 30px);
+	}
+
+	&__arrow {
+		height: 100px;
+
+		&.left {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.hangs {
+	position: relative;
+	@include flex(flex-start, center, column);
+
+	&__row {
+
+		&:nth-child(1) {
+			@include flex(space-between, flex-start, row);
+			position: absolute;
+			top: 0;
+			left: 4%;
+
+			width: 76%;
+
+			&>p {
+				text-align: center;
+				max-width: 350px;
+			}
+		}
+
+		&:nth-child(2) {
+			position: relative;
+
+			width: 100%;
+			height: 250px;
+		}
+
+		&:nth-child(3) {
+			@include flex(space-between, flex-start, row);
+			position: absolute;
+			bottom: 0;
+			right: 25px;
+
+			width: 73%;
+		}
+	}
+
+	&__shape {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.solution {
+	@include flex(center, center, column);
+	@include gap(40px, 0);
+	border-radius: $radius-m;
+	padding: 30px;
+
+	width: 100%;
+	max-width: 580px;
+
+	background-color: $WHT;
+
+	cursor: pointer;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
+
+	&:hover {
+		max-width: 100%;
+
+		.solution__button {
+			transform: rotate(90deg);
+		}
+
+		.solution__row.base>p {
+			opacity: 0;
+		}
+	}
+
+	&.base {
+		background-color: $ACM;
+	}
+
+	&__row {
+		width: 100%;
+		@include flex(space-between, flex-end, row);
+
+		&.base {
+			@include flex(space-between, flex-start, row);
+
+			&>p {
+				transition: opacity .3s ease-in-out 0s;
+				opacity: 1;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 65px;
+		font-weight: 700;
+		line-height: 100%;
+		text-transform: uppercase;
+
+		&.base {
+			color: $WHT;
+		}
+	}
+
+	&__button {
+		width: 50px;
+
+		transition: transform .3s ease-in-out 0s;
+		transform: rotate(0);
+	}
+}

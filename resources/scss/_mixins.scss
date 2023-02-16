@@ -1,0 +1,57 @@
+@mixin flex($jc: center, $ai: center, $fd: column) {
+	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
+	flex-direction: $fd;
+}
+
+@mixin grid($gtc: auto, $gtr: auto) {
+	display: grid;
+	grid-template-columns: $gtc;
+	grid-template-rows: $gtr;
+}
+
+@mixin link-hover ($cl) {
+	transition: color .2s ease-in-out 0s;
+	cursor: pointer;
+
+	&:hover {
+		color: $cl;
+	}
+}
+
+@mixin link-back ($cl) {
+	transition: background-color .2s ease-in-out 0s;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $cl;
+	}
+}
+
+@mixin gap($rg, $cg) {
+	row-gap: $rg;
+	column-gap: $cg;
+}
+
+@mixin pseudo($cn: '', $ds: flex, $ps: absolute) {
+	content: $cn;
+	display: $ds;
+	position: $ps;
+}
+
+@mixin text($fs: 16px, $fw: 400, $cl: $BLA) {
+	font-size: $fs;
+	font-weight: $fw;
+
+	color: $cl;
+}
+
+@mixin title($rg: 30px, $pmw: 100%) {
+	@include flex(flex-start, flex-start, column);
+	row-gap: $rg;
+
+	&>p {
+		max-width: $pmw;
+	}
+}

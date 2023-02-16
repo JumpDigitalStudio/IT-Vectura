@@ -1,0 +1,41 @@
+.about {
+
+	@include flex(flex-start, center, column);
+	@include gap(40px, 0);
+
+	&__main {
+		@include grid(1fr 0.5fr, 1fr);
+		@include gap(0, 50px);
+	}
+
+	&__pic {
+		border-radius: $radius-m;
+		border: $bla-border;
+		overflow: hidden;
+
+		background-color: $GRY;
+
+		z-index: 2;
+
+		@include flex(center, center, row);
+
+		&>img {
+			object-fit: contain;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__content {
+		@include flex(space-between, flex-start, column);
+		z-index: 1;
+	}
+
+	&__text {
+		@include title(7px, 100%);
+
+		&.short {
+			@include title(7px, 87%);
+		}
+	}
+}

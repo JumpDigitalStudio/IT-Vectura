@@ -1,0 +1,65 @@
+.contacts {
+
+	@include flex(flex-start, center, column);
+	@include gap(30px, 0);
+
+	&__main {
+		@include flex(flex-start, center, column);
+		@include gap(20px, 0);
+	}
+
+	&__map {
+		border-radius: $radius-m;
+		overflow: hidden;
+		width: 100%;
+
+		@include flex(center, center, row);
+
+		&>iframe {
+			width: 100%;
+			height: 430px;
+		}
+	}
+
+	&__props {
+		width: 100%;
+	}
+}
+
+.props {
+	overflow: hidden;
+
+	&__main {
+		background-color: $WHT;
+		border-radius: 0 0 $radius-m $radius-m;
+		overflow: hidden;
+
+		@include flex(center, space-between, column);
+		@include gap(30px, 0);
+	}
+
+	&__row {
+		justify-content: space-between;
+
+		&:nth-child(1) {
+			padding: 30px 30px 0 30px;
+			@include grid(repeat(4, 1fr), 1fr);
+		}
+
+		&:nth-child(2) {
+			padding: 0 30px 30px 30px;
+			@include grid(3fr 1fr, 1fr);
+		}
+	}
+
+	&__item {
+		@include flex(flex-start, flex-start, column);
+		@include gap(10px, 0px);
+	}
+
+	&.prop-open {
+		.props__button {
+			border-radius: $radius-m $radius-m 0 0;
+		}
+	}
+}

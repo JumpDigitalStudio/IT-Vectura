@@ -1,0 +1,20 @@
+.request {
+	@include flex(flex-start, center, column);
+	@include gap(15px, 0);
+
+	&__title {
+		@include title(15px);
+	}
+
+	&__main {
+		@include flex(center, flex-start, column);
+		@include gap(15px, 0);
+	}
+
+	&__inputs {
+		width: 100%;
+
+		@include grid(repeat(3, 1fr), 1fr);
+		@include gap(0, 15px);
+	}
+}

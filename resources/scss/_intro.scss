@@ -1,0 +1,95 @@
+.intro {
+	position: relative;
+	overflow: hidden;
+
+	@include flex(flex-start, center, column);
+
+	background: url('/resources/images/intro/background.png') center no-repeat;
+	background-position: bottom;
+
+	background-size: cover;
+
+	&::before {
+		@include pseudo;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.574) 0%, rgba(0, 0, 0, 0.7) 100%);
+	}
+
+	&__main {
+		@include flex (space-between, center, row);
+		padding: 220px 0 110px 0;
+
+		min-height: calc(100vh - 330px);
+		height: max-content;
+	}
+
+	&__content {
+		@include flex(center, flex-start, column);
+		@include gap(60px, 0);
+
+		max-width: 630px;
+	}
+
+	&__text {
+		@include flex(center, flex-start, column);
+		@include gap(25px, 0);
+	}
+
+	&__description {
+		@include flex(center, flex-start, column);
+		@include gap(10px, 0);
+		max-width: 550px
+	}
+
+	&__buttons {
+		@include flex(flex-start, center, row);
+		@include gap(0, 30px);
+	}
+
+	&__pic {
+		position: relative;
+		width: 400px;
+		height: 400px;
+
+		&>img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -53%);
+
+			width: 750px;
+			object-fit: contain;
+		}
+	}
+
+	// Features
+	&__features {
+		padding: 40px 0 60px 0;
+		width: 100%;
+		z-index: 2;
+
+		background: rgba(0, 0, 0, 0.53);
+		border: 3px solid rgba(0, 0, 0, 0.17);
+		backdrop-filter: blur(10px);
+	}
+
+	&__cards {
+		@include grid(repeat(4, auto), 1fr);
+		@include gap(0px, 30px);
+		flex-wrap: wrap;
+	}
+
+	&__card {
+		@include flex(center, flex-start, column);
+
+		&>img {
+			margin-left: -15px;
+			margin-bottom: -10px;
+		}
+	}
+}

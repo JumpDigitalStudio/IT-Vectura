@@ -1,0 +1,31 @@
+.cards {
+
+	&__main {
+		@include grid(repeat(2, 1fr), repeat(2, 1fr));
+		@include gap(15px, 15px);
+	}
+
+	&__card {
+		padding: 30px;
+		border-radius: $radius-m;
+
+		@include flex(space-between, flex-start, column);
+		@include gap(30px, 0);
+
+		&.blue {
+			background-color: $BLL;
+		}
+
+		&.blue-dark {
+			background-color: $ACD;
+		}
+
+		&.purple {
+			background-color: $PRL;
+		}
+
+		&.pink {
+			background-color: $PNL;
+		}
+	}
+}

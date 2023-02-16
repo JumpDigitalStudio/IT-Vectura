@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+@import '_variables';
+@import '_mixins';
+@import '_ui';
+
+@import '_plug';
+
+// Default page settings
+html {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+
+	background: $BLD;
+
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: $BLD;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: $BLL;
+		border-radius: 10px;
+	}
+}
+
+.page {
+	position: relative;
+	padding: 0;
+
+	margin: 0 auto;
+
+	background: $GRY;
+	color: $BLA;
+
+	overflow-x: hidden;
+
+	&.lock {
+		overflow: hidden;
+		touch-action: none;
+		-ms-touch-action: none;
+	}
+
+	&__plug {
+		display: none;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__header {
+		position: fixed;
+		left: 0;
+		top: 0;
+
+		z-index: 50;
+
+		transition: all .3s ease-in-out 0s;
+		@include flex (center, center, row);
+
+		width: 100%;
+		height: 150px;
+
+		&.stick-dark {
+			height: 100px;
+			background: rgba(0, 0, 0, 0.53);
+			backdrop-filter: blur(10px);
+		}
+
+		&.stick-light {
+			height: 80px;
+			background: rgba(236, 236, 236, 0.53);
+			border-bottom: $bla-border;
+		}
+	}
+
+	&__content {
+		position: relative;
+
+		padding-top: 150px;
+
+		z-index: 1;
+
+		width: 100%;
+		min-height: 100vh;
+	}
+
+	&__footer {
+		z-index: 1;
+		width: 100%;
+		background-color: $BLD;
+
+		@include flex(center, center, column);
+	}
+
+	@media (max-width: 1250px) {
+		&__plug {
+			display: flex;
+		}
+
+		&__header {
+			display: none;
+		}
+
+		&__content {
+			display: none;
+		}
+
+		&__footer {
+			display: none;
+		}
+	}
+}
+
+.container {
+	margin: 0 auto;
+	position: relative;
+
+	display: flex;
+
+	max-width: 1200px;
+	width: 100%;
+
+	padding: 0 25px;
+}
+
+// Components
+@import '_header';
+@import '_modal';
+
+// Content
+.content {
+	&__intro {
+		margin-top: -150px;
+		background-color: $BLA;
+	}
+
+	&__about,
+	&__cards {
+		padding: 60px 0;
+	}
+
+	&__features {
+		background-color: $ACM;
+	}
+
+	&__features,
+	&__logistic-system,
+	&__solutions,
+	&__request,
+	&__contacts {
+		padding: 60px 0;
+	}
+}
+
+// Main page content
+@import '_intro';
+@import '_about';
+@import '_features';
+@import '_cards';
+@import '_logistics-management-system';
+@import '_features-of-solutions';
+@import '_request';
+@import '_contacts';
+
+@import '_footer';
+
+// Products pages content
+@import '_general-functionality';
