@@ -32,7 +32,7 @@
 		height: max-content;
 
 		&.intro-products {
-			padding: 170px 0 40px 0;
+			padding: 180px 0 40px 0;
 			min-height: fit-content;
 			height: auto;
 		}
@@ -132,7 +132,7 @@
 	border: 1px $WHT solid;
 
 	&__item {
-		padding: 20px 20px 40px 20px;
+		padding: 20px;
 		@include grid(1fr, auto);
 		@include gap(15px, 0);
 
