@@ -595,10 +595,11 @@ html ::-webkit-scrollbar-thumb {
   will-change: background-color, box-shadow;
   transition: all 0.2s ease-in-out 0s;
   position: relative;
-  width: 14px;
-  height: 14px;
+  width: 17px;
+  height: 17px;
+  background: url("/resources/images/icon-sub-list.svg") center no-repeat;
+  background-size: 100%;
   border-radius: 50%;
-  border: 1px #FFFFFF solid;
   box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0);
 }
 .header__open::before {
@@ -676,12 +677,19 @@ html ::-webkit-scrollbar-thumb {
   background: #FFFFFF;
 }
 .header.stick-light .header__open {
-  border: 1px #232323 solid;
+  background: url("/resources/images/icon-sub-list-dark.svg") center no-repeat;
+  background-size: 100%;
 }
 .header.stick-light .header__open::before {
   background: #232323;
 }
 
+.mod {
+  overflow: hidden;
+}
+.mod ::-webkit-scrollbar {
+  display: none;
+}
 .mod__header {
   display: flex;
   justify-content: center;

@@ -1,4 +1,9 @@
 .mod {
+	overflow: hidden;
+
+	::-webkit-scrollbar {
+		display: none;
+	}
 
 	&__header {
 		@include flex(center, flex-start, column);

@@ -45,10 +45,29 @@ document.addEventListener("DOMContentLoaded", () => {
 			transitionOut: 'fadeOutDown',
 		});
 
+		$("#licensing-modal").iziModal({
+			width: 700,
+			top: 20,
+			bottom: 20,
+			padding: 30,
+			radius: 20,
+			zindex: 100,
+			focusInput: true,
+			closeOnEscape: true,
+			overlayColor: 'rgba(0, 0, 0, 0.53)',
+			transitionIn: 'fadeInDown',
+			transitionOut: 'fadeOutDown',
+		});
+
 		// Modal
 		$(document).on('click', '.req-btn', function (event) {
 			event.preventDefault();
 			$('#request-modal').iziModal('open');
+		});
+
+		$(document).on('click', '.lic-btn', function (event) {
+			event.preventDefault();
+			$('#licensing-modal').iziModal('open');
 		});
 	};
 
