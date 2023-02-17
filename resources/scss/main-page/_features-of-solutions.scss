@@ -82,17 +82,17 @@
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
 
-	&:hover {
-		max-width: 100%;
+	// &:hover {
+	// 	max-width: 100%;
 
-		.solution__button {
-			transform: rotate(90deg);
-		}
+	// 	.solution__button {
+	// 		transform: rotate(90deg);
+	// 	}
 
-		.solution__row.base>p {
-			opacity: 0;
-		}
-	}
+	// 	.solution__row.base>p {
+	// 		opacity: 0;
+	// 	}
+	// }
 
 	&.base {
 		background-color: $ACM;

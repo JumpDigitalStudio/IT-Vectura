@@ -1295,15 +1295,6 @@ html ::-webkit-scrollbar-thumb {
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
 }
-.solution:hover {
-  max-width: 100%;
-}
-.solution:hover .solution__button {
-  transform: rotate(90deg);
-}
-.solution:hover .solution__row.base > p {
-  opacity: 0;
-}
 .solution.base {
   background-color: #4B60CC;
 }
