@@ -1104,18 +1104,7 @@ html ::-webkit-scrollbar-thumb {
   row-gap: 30px;
   -moz-column-gap: 0;
        column-gap: 0;
-}
-.cards__card.blue {
-  background-color: #00B2FF;
-}
-.cards__card.blue-dark {
-  background-color: #384FCA;
-}
-.cards__card.purple {
-  background-color: #A834D0;
-}
-.cards__card.pink {
-  background-color: #CB416A;
+  background-color: #012e71;
 }
 
 .logistic-system {

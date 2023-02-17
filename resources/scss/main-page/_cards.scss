@@ -12,20 +12,6 @@
 		@include flex(space-between, flex-start, column);
 		@include gap(30px, 0);
 
-		&.blue {
-			background-color: $BLL;
-		}
-
-		&.blue-dark {
-			background-color: $ACD;
-		}
-
-		&.purple {
-			background-color: $PRL;
-		}
-
-		&.pink {
-			background-color: $PNL;
-		}
+		background-color: $BLM;
 	}
 }
