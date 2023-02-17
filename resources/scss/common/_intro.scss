@@ -30,6 +30,12 @@
 
 		min-height: calc(100vh - 330px);
 		height: max-content;
+
+		&.intro-products {
+			padding: 170px 0 40px 0;
+			min-height: fit-content;
+			height: auto;
+		}
 	}
 
 	&__content {
@@ -41,17 +47,29 @@
 		&.product {
 			@include gap(90px, 0);
 		}
+
+		&.intro-products {
+			@include gap(20px, 0);
+		}
 	}
 
 	&__text {
 		@include flex(center, flex-start, column);
 		@include gap(25px, 0);
+
+		&.intro-products {
+			@include gap(10px, 0);
+		}
 	}
 
 	&__description {
 		@include flex(center, flex-start, column);
 		@include gap(10px, 0);
-		max-width: 550px
+		max-width: 550px;
+
+		&.intro-products {
+			max-width: 700px
+		}
 	}
 
 	&__buttons {
@@ -98,6 +116,50 @@
 		&>img {
 			margin-left: -15px;
 			margin-bottom: -10px;
+		}
+	}
+}
+
+.products {
+	@include grid(repeat(3, 1fr), 1fr);
+	padding: 0;
+	overflow: hidden;
+
+	background: rgba(0, 0, 0, 0.53);
+	backdrop-filter: blur(10px);
+
+	border-radius: $radius-m $radius-m 0 0;
+	border: 1px $WHT solid;
+
+	&__item {
+		padding: 20px 20px 40px 20px;
+		@include grid(1fr, auto);
+		@include gap(15px, 0);
+
+		cursor: pointer;
+		transition: .2s ease-in-out 0s;
+		background: rgba(0, 0, 0, 0.0);
+
+		&:nth-child(2) {
+			border-left: 1px $WHT solid;
+			border-right: 1px $WHT solid;
+		}
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.53);
+		}
+	}
+
+	&__header {
+		@include flex(space-between, center, row);
+	}
+
+	&__buttons {
+		@include flex(space-between, flex-end, row);
+
+		&>img {
+			width: 30px;
+			transform: rotate(-90deg);
 		}
 	}
 }

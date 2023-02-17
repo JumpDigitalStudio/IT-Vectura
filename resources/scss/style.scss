@@ -164,7 +164,8 @@ html {
 	&__solutions,
 	&__request,
 	&__contacts,
-	&__functionality {
+	&__functionality,
+	&__product-sol {
 		padding: 60px 0;
 	}
 
@@ -185,3 +186,4 @@ html {
 
 // Products content
 @import 'products/_general-functionality';
+@import 'products/product-solutions';
