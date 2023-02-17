@@ -6,8 +6,10 @@
 	}
 
 	&__logo {
-		height: 55px;
-		width: auto;
+		@include flex(flex-start, flex-start, row);
+
+		transition: all .2s ease-in-out 0s;
+		min-height: 55px;
 
 		&.light {
 			display: block;
@@ -26,8 +28,10 @@
 	}
 
 	&__contacts {
-		height: 55px;
 		@include flex(space-between, flex-end, column);
+
+		min-height: 55px;
+		transition: all .2s ease-in-out 0s;
 
 		&>a {
 			@include link-hover($ACM);
@@ -170,6 +174,10 @@
 
 	// Mods
 	&.stick-dark {
+		.header__nav {
+			min-height: 0;
+		}
+
 		.header__sub-list {
 			background: rgba(0, 0, 0, 0.7);
 		}
@@ -187,6 +195,7 @@
 
 	&.stick-light {
 		.header__logo {
+			min-height: 45px;
 
 			&.light {
 				display: none;
@@ -197,13 +206,13 @@
 			}
 		}
 
-		.header__nav {
-			min-height: 0;
-		}
+		.header__contacts {
+			height: 45px;
 
-		.header__contacts>a {
-			color: $BLA;
-			@include link-hover($ACM);
+			&>a {
+				color: $BLA;
+				@include link-hover($ACM);
+			}
 		}
 
 		// Navigation components

@@ -1,6 +1,6 @@
 .solutions {
 	@include flex(flex-start, center, column);
-	@include gap(50px, 0);
+	@include gap(60px, 0);
 
 	&__main {
 		@include flex(flex-start, center, column);
@@ -63,18 +63,20 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
+		max-width: 950px;
+		width: 100%;
 		transform: translate(-50%, -50%);
 	}
 }
 
 .solution {
 	@include flex(center, center, column);
-	@include gap(40px, 0);
+	@include gap(50px, 0);
 	border-radius: $radius-m;
 	padding: 30px;
 
 	width: 100%;
-	max-width: 580px;
+	max-width: 530px;
 
 	background-color: $WHT;
 
@@ -113,7 +115,7 @@
 	}
 
 	&__title {
-		font-size: 65px;
+		font-size: 60px;
 		font-weight: 700;
 		line-height: 100%;
 		text-transform: uppercase;
@@ -124,7 +126,7 @@
 	}
 
 	&__button {
-		width: 50px;
+		width: 40px;
 
 		transition: transform .3s ease-in-out 0s;
 		transform: rotate(0);

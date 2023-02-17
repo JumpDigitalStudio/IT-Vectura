@@ -72,7 +72,7 @@ html {
 		@include flex (center, center, row);
 
 		width: 100%;
-		height: 150px;
+		height: 130px;
 
 		&.stick-dark {
 			height: 100px;
@@ -81,7 +81,7 @@ html {
 		}
 
 		&.stick-light {
-			height: 80px;
+			height: 70px;
 			backdrop-filter: none;
 			background: $GRY;
 			border-bottom: $bla-border;
@@ -132,7 +132,7 @@ html {
 
 	display: flex;
 
-	max-width: 1200px;
+	max-width: 1140px;
 	width: 100%;
 
 	padding: 0 25px;

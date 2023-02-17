@@ -37,8 +37,8 @@
 	}
 
 	&__inputs {
-		@include grid(repeat(2, 1fr), 1fr);
-		@include gap(0, 15px);
+		@include grid(repeat(2, 1fr), auto);
+		@include gap(15px, 15px);
 		width: 100%;
 	}
 }

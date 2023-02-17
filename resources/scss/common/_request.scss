@@ -25,14 +25,14 @@
 	}
 
 	&__main {
-		@include flex(center, flex-start, column);
+		@include grid(1fr, auto);
 		@include gap(15px, 0);
 	}
 
 	&__inputs {
 		width: 100%;
 
-		@include grid(repeat(3, 1fr), 1fr);
-		@include gap(0, 15px);
+		@include grid(repeat(2, 1fr), auto);
+		@include gap(15px, 15px);
 	}
 }

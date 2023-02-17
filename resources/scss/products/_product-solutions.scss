@@ -5,12 +5,12 @@
 
 	&__content {
 		@include grid(1fr, auto);
-		@include gap(50px, 0);
+		@include gap(90px, 0);
 	}
 
 	&__item {
-		@include flex(space-between, center, row);
-		@include gap(0, 40px);
+		@include grid(1.3fr auto, auto);
+		@include gap(0, 50px);
 	}
 
 	&__main {
@@ -19,7 +19,7 @@
 	}
 
 	&__title {
-		@include title(7px, 100%);
+		@include title(20px, 100%);
 	}
 
 	&__text {
@@ -68,8 +68,14 @@
 	}
 
 	&__pic {
+		@include flex(center, center, column);
+		width: 450px;
+
 		&>img {
-			width: 500px;
+			// width: 500px;
+			height: 366px;
+			max-width: 100%;
+			object-fit: contain;
 		}
 	}
 }
