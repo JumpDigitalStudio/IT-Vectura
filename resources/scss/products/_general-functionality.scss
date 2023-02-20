@@ -26,15 +26,24 @@
 		@include gap(0, 15px);
 		padding: 20px 30px;
 
+		will-change: background;
 		transition: background .2s ease 0s;
-
-		&.active {
-			background: $ACM;
-		}
 
 		&:nth-child(2) {
 			border-top: 1px $BLA solid;
 			border-bottom: 1px $BLA solid;
+		}
+
+		&:hover {
+			background: $WHT;
+		}
+
+		&.active {
+			background: $ACM;
+
+			&:hover {
+				background: $ACD;
+			}
 		}
 	}
 }

@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Styles links -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="stylesheet" href="/resources/css/normalize.css?1">
 	<link rel="stylesheet" href="/resources/css/iziModal.min.css">
 	<!-- Main -->
@@ -69,8 +68,10 @@
 	<header class="page__header header">
 		<div class="header__container container">
 			<!-- Logo -->
-			<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura" class="header__logo light">
-			<img src="/resources/images/logo/logo-dark.svg" alt="Логотип IT Vectura" class="header__logo dark">
+			<div class="header__logo">
+				<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura" class="logo light">
+				<img src="/resources/images/logo/logo-dark.svg" alt="Логотип IT Vectura" class="logo dark">
+			</div>
 			<!-- Navigation -->
 			<nav class="header__nav">
 				<ul class="header__main-list scr-list">
@@ -116,18 +117,18 @@
 	<main class="page__content content">
 
 		<!-- Intro -->
-		<section class="content__intro intro intro-product" id="intro">
-			<div class="intro__main product container">
+		<section class="content__intro intro type-product" id="intro">
+			<div class="intro__main container">
 				<!-- Content -->
-				<div class="intro__content product wow animate__animated animate__backInLeft">
+				<div class="intro__content">
 					<div class="intro__text">
 						<div class="intro__title">
-							<h1>РЕШЕНИЕ IT VECTURA <span class="span">WAREHOUSE MANAGEMENT</span> ДЛЯ УПРАВЛЕНИЯ СКЛАДОМ</h1>
+							<h1>Решение IT Vectura <span class="span">Warehouse Management</span> для&nbsp;управления складом</h1>
 						</div>
 						<div class="intro__description">
-							<p class="fm cw ">
-								Прозрачное управление полным циклом складских операций, интегрируемое в процессы управления двором и
-								транспортом.
+							<p class="fm cw">
+								Прозрачное управление полным циклом складских операций, интегрируемое в процессы
+								управления&nbsp;двором&nbsp;и&nbsp;транспортом.
 							</p>
 						</div>
 					</div>
@@ -138,34 +139,38 @@
 					</div>
 				</div>
 				<!-- Background -->
-				<div class="intro__pic wow animate__animated animate__backInRight">
-					<img src="/resources/images/intro/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
+				<div class="intro__pic">
+					<img src="/resources/images/product-page/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
 				</div>
 			</div>
 		</section>
+
 		<!-- General functionality -->
 		<section class="content__functionality functionality">
 			<!-- Title -->
 			<div class="functionality__title title container">
-				<h2 class="wow animate__animated animate__fadeInUp">Программное обеспечение для управления складом</h2>
+				<h2>Программное обеспечение для управления складом</h2>
 				<div class="title__hr"></div>
 			</div>
 			<!-- Content -->
 			<div class="functionality__main container">
 				<!-- Sidebar -->
 				<div class="functionality__sidebar sidebar">
-					<a href="/products/yard-logistic/" class="sidebar__row">
-						<img src="/resources/images/products-icons/yard.svg" alt="Двор">
-						<p class="fxs wm">Управление двором</p>
+					<!-- Warehouse managment -->
+					<a href="/products/warehouse-management/" class="sidebar__row active">
+						<img src="/resources/images/product-page/icons/warehouse-management.svg" alt="Склад">
+						<p class="fxs wm">Управление складом</p>
 					</a>
+					<!-- Transport logistic -->
 					<a href="/products/transport-management/" class="sidebar__row">
-						<img src="/resources/images/products-icons/transport.svg" alt="Двор">
+						<img src="/resources/images/product-page/icons/transport-management.svg" alt="Транспорт">
 						<p class="fxs wm">Управление транспортом</p>
 					</a>
-					<div class="sidebar__row active">
-						<img src="/resources/images/products-icons/warehouse.svg" alt="Двор">
-						<p class="fxs wm">Управление складом</p>
-					</div>
+					<!-- Yard logistic -->
+					<a href="/products/yard-logistic/" class="sidebar__row">
+						<img src="/resources/images/product-page/icons/yard-logistic.svg" alt="Двор">
+						<p class="fxs wm">Управление двором</p>
+					</a>
 				</div>
 				<!-- Functionality content -->
 				<div class="functionality__func func">
@@ -178,8 +183,7 @@
 					<div class="func__blocks">
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
-									data-wow-delay=".2s">
+								<img src="/resources/images/icons/icon-check-light.svg">
 								<h4 class="fm wb">Мастер данные</h4>
 							</div>
 							<p class="fxs">
@@ -189,8 +193,7 @@
 						</div>
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
-									data-wow-delay=".2s">
+								<img src="/resources/images/icons/icon-check-light.svg">
 								<h4 class="fm wb">Поступление материала</h4>
 							</div>
 							<p class="fxs">
@@ -200,8 +203,7 @@
 						</div>
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
-									data-wow-delay=".2s">
+								<img src="/resources/images/icons/icon-check-light.svg">
 								<h4 class="fm wb">Инвентаризация</h4>
 							</div>
 							<p class="fxs">
@@ -210,8 +212,7 @@
 						</div>
 						<div class="func__item">
 							<div class="func__item-head">
-								<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
-									data-wow-delay=".2s">
+								<img src="/resources/images/icons/icon-check-light.svg">
 								<h4 class="fm wb">Отчетность</h4>
 							</div>
 							<p class="fxs">
@@ -221,7 +222,7 @@
 					</div>
 					<div class="func__item full">
 						<div class="func__item-head">
-							<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+							<img src="/resources/images/icons/icon-check-light.svg" class="wow animate__animated animate__fadeIn"
 								data-wow-delay=".2s">
 							<h4 class="fm wb">Процесс отпуска материалов</h4>
 						</div>
@@ -232,7 +233,7 @@
 					</div>
 					<div class="func__item full">
 						<div class="func__item-head">
-							<img src="/resources/images/green-point.svg" class="wow animate__animated animate__fadeIn"
+							<img src="/resources/images/icons/icon-check-light.svg" class="wow animate__animated animate__fadeIn"
 								data-wow-delay=".2s">
 							<h4 class="fm wb">Внутрискладские помещения</h4>
 						</div>
@@ -253,27 +254,29 @@
 
 		<!-- Request -->
 		<article class="content__request modal request container" id="request">
-			<!-- Title -->
-			<div class="request__title title">
-				<h2 class="wow animate__animated animate__fadeInUp">Свяжитесь с нами</h2>
-				<div class="title__hr"></div>
-				<p class="fl">Будем рады ответить на ваш вопрос</p>
-			</div>
-			<!-- Content -->
-			<form class="request__main">
-				<div class="request__inputs">
-					<input type="text" class="input" placeholder="Ваше имя">
-					<input type="email" class="input" placeholder="E-mail">
-					<input type="text" class="input" placeholder="Компания">
-					<input type="text" class="input" placeholder="Должность">
+			<div class="request__card">
+				<!-- Title -->
+				<div class="request__title title">
+					<h2 class="wow animate__animated animate__fadeInUp">Свяжитесь с нами</h2>
+					<div class="title__hr"></div>
+					<p class="fl">Будем рады ответить на ваш вопрос</p>
 				</div>
-				<input type="text" class="input" placeholder="Ваш вопрос">
-				<input type="submit" value="Отправить" class="button-fill">
-				<p class="fs">
-					Нажимая на кнопку *Отправить*, даю согласие на
-					<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
-				</p>
-			</form>
+				<!-- Content -->
+				<form class="request__main">
+					<div class="request__inputs">
+						<input type="text" class="input" placeholder="Ваше имя">
+						<input type="email" class="input" placeholder="E-mail">
+						<input type="text" class="input" placeholder="Компания">
+						<input type="text" class="input" placeholder="Должность">
+					</div>
+					<input type="text" class="input" placeholder="Ваш вопрос">
+					<input type="submit" value="Отправить" class="button-fill">
+					<p class="fs">
+						Нажимая на кнопку *Отправить*, даю согласие на
+						<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
+					</p>
+				</form>
+			</div>
 		</article>
 
 	</main>
@@ -315,7 +318,7 @@
 		<!-- Button -->
 		<div class="footer__button src-list">
 			<a href="#intro" class="src-link">
-				<img src="/resources/images/up-button.svg" alt="Наверх">
+				<img src="/resources/images/icons/btn-up-light.svg" alt="Наверх">
 			</a>
 		</div>
 	</footer>
@@ -327,7 +330,7 @@
 			<div class="mod__title">
 				<h1>Свяжитесь с нами</h1>
 				<div class="mod__close" data-izimodal-close="#request-modal">
-					<img src="/resources/images/close.svg" alt="Закрыть">
+					<img src="/resources/images/icons/btn-close-light.svg" alt="Закрыть">
 				</div>
 			</div>
 			<p class="fl wsb">Будем рады ответить на ваш вопрос</p>
@@ -354,12 +357,12 @@
 		<!-- Modal header -->
 		<div class="mod__header">
 			<div class="mod__title">
-				<h1>Лицензирование и распространение</h1>
+				<h1>IT Vectura WM</h1>
 				<div class="mod__close" data-izimodal-close="#licensing-modal">
-					<img src="/resources/images/close.svg" alt="Закрыть">
+					<img src="/resources/images/icons/btn-close-light.svg" alt="Закрыть">
 				</div>
 			</div>
-			<p class="fl wm cbl">IT Vectura Warehouse Management</p>
+			<p class="fl wm cbl">Лицензирование и распространение</p>
 		</div>
 		<!-- Modal content -->
 		<div class="mod__main">
@@ -413,10 +416,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
 		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 	<script src="/resources/js/iziModal.min.js"></script>
-	<script src="/resources/js/wow.min.js"></script>
-	<script>
-		new WOW().init();
-	</script>
 	<script src="/resources/js/script.js?1"></script>
 </body>
 

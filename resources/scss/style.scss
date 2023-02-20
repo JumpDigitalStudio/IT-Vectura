@@ -1,12 +1,13 @@
 @charset "UTF-8";
 
 // Settings and values
-@import '_variables';
-@import '_mixins';
+@import '_mixins-variables';
 @import '_ui';
 
 // Mobile plug
-@import '_plug';
+@import 'components/_preloader';
+@import 'components/_modal';
+@import 'components/_plug';
 
 // Main settings
 html {
@@ -15,20 +16,18 @@ html {
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
 
-	background: $BLD;
-
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
 
-	::-webkit-scrollbar {
+	&::-webkit-scrollbar {
 		width: 10px;
 	}
 
-	::-webkit-scrollbar-track {
+	&::-webkit-scrollbar-track {
 		background-color: $BLD;
 	}
 
-	::-webkit-scrollbar-thumb {
+	&::-webkit-scrollbar-thumb {
 		background-color: $BLL;
 		border-radius: 10px;
 	}
@@ -40,7 +39,7 @@ html {
 
 	margin: 0 auto;
 
-	background: $GRY;
+	background-color: $BLD;
 	color: $BLA;
 
 	overflow-x: hidden;
@@ -49,6 +48,27 @@ html {
 		overflow: hidden;
 		touch-action: none;
 		-ms-touch-action: none;
+	}
+
+	&.loaded {
+		padding-right: 0;
+
+		.preloader {
+			display: none;
+		}
+	}
+
+	&.loaded-hiding {
+		overflow: hidden;
+		touch-action: none;
+		-ms-touch-action: none;
+
+		padding-right: 10px;
+
+		.preloader {
+			transition: 0.3s opacity;
+			opacity: 0;
+		}
 	}
 
 	&__plug {
@@ -90,9 +110,7 @@ html {
 
 	&__content {
 		position: relative;
-
 		padding-top: 150px;
-
 		z-index: 1;
 
 		width: 100%;
@@ -139,12 +157,13 @@ html {
 }
 
 // Components
-@import 'common/_header';
-@import 'common/_modal';
-@import 'common/_footer';
+@import 'components/_header';
+@import 'components/_footer';
 
 // Content
 .content {
+	background-color: $GRY;
+
 	&__intro {
 		margin-top: -150px;
 		background-color: $BLA;
@@ -160,30 +179,30 @@ html {
 	}
 
 	&__features,
-	&__logistic-system,
+	&__system,
 	&__solutions,
 	&__request,
+	&__request.modal,
 	&__contacts,
-	&__functionality,
-	&__common-products {
+	&__catalog {
 		padding: 60px 0;
 	}
 
-	&__request.modal {
-		margin-bottom: 60px;
+	&__functionality {
+		padding: 60px 0 0 0;
 	}
 }
 
 // Main content
 @import 'common/_intro';
-@import 'main-page/_about';
-@import 'main-page/_features';
-@import 'main-page/_cards';
-@import 'main-page/_logistics-management-system';
-@import 'main-page/_features-of-solutions';
+@import 'main/_about';
+@import 'main/_features';
+@import 'main/_cards';
+@import 'main/_system';
+@import 'main/_solutions';
 @import 'common/_request';
-@import 'main-page/_contacts';
+@import 'main/_contacts';
 
 // Products content
 @import 'products/_general-functionality';
-@import 'products/product-solutions';
+@import 'products/_catalog';

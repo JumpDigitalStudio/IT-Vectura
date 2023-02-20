@@ -11,12 +11,18 @@
 		transition: all .2s ease-in-out 0s;
 		min-height: 55px;
 
-		&.light {
-			display: block;
-		}
+		&>img.logo {
+			height: 100%;
+			width: auto;
+			object-fit: contain;
 
-		&.dark {
-			display: none;
+			&.light {
+				display: block;
+			}
+
+			&.dark {
+				display: none;
+			}
 		}
 	}
 
@@ -146,7 +152,7 @@
 		width: 17px;
 		height: 17px;
 
-		background: url('/resources/images/icon-sub-list.svg') center no-repeat;
+		background: url('/resources/images/icons/icon-down-light.svg') center no-repeat;
 		background-size: 100%;
 
 		border-radius: 50%;
@@ -197,17 +203,20 @@
 		.header__logo {
 			min-height: 45px;
 
-			&.light {
-				display: none;
-			}
+			&>img.logo {
 
-			&.dark {
-				display: block;
+				&.light {
+					display: none;
+				}
+
+				&.dark {
+					display: block;
+				}
 			}
 		}
 
 		.header__contacts {
-			height: 45px;
+			min-height: 45px;
 
 			&>a {
 				color: $BLA;
@@ -262,7 +271,7 @@
 		}
 
 		.header__open {
-			background: url('/resources/images/icon-sub-list-dark.svg') center no-repeat;
+			background: url('/resources/images/icons/icon-down-dark.svg') center no-repeat;
 			background-size: 100%;
 
 			&::before {

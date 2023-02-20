@@ -9,7 +9,6 @@
 
 	<!-- Styles links -->
 	<link rel="stylesheet" href="/resources/css/normalize.css?1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="stylesheet" href="/resources/css/iziModal.min.css">
 	<!-- Main -->
 	<link rel="stylesheet" href="/resources/css/style.css?1">
@@ -69,8 +68,10 @@
 	<header class="page__header header">
 		<div class="header__container container">
 			<!-- Logo -->
-			<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura" class="header__logo light">
-			<img src="/resources/images/logo/logo-dark.svg" alt="Логотип IT Vectura" class="header__logo dark">
+			<div class="header__logo">
+				<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura" class="logo light">
+				<img src="/resources/images/logo/logo-dark.svg" alt="Логотип IT Vectura" class="logo dark">
+			</div>
 			<!-- Navigation -->
 			<nav class="header__nav">
 				<ul class="header__main-list scr-list">
@@ -116,20 +117,20 @@
 	<main class="page__content content">
 
 		<!-- Intro -->
-		<section class="content__intro intro intro-product" id="intro">
+		<section class="content__intro intro type-products" id="intro">
 			<!-- Main -->
-			<div class="intro__main intro-products container">
+			<div class="intro__main container">
 				<!-- Content -->
-				<div class="intro__content intro-products wow animate__animated animate__backInLeft">
+				<div class="intro__content">
 					<div class="intro__text intro-products">
 						<div class="intro__title">
 							<h1>Линейка решений IT Vectura <span class="span">Logistic Platform</span></h1>
 						</div>
-						<div class="intro__description intro-products">
+						<div class="intro__description">
 							<p class="fm cw ">
 								Выведите все процессы логистики в единое информационное пространство для достижения прозрачности всех
 								операций и моментального принятия управленческих и операционных решений, которые раскроют потенциальные
-								точки роста прибыли и сокращения расходов.
+								точки роста прибыли и&nbsp;сокращения расходов.
 							</p>
 						</div>
 					</div>
@@ -140,34 +141,32 @@
 					</div>
 				</div>
 				<!-- Background -->
-				<div class="intro__pic wow animate__animated animate__backInRight">
-					<img src="/resources/images/intro/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
+				<div class="intro__pic">
+					<img src="/resources/images/product-page/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
 				</div>
 			</div>
 			<!-- Products -->
 			<div class="intro__products products container">
-				<a href="/products/warehouse-management/" class="products__item wow animate__animated animate__fadeInLeft"
-					data-wow-delay=".2s">
-					<!-- Title -->
+				<!-- Warehouse management -->
+				<a class="products__item" href="/products/warehouse-management/">
 					<div class="products__header">
 						<p class="fm wm cw">Управление складом</p>
-						<img src="/resources/images/products-icons/warehouse.svg" alt="Двор">
+						<img src="/resources/images/product-page/icons/warehouse-management.svg" alt="Склад">
 					</div>
-					<!-- Description -->
-					<p class="fxs cw">
+					<p class=" products__description fxs cw">
 						Система оперативного управления складскими процессами
 					</p>
-					<!-- Buttons -->
 					<div class="products__buttons">
 						<p class="link cw">Подробнее</p>
-						<img src="/resources/images/bottom-button.svg">
+						<img src="/resources/images/icons/btn-down-light.svg">
 					</div>
 				</a>
-				<a href="/products/transport-management/" class="products__item wow animate__animated animate__fadeInDown">
+				<!-- Transport management -->
+				<a class="products__item" href="/products/transport-management/">
 					<!-- Title -->
 					<div class="products__header">
 						<p class="fm wm cw">Управление транспортом</p>
-						<img src="/resources/images/products-icons/transport.svg" alt="Двор">
+						<img src="/resources/images/product-page/icons/transport-management.svg" alt="Транспорт">
 					</div>
 					<!-- Description -->
 					<p class="fxs cw">
@@ -176,34 +175,34 @@
 					<!-- Buttons -->
 					<div class="products__buttons">
 						<p class="link cw">Подробнее</p>
-						<img src="/resources/images/bottom-button.svg">
+						<img src="/resources/images/icons/btn-down-light.svg">
 					</div>
 				</a>
-				<a href="/products/yard-logistic/" class="products__item wow animate__animated animate__fadeInRight"
-					data-wow-delay=".2s">
+				<!-- Yard logistic -->
+				<a class="products__item" href="/products/yard-logistic/">
 					<!-- Title -->
 					<div class="products__header">
 						<p class="fm wm cw">Управление двором</p>
-						<img src="/resources/images/products-icons/yard.svg">
+						<img src="/resources/images/product-page/icons/yard-logistic.svg">
 					</div>
 					<!-- Description -->
-					<p class="fxs cw">
+					<p class="products__description fxs cw">
 						Решение для эффективного управления внутридворовыми перемещениями
 					</p>
 					<!-- Buttons -->
 					<div class="products__buttons">
 						<p class="link cw">Подробнее</p>
-						<img src="/resources/images/bottom-button.svg">
+						<img src="/resources/images/icons/btn-down-light.svg">
 					</div>
 				</a>
 			</div>
 		</section>
 
 		<!-- Solution -->
-		<section class="content__common-products common-products">
+		<section class="content__catalog catalog">
 			<!-- Title -->
-			<div class="common-products__title title container">
-				<h2 class="wow animate__animated animate__fadeInUp">ОТКРОЙТЕ ДЛЯ СЕБЯ РЕШЕНИЯ</h2>
+			<div class="catalog__title title container">
+				<h2>Откройте для себя решение</h2>
 				<div class="title__hr"></div>
 				<div class="title__description">
 					<div class="title__text">
@@ -216,94 +215,94 @@
 							бизнес-результатов.
 						</p>
 					</div>
-					<img src="/resources/images/icon-solutions.svg" class="title__icon">
+					<img src="/resources/images/icons/btn-down-long-dark.svg" class="title__icon">
 				</div>
 			</div>
 			<!-- Main -->
-			<div class="common-products__content container">
+			<div class="catalog__content container">
 				<!-- Warehouse -->
-				<div class="common-products__item">
+				<div class="catalog__item">
 					<!-- Text -->
-					<div class="common-products__main">
-						<div class="common-products__title title">
-							<h3 class="fxl wb up wow animate__animated animate__fadeInUp">Управление складом</h3>
+					<div class="catalog__main">
+						<div class="catalog__title title">
+							<h3 class="fxl wb up">Управление складом</h3>
 							<p>
 								Управляйте крупномасштабными складскими операциями и объединяйте сложные логистические цепочки с вашими
 								складскими и распределительными процессами, обеспечивая высокий уровень прозрачности и контроля с
 								помощью решений линейки IT Vectura.
 							</p>
 						</div>
-						<div class="common-products__text">
-							<p class="fxs wsb red wow animate__animated animate__fadeInRight">Приемка и учет товаров</p>
-							<p class="fxs wsb yel wow animate__animated animate__fadeInRight"> Комплектация и отгрузка</p>
-							<p class="fxs wsb orn wow animate__animated animate__fadeInRight">
+						<div class="catalog__text">
+							<p class="fxs wsb red">Приемка и учет товаров</p>
+							<p class="fxs wsb yel"> Комплектация и отгрузка</p>
+							<p class="fxs wsb orn">
 								Формирование эффективных схем хранения
 							</p>
-							<p class="fxs wsb blu wow animate__animated animate__fadeInRight">
+							<p class="fxs wsb blu">
 								Контроль и отчетность за складскими процессами
 							</p>
 						</div>
 						<a href="/products/warehouse-management/" class="button-fill">Узнать больше о продукте</a>
 					</div>
 					<!-- Picture -->
-					<div class="common-products__pic">
-						<img src="/resources/images/solutions/warehouse.png">
+					<div class="catalog__pic">
+						<img src="/resources/images/product-page/products/warehouse.png">
 					</div>
 				</div>
 				<!-- Transport -->
-				<div class="common-products__item">
+				<div class="catalog__item">
 					<!-- Text -->
-					<div class="common-products__main">
-						<div class="common-products__title title">
-							<h3 class="fxl wb up wow animate__animated animate__fadeInUp">Управление транспортом</h3>
+					<div class="catalog__main">
+						<div class="catalog__title title">
+							<h3 class="fxl wb up">Управление транспортом</h3>
 							<p>
 								Формируйте план транспортных цепей, ориентированный на производство и потребности. Используйте
 								сквозной анализ и динамическое отслеживание перемещения транспорта. Управляйте транспортными затратами,
 								используя функцию предварительного и&nbsp;фактического расчета стоимости фрахта.
 							</p>
 						</div>
-						<div class="common-products__text">
-							<p class="fxs wsb red wow animate__animated animate__fadeInRight">«Умное» планирование заказов</p>
-							<p class="fxs wsb yel wow animate__animated animate__fadeInRight">Мониторинг исполнения перевозок 24/7</p>
-							<p class="fxs wsb orn wow animate__animated animate__fadeInRight">
+						<div class="catalog__text">
+							<p class="fxs wsb red">«Умное» планирование заказов</p>
+							<p class="fxs wsb yel">Мониторинг исполнения перевозок 24/7</p>
+							<p class="fxs wsb orn">
 								Автоматический расчет транспортных затрат
 							</p>
-							<p class="fxs wsb blu wow animate__animated animate__fadeInRight">
+							<p class="fxs wsb blu">
 								Оперативная и аналитическая отчетность
 							</p>
 						</div>
 						<a href="/products/transport-management/" class="button-fill">Узнать больше о продукте</a>
 					</div>
 					<!-- Picture -->
-					<div class="common-products__pic">
-						<img src="/resources/images/solutions/transport.png">
+					<div class="catalog__pic">
+						<img src="/resources/images/product-page/products/transport.png">
 					</div>
 				</div>
 				<!-- Yard -->
-				<div class="common-products__item">
+				<div class="catalog__item">
 					<!-- Text -->
-					<div class="common-products__main">
-						<div class="common-products__title title">
-							<h3 class="fxl wb up wow animate__animated animate__fadeInUp">Управление двором</h3>
+					<div class="catalog__main">
+						<div class="catalog__title title">
+							<h3 class="fxl wb up">Управление двором</h3>
 							<p>
 								Создайте инфраструктурную модель внутреннего двора компании для оперативного и прозрачного контроля
 								исполнения операций погрузки, разгрузки, регистрации транспортных средств и планирования доступности
 								мощностей погрузочно-разгрузочных зон.
 							</p>
 						</div>
-						<div class="common-products__text">
-							<p class="fxs wsb red wow animate__animated animate__fadeInRight">Планирование загрузки ворот</p>
-							<p class="fxs wsb orn wow animate__animated animate__fadeInRight">Управление электронной очередью</p>
-							<p class="fxs wsb yel wow animate__animated animate__fadeInRight">Контроль передвижения транспорта</p>
-							<p class="fxs wsb blu wow animate__animated animate__fadeInRight">
+						<div class="catalog__text">
+							<p class="fxs wsb red">Планирование загрузки ворот</p>
+							<p class="fxs wsb orn">Управление электронной очередью</p>
+							<p class="fxs wsb yel">Контроль передвижения транспорта</p>
+							<p class="fxs wsb blu">
 								Информирование водителей и складского персонала
 							</p>
 						</div>
 						<a href="/products/yard-logistic/" class="button-fill">Узнать больше о продукте</a>
 					</div>
 					<!-- Picture -->
-					<div class="common-products__pic">
-						<img src="/resources/images/solutions/yard.png">
+					<div class="catalog__pic">
+						<img src="/resources/images/product-page/products/yard.png">
 					</div>
 				</div>
 			</div>
@@ -334,20 +333,20 @@
 				<!-- Mavigation -->
 				<div class="footer__col">
 					<!-- Logistics management system -->
-					<a href="#logistic-system" class="fxs cw">Возможности</a>
+					<a href="/" class="fxs cw">Возможности</a>
 					<!-- Contacts -->
-					<a href="#contacts" class="fxs cw">Контакты</a>
+					<a href="/" class="fxs cw">Контакты</a>
 					<!-- Main link to Products -->
 					<a href="/products/" class="fxs cw">Продукты</a>
 					<!-- About -->
-					<a href="#about" class="fxs cw">О нас</a>
+					<a href="/" class="fxs cw">О нас</a>
 				</div>
 			</div>
 		</div>
 		<!-- Button -->
 		<div class="footer__button src-list">
 			<a href="#intro" class="src-link">
-				<img src="/resources/images/up-button.svg" alt="Наверх">
+				<img src="/resources/images/icons/btn-up-light.svg" alt="Наверх">
 			</a>
 		</div>
 	</footer>
@@ -359,7 +358,7 @@
 			<div class="mod__title">
 				<h1>Свяжитесь с нами</h1>
 				<div class="mod__close" data-izimodal-close="#request-modal">
-					<img src="/resources/images/close.svg" alt="Закрыть">
+					<img src="/resources/images/icons/btn-close-light.svg" alt="Закрыть">
 				</div>
 			</div>
 			<p class="fl wsb">Будем рады ответить на ваш вопрос</p>
@@ -385,10 +384,6 @@
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
 		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 	<script src="/resources/js/iziModal.min.js"></script>
-	<script src="/resources/js/wow.min.js"></script>
-	<script>
-		new WOW().init();
-	</script>
 	<script src="/resources/js/script.js?1"></script>
 </body>
 

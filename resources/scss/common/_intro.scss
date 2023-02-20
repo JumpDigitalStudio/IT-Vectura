@@ -4,13 +4,37 @@
 
 	@include flex(flex-start, center, column);
 
-	background: url('/resources/images/intro/background.png') center no-repeat;
+	background: url('/resources/images/common/intro/back-intro.png') center no-repeat;
 	background-position: bottom;
 
 	background-size: cover;
 
-	&.intro-product {
+	&.type-products {
 		background-position: center;
+
+		.intro__main {
+			padding: 165px 0 55px 0;
+			min-height: fit-content;
+			height: auto;
+		}
+
+		.intro__content {
+			@include gap(30px, 0);
+			max-width: 550px;
+		}
+	}
+
+	&.type-product {
+		background-position: center;
+
+		.intro__main {
+			min-height: calc(100vh - 305px);
+		}
+
+		.intro__content {
+			@include gap(80px, 0);
+			max-width: 570px;
+		}
 	}
 
 	&::before {
@@ -30,16 +54,6 @@
 
 		min-height: fit-content;
 		height: auto;
-
-		&.intro-products {
-			padding: 165px 0 55px 0;
-			min-height: fit-content;
-			height: auto;
-		}
-
-		&.product {
-			min-height: calc(100vh - 305px);
-		}
 	}
 
 	&__content {
@@ -47,16 +61,6 @@
 		@include gap(50px, 0);
 
 		max-width: 520px;
-
-		&.product {
-			@include gap(80px, 0);
-			max-width: 570px;
-		}
-
-		&.intro-products {
-			@include gap(30px, 0);
-			max-width: 550px;
-		}
 	}
 
 	&__text {
@@ -68,10 +72,6 @@
 		@include flex(center, flex-start, column);
 		@include gap(10px, 0);
 		max-width: 550px;
-
-		&.intro-products {
-			max-width: 700px
-		}
 	}
 
 	&__buttons {
