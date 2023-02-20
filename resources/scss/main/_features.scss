@@ -7,13 +7,17 @@
 	}
 
 	&__item {
-		@include flex(center, center, column);
+		@include flex(flex-start, center, column);
 		@include gap(15px, 0);
-		height: 203px;
 
 		text-align: center;
 
-		background: url('/resources/images/main-page/features/pentagon-vector.svg') center no-repeat;
-		background-size: 100%;
+		&>img {
+			height: 50px;
+			width: auto;
+		}
+
+		// background: url('/resources/images/main-page/features/pentagon-vector.svg') center no-repeat;
+		// background-size: 100%;
 	}
 }

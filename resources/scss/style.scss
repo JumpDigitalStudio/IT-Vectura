@@ -169,16 +169,11 @@ html {
 		background-color: $BLA;
 	}
 
-	&__about,
-	&__cards {
-		padding: 60px 0;
+	&__about {
+		padding: 60px 0 70px 0;
 	}
 
-	&__features {
-		background-color: $ACM;
-	}
-
-	&__features,
+	&__cards,
 	&__system,
 	&__solutions,
 	&__request,

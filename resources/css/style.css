@@ -866,13 +866,10 @@ html::-webkit-scrollbar-thumb {
   margin-top: -150px;
   background-color: #232323;
 }
-.content__about, .content__cards {
-  padding: 60px 0;
+.content__about {
+  padding: 60px 0 70px 0;
 }
-.content__features {
-  background-color: #4B60CC;
-}
-.content__features, .content__system, .content__solutions, .content__request, .content__request.modal, .content__contacts, .content__catalog {
+.content__cards, .content__system, .content__solutions, .content__request, .content__request.modal, .content__contacts, .content__catalog {
   padding: 60px 0;
 }
 .content__functionality {
@@ -1140,16 +1137,17 @@ html::-webkit-scrollbar-thumb {
 }
 .features__item {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   row-gap: 15px;
   -moz-column-gap: 0;
        column-gap: 0;
-  height: 203px;
   text-align: center;
-  background: url("/resources/images/main-page/features/pentagon-vector.svg") center no-repeat;
-  background-size: 100%;
+}
+.features__item > img {
+  height: 50px;
+  width: auto;
 }
 
 .cards__main {
@@ -1170,7 +1168,12 @@ html::-webkit-scrollbar-thumb {
   row-gap: 40px;
   -moz-column-gap: 0;
        column-gap: 0;
-  background-color: #012e71;
+  box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 3.5px;
+  background: linear-gradient(90deg, #384FCA 0%, #445EE9 100%);
+  transition: box-shadow 0.2s ease-in-out 0s;
+}
+.cards__card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 3px 3px 3.5px;
 }
 
 .system {
@@ -1351,13 +1354,16 @@ html::-webkit-scrollbar-thumb {
   padding: 30px;
   width: 100%;
   max-width: 530px;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 3.5px;
   cursor: pointer;
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
+  transition: box-shadow 0.2s ease-in-out 0s;
+}
+.decisions__card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 3px 3px 3.5px;
 }
 .decisions__card.base {
-  background-color: #4B60CC;
+  background: linear-gradient(90deg, #384FCA 0%, #445EE9 100%);
 }
 .decisions__card-row {
   width: 100%;

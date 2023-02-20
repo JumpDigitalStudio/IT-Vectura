@@ -12,6 +12,13 @@
 		@include flex(space-between, flex-start, column);
 		@include gap(40px, 0);
 
-		background-color: $BLM;
+		box-shadow: $card-shadow;
+		background: $card-gradient;
+
+		transition: box-shadow .2s ease-in-out 0s;
+
+		&:hover {
+			box-shadow: $card-shadow-hover;
+		}
 	}
 }
