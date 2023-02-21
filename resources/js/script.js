@@ -8,12 +8,12 @@ window.onload = function () {
 	}, 500);
 };
 
-const scroll = new LocomotiveScroll({
-	el: document.querySelector('.page'),
-	smooth: true,
-	tablet: { smooth: true },
-	smartphone: { smooth: true },
-});
+// const scroll = new LocomotiveScroll({
+// 	el: document.querySelector('.page'),
+// 	smooth: true,
+// 	tablet: { smooth: true },
+// 	smartphone: { smooth: true },
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
 
