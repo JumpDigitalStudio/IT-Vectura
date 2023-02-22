@@ -67,26 +67,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		elem.classList.toggle(modifier);
 	};
 
-	// Header functions
-	if (document.querySelector('.intro')) {
-		const intro = document.querySelector('.intro');
-		introHeight = getComputedStyle(intro).height;
-		alert(introHeight);
-	};
-
 	if (document.querySelector('.page__header')) {
 		const header = document.querySelector('.page__header');
 		const hMenuBtn = header.querySelector('.header__mobile-menu');
-
-		let scrollPoint1 = 50;
-		let scrollPoint2;
 
 		window.addEventListener("scroll", () => {
 
 			let windowScroll = window.pageYOffset;
 			let scroll = Math.round(windowScroll);
 
-			scrollPoint2 = Math.round(introHeight.slice(0, -2)) - 80;
+			const intro = document.querySelector('.intro');
+			introHeight = getComputedStyle(intro).height;
+
+			let scrollPoint1 = 50;
+			let scrollPoint2 = Math.round(introHeight.slice(0, -2)) - 80;
 
 			scroll >= scrollPoint1 ? add(header, 'stick-dark') : rem(header, 'stick-dark');
 			scroll >= scrollPoint2 ? add(header, 'stick-light') : rem(header, 'stick-light');
@@ -95,6 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (window.pageYOffset > 100) {
 			add(header, 'stick-dark');
 		}
+		const intro = document.querySelector('.intro');
+		introHeight = getComputedStyle(intro).height;
 		if (window.pageYOffset > introHeight.slice(0, -2)) {
 			add(header, 'stick-light');
 		}
