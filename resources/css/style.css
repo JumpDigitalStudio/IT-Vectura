@@ -1068,11 +1068,10 @@ html::-webkit-scrollbar-track {
   align-items: flex-start;
   flex-direction: column;
   width: calc(100% - 2px);
-  border: 0px #FFFFFF solid;
+  border: 1px transparent solid;
   border-radius: 10px;
   cursor: pointer;
-  will-change: border;
-  transition: border 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 .mobile__nav-li.active {
   border: 1px #FFFFFF solid;
