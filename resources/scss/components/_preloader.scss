@@ -19,6 +19,12 @@
 		text-align: center;
 		animation: preloader-rotate 2s infinite linear;
 	}
+
+	@media (max-width: $lg) {}
+
+	@media (max-width: $md) {}
+
+	@media (max-width: $sm) {}
 }
 
 @keyframes preloader-rotate {

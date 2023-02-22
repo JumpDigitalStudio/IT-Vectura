@@ -1,8 +1,5 @@
 .system {
 
-	@include flex(flex-start, center, column);
-	@include gap(30px, 0);
-
 	&__main {
 		@include flex(flex-start, flex-start, column);
 	}
@@ -10,13 +7,13 @@
 	&__item {
 		@include flex(flex-start, center, row);
 		flex-wrap: nowrap;
-		@include gap(0, 60px);
-		min-height: 60px;
+		@include gap(0, 40px);
+		min-height: 55px;
 		height: 100%;
 	}
 
 	&__shape {
-		min-height: 60px;
+		min-height: 55px;
 		width: 21px;
 
 		position: relative;
@@ -84,5 +81,9 @@
 		&.pink::before {
 			background: $PND;
 		}
+	}
+
+	@media (max-width: $lg) {
+		display: none;
 	}
 }

@@ -1,11 +1,8 @@
 .catalog {
 
-	@include flex(flex-start, center, column);
-	@include gap(50px, 0);
-
 	&__content {
 		@include grid(1fr, auto);
-		@include gap(90px, 0);
+		@include gap(100px, 0);
 	}
 
 	&__item {
@@ -15,11 +12,7 @@
 
 	&__main {
 		@include flex(flex-start, flex-start, column);
-		@include gap(20px, 0);
-	}
-
-	&__title {
-		@include title(20px, 100%);
+		@include gap(30px, 0);
 	}
 
 	&__text {
@@ -67,15 +60,53 @@
 		}
 	}
 
+	&__button {
+		max-width: 330px;
+		width: 100%;
+	}
+
 	&__pic {
 		@include flex(center, center, column);
 		width: 450px;
 
-		&>img {
-			// width: 500px;
-			height: 366px;
+		img {
+			height: 350px;
 			max-width: 100%;
 			object-fit: contain;
+		}
+	}
+
+	@media (max-width: $lg) {
+		&__pic {
+			width: 250px;
+
+			img {
+				height: auto;
+			}
+		}
+	}
+
+	@media (max-width: $md) {
+		&__item {
+			@include grid(1fr, auto);
+			@include gap(30px, 0);
+		}
+
+		&__pic {
+			width: 100%;
+
+			img {
+				max-width: 300px;
+			}
+		}
+	}
+
+	@media (max-width: $sm) {
+		&__pic {
+
+			img {
+				max-width: 100%;
+			}
 		}
 	}
 }

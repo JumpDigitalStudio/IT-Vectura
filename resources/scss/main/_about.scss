@@ -1,8 +1,5 @@
 .about {
 
-	@include flex(flex-start, center, column);
-	@include gap(30px, 0);
-
 	&__main {
 		@include grid(1fr 0.5fr, 1fr);
 		@include gap(0, 40px);
@@ -20,7 +17,7 @@
 		@include flex(center, center, row);
 
 		&>img {
-			object-fit: contain;
+			object-fit: cover;
 			width: 100%;
 			height: 100%;
 		}
@@ -31,11 +28,32 @@
 		z-index: 1;
 	}
 
-	&__text {
-		@include title(7px, 100%);
+	@media (max-width: $xl) {
+		&__content {
+			@include gap(30px, 0);
+		}
+	}
 
-		&.short {
-			@include title(7px, 87%);
+	@media (max-width: $lg) {
+		&__main {
+			@include grid(1fr, auto);
+			@include gap(30px, 0);
+		}
+
+		&__pic {
+			height: 350px;
+		}
+	}
+
+	@media (max-width: $md) {
+		&__pic {
+			height: 300px;
+		}
+	}
+
+	@media (max-width: $sm) {
+		&__pic {
+			height: 250px;
 		}
 	}
 }

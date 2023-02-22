@@ -17,15 +17,29 @@ $PNL: #CB416A;
 $PND: #99005C;
 $ORN: #D47300;
 
+// Breakpoints
+$xl: 1200px;
+$lg: 950px;
+$md: 750px;
+$sm: 550px;
+
 // UI Variables
 $radius-s: 10px;
 $radius-m: 15px;
 $radius-l: 20px;
 
+// Shadows
 $bla-border: 1px $BLA solid;
 $card-shadow: rgba(0, 0, 0, 0.15) 3px 3px 3.5px;
 $card-shadow-hover: rgba(0, 0, 0, 0.25) 3px 3px 3.5px;
 
+// Transitions
+$trans-2: .2s ease-in-out 0s;
+$trans-3: .3s ease-in-out 0s;
+$trans-4: .4s ease-in-out 0s;
+$trans-5: .5s ease-in-out 0s;
+
+// Gradients
 $btn-gradient: linear-gradient(125deg, rgba(12, 105, 255, 1) 30%, rgba(48, 205, 255, 1) 100%);
 $card-gradient: linear-gradient(90deg, #384FCA 0%, #445EE9 100%);
 
@@ -49,8 +63,10 @@ $card-gradient: linear-gradient(90deg, #384FCA 0%, #445EE9 100%);
 }
 
 @mixin link-hover ($cl) {
-	transition: color .2s ease-in-out 0s;
 	cursor: pointer;
+
+	will-change: color;
+	transition: color $trans-2;
 
 	&:hover {
 		color: $cl;
@@ -58,27 +74,13 @@ $card-gradient: linear-gradient(90deg, #384FCA 0%, #445EE9 100%);
 }
 
 @mixin link-back ($cl) {
-	transition: background-color .2s ease-in-out 0s;
 	cursor: pointer;
+
+	will-change: background-color;
+	transition: background-color $trans-3;
 
 	&:hover {
 		background-color: $cl;
-	}
-}
-
-@mixin text($fs: 16px, $fw: 400, $cl: $BLA) {
-	font-size: $fs;
-	font-weight: $fw;
-
-	color: $cl;
-}
-
-@mixin title($rg: 30px, $pmw: 100%) {
-	@include flex(flex-start, flex-start, column);
-	row-gap: $rg;
-
-	&>p {
-		max-width: $pmw;
 	}
 }
 

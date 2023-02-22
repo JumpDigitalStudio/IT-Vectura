@@ -1,8 +1,7 @@
 .intro {
+	@include flex(flex-start, center, column);
 	position: relative;
 	overflow: hidden;
-
-	@include flex(flex-start, center, column);
 
 	background: url('/resources/images/common/intro/back-intro.png') center no-repeat;
 	background-position: bottom;
@@ -20,7 +19,10 @@
 
 		.intro__content {
 			@include gap(30px, 0);
-			max-width: 550px;
+		}
+
+		.intro__buttons>.btn {
+			min-width: 300px;
 		}
 	}
 
@@ -34,6 +36,19 @@
 		.intro__content {
 			@include gap(80px, 0);
 			max-width: 570px;
+		}
+
+		.intro__text {
+			max-width: 520px;
+		}
+
+		.intro__buttons>.btn {
+			min-width: 300px;
+		}
+
+		.intro__products {
+			display: none;
+			visibility: hidden;
 		}
 	}
 
@@ -60,7 +75,7 @@
 		@include flex(center, flex-start, column);
 		@include gap(50px, 0);
 
-		max-width: 520px;
+		max-width: 550px;
 	}
 
 	&__text {
@@ -71,12 +86,11 @@
 	&__description {
 		@include flex(center, flex-start, column);
 		@include gap(10px, 0);
-		max-width: 550px;
 	}
 
 	&__buttons {
 		@include flex(flex-start, center, row);
-		@include gap(0, 30px);
+		@include gap(0, 20px);
 	}
 
 	&__pic {
@@ -95,9 +109,30 @@
 		}
 	}
 
+	&__pic-mobile {
+		position: relative;
+		width: 100%;
+		height: 300px;
+
+		display: none;
+		visibility: hidden;
+		pointer-events: none;
+
+		img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%);
+
+			object-fit: contain;
+			height: 490px;
+		}
+	}
+
 	// Features
 	&__features {
-		padding: 30px 0px 50px 0px;
+		padding: 25px 0 45px 0;
 		width: 100%;
 		z-index: 2;
 
@@ -108,7 +143,6 @@
 	&__cards {
 		@include grid(repeat(4, auto), 1fr);
 		@include gap(0px, 30px);
-		flex-wrap: wrap;
 	}
 
 	&__card {
@@ -119,6 +153,129 @@
 			margin-bottom: -10px;
 		}
 	}
+
+	@media (max-width: $xl) {
+		&__pic {
+			width: 200px;
+			height: 200px;
+
+			&>img {
+				width: 430px;
+			}
+		}
+
+		&__cards {
+			align-items: flex-start;
+			@include gap(0px, 20px);
+		}
+
+		&__card {
+			@include flex(center, flex-start, column);
+			max-width: 180px;
+		}
+	}
+
+	@media (max-width: $lg) {
+		&__pic {
+			display: none;
+		}
+
+		&__description {
+			max-width: none;
+		}
+
+		&__cards {
+			@include grid(repeat(2, auto), 1fr);
+			@include gap(30px, 30px);
+			justify-content: space-between;
+		}
+
+		&__card {
+			max-width: none;
+		}
+	}
+
+	@media (max-width: $md) {
+		&__main {
+			height: fit-content;
+			padding: 180px 0 80px 0;
+		}
+
+		&__content {
+			max-width: none;
+		}
+
+		&__cards {
+			@include gap(30px, 50px);
+		}
+
+		&.type-products {
+			.intro__main {
+				padding: 180px 0 30px 0;
+			}
+		}
+
+		&.type-product {
+			.intro__main {
+				padding: 180px 0 30px 0;
+				min-height: fit-content;
+				height: auto;
+			}
+
+			.intro__content {
+				@include gap(30px, 0);
+				max-width: none;
+			}
+
+			.intro__text {
+				max-width: none;
+			}
+
+			.intro__products {
+				display: grid;
+				visibility: visible;
+			}
+		}
+	}
+
+	@media (max-width: $sm) {
+		background-position: top;
+
+		&__main {
+			padding: 180px 0 30px 0;
+		}
+
+		&__pic-mobile {
+			display: flex;
+			visibility: visible;
+		}
+
+		&__buttons {
+			@include flex(flex-start, flex-start, column);
+			@include gap(15px, 0);
+			width: 100%;
+		}
+
+		&__features {
+			padding: 25px 0;
+		}
+
+		&__cards {
+			@include grid(1fr, 1fr);
+			@include gap(0, 0);
+		}
+
+		&__card {
+			@include flex(flex-start, center, row);
+			@include gap(0, 10px);
+
+			&>img {
+				height: 80px;
+				margin-left: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 .products {
@@ -126,7 +283,7 @@
 	padding: 0;
 	overflow: hidden;
 
-	background: rgba(0, 0, 0, 0.53);
+	background-color: rgba(0, 0, 0, 0.53);
 	backdrop-filter: blur(10px);
 
 	border-radius: $radius-m $radius-m 0 0;
@@ -138,7 +295,8 @@
 		@include gap(15px, 0);
 
 		cursor: pointer;
-		transition: .2s ease-in-out 0s;
+		will-change: background-color;
+		transition: background-color $trans-3;
 		background: rgba(0, 0, 0, 0.0);
 
 		&:nth-child(2) {
@@ -147,7 +305,7 @@
 		}
 
 		&:hover {
-			background: rgba(0, 0, 0, 0.53);
+			background-color: rgba(0, 0, 0, 0.53);
 		}
 	}
 
@@ -161,6 +319,21 @@
 		&>img {
 			width: 30px;
 			transform: rotate(-90deg);
+		}
+	}
+
+	@media (max-width: $md) {
+		@include grid(1fr, repeat(3, 1fr));
+
+		&__item {
+			@include gap(10px, 0);
+
+			&:nth-child(2) {
+				border-left: none;
+				border-right: none;
+				border-top: 1px $WHT solid;
+				border-bottom: 1px $WHT solid;
+			}
 		}
 	}
 }

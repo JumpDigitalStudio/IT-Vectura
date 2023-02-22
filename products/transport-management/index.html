@@ -4,20 +4,29 @@
 <head>
 	<!-- Meta -->
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Styles links -->
-	<link rel="stylesheet" href="/resources/css/normalize.css?1">
-	<link rel="stylesheet" href="/resources/css/iziModal.min.css">
-	<!-- Main -->
-	<link rel="stylesheet" href="/resources/css/style.css?1">
+	<meta name="HandheldFriendly" content="true">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
 
 	<!-- SEO -->
-	<title>IT Vectura: Transport Management</title>
+	<title>IT Vectura &mdash; Transport Management</title>
 	<meta name="description"
 		content="Централизованный подход к развитию управления транспортом, двором и складом. Автоматизация процессов компаний экспедиторов и грузоотправителей.">
 	<meta name="author" content="IT Vectura">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="/resources/css/normalize.css?1">
+	<link rel="stylesheet" href="/resources/css/style.css?1">
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
+	<script src="/resources/js/script.js" defer></script>
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicon/apple-touch-icon.png">
@@ -33,11 +42,6 @@
 	<meta name="msapplication-TileImage" content="/resources/images/favicon/mstile-144x144.png?v=3">
 	<meta name="msapplication-config" content="/resources/images/favicon/browserconfig.xml?v=3">
 	<meta name="theme-color" content="#ffffff">
-
-	<!-- Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 	<!-- Open Graph -->
 	<!-- Facebook Meta Tags -->
@@ -62,27 +66,10 @@
 </head>
 
 <body class="page">
-
-	<!-- Preloader -->
 	<div class="preloader">
 		<img src="/resources/images/icons/preloader-light.svg" alt="Загрузка сайта" class="preloader__image">
 	</div>
 
-	<!-- Plug -->
-	<div class="page__plug plug">
-		<div class="plug__main">
-			<div class="plug__title">
-				<img src="/resources/images/logo/logo-dark.svg" alt="IT Vectura">
-				<h2>Сайт в разработке</h2>
-			</div>
-			<div class="plug__text">
-				<p class="fm">Мобильная версия сайта в стадии разработки.</p>
-				<p class="fm">Вы можете ознакомиться с нашими продуктами в Desktop-версии.</p>
-			</div>
-		</div>
-	</div>
-
-	<!-- Header -->
 	<header class="page__header header">
 		<div class="header__container container">
 			<!-- Logo -->
@@ -93,7 +80,7 @@
 			<!-- Navigation -->
 			<nav class="header__nav">
 				<ul class="header__main-list scr-list">
-					<!-- About -->
+					<!-- Main page -->
 					<li class="header__main-link">
 						<a href="/" class="fxs wm cw">Главная</a>
 					</li>
@@ -128,20 +115,82 @@
 				<a href="tel:+7(800)101-26-96" class="fl cw wm">8 (800) 101-26-96</a>
 				<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 			</div>
+			<!-- Mobile buttons -->
+			<div class="header__mobile-menu">
+				<img src="/resources/images/icons/mobile/btn-menu-open-light.svg" class="btn-menu-light">
+				<img src="/resources/images/icons/mobile/btn-menu-open-dark.svg" class="btn-menu-dark">
+			</div>
 		</div>
 	</header>
 
-	<!-- Content -->
-	<main class="page__content content">
+	<div class="page__blackout blackout"></div>
 
-		<!-- Intro -->
+	<div class="page__mobile mobile">
+		<div class="mobile__body">
+			<!-- Top bar -->
+			<div class="mobile__bar">
+				<button class="mobile__button">
+					<img src="/resources/images/icons/mobile/btn-menu-close.svg">
+				</button>
+			</div>
+			<!-- Content -->
+			<div class="mobile__content">
+				<!-- Main content -->
+				<div class="mobile__nav">
+					<ul class="mobile__nav-list scr-list">
+						<!-- Main page -->
+						<li class="mobile__nav-li">
+							<a href="/" class="mobile__title wm alone">Главная</a>
+						</li>
+						<!-- Products -->
+						<li class="mobile__nav-li">
+							<!-- Main link -->
+							<p class="mobile__title wm">
+								Продукты
+								<span class="mobile__open"></span>
+							</p>
+							<!-- Submenu -->
+							<div class="mobile__sub-list">
+								<a href="/products/" class="mobile__link">
+									Управление цепочками поставок
+								</a>
+								<a href="/products/transport-management/" class="mobile__link">
+									Transport Management
+								</a>
+								<a href="/products/warehouse-management/" class="mobile__link">
+									Warehouse Management
+								</a>
+								<a href="/products/yard-logistic/" class="mobile__link">
+									Yard Logistic
+								</a>
+							</div>
+							</p>
+						</li>
+						<!-- Contacts -->
+						<li class="mobile__nav-li">
+							<!-- Main link -->
+							<a href="#request" class="scr-link mobile__title wm alone">Связаться с нами</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Contacts -->
+				<div class="mobile__contacts">
+					<a href="tel:+7(800)101-26-96" class="fxs cw wm">8 (800) 101-26-96</a>
+					<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<main class="page__content content">
 		<section class="content__intro intro type-product" id="intro">
+			<!-- Main -->
 			<div class="intro__main container">
 				<!-- Content -->
 				<div class="intro__content">
 					<div class="intro__text">
 						<div class="intro__title">
-							<h1>Решение IT Vectura <span class="span">Transport Management</span> для управления транспортом</h1>
+							<h1>Решение IT Vectura <span class="span">Transport&nbsp;Management</span> для управления транспортом</h1>
 						</div>
 						<div class="intro__description">
 							<p class="fm cw ">
@@ -149,10 +198,13 @@
 							</p>
 						</div>
 					</div>
+					<div class="intro__pic-mobile">
+						<img src="/resources/images/product-page/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
+					</div>
 					<div class="intro__buttons">
-						<a target="_blank" class="button-border req-btn">
-							<div class="text">Запросить демонстрацию</div>
-						</a>
+						<div class="btn btn__clear">
+							<a href="#">Запросить демонстрацию</a>
+						</div>
 					</div>
 				</div>
 				<!-- Background -->
@@ -160,14 +212,63 @@
 					<img src="/resources/images/product-page/planet-solo.png" alt="Авиа, авто, морские, Ж/Д и речные перевозки">
 				</div>
 			</div>
+			<!-- Products -->
+			<div class="intro__products products container">
+				<!-- Warehouse management -->
+				<a class="products__item" href="/products/warehouse-management/">
+					<div class="products__header">
+						<p class="fm wm cw">Управление складом</p>
+						<img src="/resources/images/product-page/icons/warehouse-management.svg" alt="Склад">
+					</div>
+					<p class=" products__description fxs cw">
+						Система оперативного управления складскими процессами
+					</p>
+					<div class="products__buttons">
+						<p class="fm link cw">Подробнее</p>
+						<img src="/resources/images/icons/btn-down-light.svg">
+					</div>
+				</a>
+				<!-- Transport management -->
+				<a class="products__item" href="/products/transport-management/">
+					<!-- Title -->
+					<div class="products__header">
+						<p class="fm wm cw">Управление транспортом</p>
+						<img src="/resources/images/product-page/icons/transport-management.svg" alt="Транспорт">
+					</div>
+					<!-- Description -->
+					<p class="fxs cw">
+						Управление транспортными перевозками и экспедиторскими услугами
+					</p>
+					<!-- Buttons -->
+					<div class="products__buttons">
+						<p class="fm link cw">Подробнее</p>
+						<img src="/resources/images/icons/btn-down-light.svg">
+					</div>
+				</a>
+				<!-- Yard logistic -->
+				<a class="products__item" href="/products/yard-logistic/">
+					<!-- Title -->
+					<div class="products__header">
+						<p class="fm wm cw">Управление двором</p>
+						<img src="/resources/images/product-page/icons/yard-logistic.svg">
+					</div>
+					<!-- Description -->
+					<p class="products__description fxs cw">
+						Решение для эффективного управления внутридворовыми перемещениями
+					</p>
+					<!-- Buttons -->
+					<div class="products__buttons">
+						<p class="fm link cw">Подробнее</p>
+						<img src="/resources/images/icons/btn-down-light.svg">
+					</div>
+				</a>
+			</div>
 		</section>
-
-		<!-- General functionality -->
-		<section class="content__functionality functionality">
+		<section class="content__functionality content__default-section functionality">
 			<!-- Title -->
-			<div class="functionality__title title container">
-				<h2>Программное обеспечение для управления транспортом</h2>
-				<div class="title__hr"></div>
+			<div class="entry container">
+				<h2 class="entry__title">Программное обеспечение для управления транспортом</h2>
+				<hr class="entry__line">
 			</div>
 			<!-- Content -->
 			<div class="functionality__main container">
@@ -192,9 +293,9 @@
 				<!-- Functionality content -->
 				<div class="functionality__func func">
 					<!-- Title -->
-					<div class="func__title title">
-						<h3 class="wm up">Общая функциональность IT Vectura Transport Management</h3>
-						<div class="title__hr"></div>
+					<div class="entry">
+						<h3 class="entry__title fl wm up">Общая функциональность IT Vectura Transport Management</h3>
+						<hr class="entry__line">
 					</div>
 					<!-- Content -->
 					<div class="func__blocks">
@@ -272,44 +373,45 @@
 					<!-- Buttons -->
 					<div class="func__buttons">
 						<!-- Buttons -->
-						<button class="func__button button-fill lic-btn">
-							Лицензирование и распространение ITV TM
+						<button class="btn btn__fill">
+							Лицензирование и распространение IT Vectura Transport Management
 						</button>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- Request -->
 		<article class="content__request modal request container" id="request">
 			<div class="request__card">
 				<!-- Title -->
 				<div class="request__title title">
 					<h2 class="wow animate__animated animate__fadeInUp">Свяжитесь с нами</h2>
-					<div class="title__hr"></div>
+					<hr>
 					<p class="fl">Будем рады ответить на ваш вопрос</p>
 				</div>
 				<!-- Content -->
-				<form class="request__main">
-					<div class="request__inputs">
-						<input type="text" class="input" placeholder="Ваше имя">
-						<input type="email" class="input" placeholder="E-mail">
-						<input type="text" class="input" placeholder="Компания">
-						<input type="text" class="input" placeholder="Должность">
+				<form class="request__main form">
+					<div class="form__main">
+						<!-- Main inputs -->
+						<div class="form__grid">
+							<input type="text" class="form__inp" placeholder="Ваше имя">
+							<input type="email" class="form__inp" placeholder="E-mail">
+							<input type="text" class="form__inp" placeholder="Компания">
+							<input type="text" class="form__inp" placeholder="Должность">
+						</div>
+						<!-- Question input -->
+						<textarea class="form__area" maxlength="370" placeholder="Ваш вопрос"></textarea>
+						<!-- Send button -->
+						<input type="submit" value="Отправить" class="btn btn__fill">
 					</div>
-					<input type="text" class="input" placeholder="Ваш вопрос">
-					<input type="submit" value="Отправить" class="button-fill">
-					<p class="fs">
+					<p class="form__commerce-info">
 						Нажимая на кнопку *Отправить*, даю согласие на
 						<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
 					</p>
 				</form>
 			</div>
 		</article>
-
 	</main>
 
-	<!-- Footer -->
 	<footer class="page__footer footer">
 		<!-- Content -->
 		<div class="footer__container container">
@@ -351,38 +453,8 @@
 		</div>
 	</footer>
 
-	<!-- Modal request -->
-	<div class="mod" id="request-modal">
-		<!-- Modal header -->
-		<div class="mod__header">
-			<div class="mod__title">
-				<h1>Свяжитесь с нами</h1>
-				<div class="mod__close" data-izimodal-close="#request-modal">
-					<img src="/resources/images/icons/btn-close-light.svg" alt="Закрыть">
-				</div>
-			</div>
-			<p class="fl wsb">Будем рады ответить на ваш вопрос</p>
-		</div>
-		<!-- Modal content -->
-		<form class="mod__main">
-			<div class="mod__inputs">
-				<input type="text" class="input" placeholder="Ваше имя">
-				<input type="email" class="input" placeholder="E-mail">
-				<input type="text" class="input" placeholder="Компания">
-				<input type="text" class="input" placeholder="Должность">
-			</div>
-			<input type="text" class="input" placeholder="Ваш вопрос">
-			<input type="submit" value="Отправить" class="button-fill">
-			<p class="fs">
-				Нажимая на кнопку *Отправить*, даю согласие на
-				<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
-			</p>
-		</form>
-	</div>
-
 	<!-- Modal licensing Transport -->
-	<div class="mod" id="licensing-modal">
-		<!-- Modal header -->
+	<!-- <div class="mod" id="licensing-modal">
 		<div class="mod__header">
 			<div class="mod__title">
 				<h1>IT Vectura TM</h1>
@@ -392,7 +464,6 @@
 			</div>
 			<p class="fl wm cbl">Лицензирование и распространение</p>
 		</div>
-		<!-- Modal content -->
 		<div class="mod__main">
 			<p class="fxs">
 				Распространение и внедрение программных продуктов, содержащих конфигурацию "Управление транспортом ITVectura
@@ -443,13 +514,7 @@
 				количестве зарегистрированных в системе уникальных единиц мощности погрузочно-разгрузочной зоны.
 			</p>
 		</div>
-	</div>
-
-	<!-- Scripts links -->
-	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
-		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-	<script src="/resources/js/iziModal.min.js"></script>
-	<script src="/resources/js/script.js?1"></script>
+	</div> -->
 </body>
 
 </html>

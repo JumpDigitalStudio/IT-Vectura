@@ -4,19 +4,18 @@
 <head>
 	<!-- Meta -->
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="HandheldFriendly" content="true">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
 
 	<!-- SEO -->
-	<title>IT Vectura: управление логистикой</title>
+	<title>IT Vectura &mdash; управление логистикой</title>
 	<meta name="description"
 		content="Централизованный подход к развитию управления транспортом, двором и складом. Автоматизация процессов компаний экспедиторов и грузоотправителей.">
 	<meta name="author" content="IT Vectura">
 
 	<!-- Styles -->
-	<!-- <link rel="stylesheet" href="/resources/css/locomotive-scroll.min.css"> -->
 	<link rel="stylesheet" href="/resources/css/normalize.css?1">
-	<link rel="stylesheet" href="/resources/css/iziModal.min.css">
 	<link rel="stylesheet" href="/resources/css/style.css?1">
 
 	<!-- Fonts -->
@@ -27,8 +26,6 @@
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
 		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
-	<!-- <script src="/resources/js/locomotive-scroll.min.js" defer></script> -->
-	<script src="/resources/js/iziModal.min.js" defer></script>
 	<script src="/resources/js/script.js" defer></script>
 
 	<!-- Favicon -->
@@ -69,27 +66,10 @@
 </head>
 
 <body class="page">
-
-	<!-- Preloader -->
 	<div class="preloader">
 		<img src="/resources/images/icons/preloader-light.svg" alt="Загрузка сайта" class="preloader__image">
 	</div>
 
-	<!-- Plug -->
-	<div class="page__plug plug">
-		<div class="plug__main">
-			<div class="plug__title">
-				<img src="/resources/images/logo/logo-dark.svg" alt="IT Vectura">
-				<h2>Сайт в разработке</h2>
-			</div>
-			<div class="plug__text">
-				<p class="fm">Мобильная версия сайта в стадии разработки.</p>
-				<p class="fm">Вы можете ознакомиться с нашими продуктами в Desktop-версии.</p>
-			</div>
-		</div>
-	</div>
-
-	<!-- Header -->
 	<header class="page__header header">
 		<div class="header__container container">
 			<!-- Logo -->
@@ -139,13 +119,75 @@
 				<a href="tel:+7(800)101-26-96" class="fl cw wm">8 (800) 101-26-96</a>
 				<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 			</div>
+			<!-- Mobile buttons -->
+			<div class="header__mobile-menu">
+				<img src="/resources/images/icons/mobile/btn-menu-open-light.svg" class="btn-menu-light">
+				<img src="/resources/images/icons/mobile/btn-menu-open-dark.svg" class="btn-menu-dark">
+			</div>
 		</div>
 	</header>
 
-	<!-- Content -->
-	<main class="page__content content">
+	<div class="page__blackout blackout"></div>
 
-		<!-- Intro -->
+	<div class="page__mobile mobile">
+		<div class="mobile__body">
+			<!-- Top bar -->
+			<div class="mobile__bar">
+				<button class="mobile__button">
+					<img src="/resources/images/icons/mobile/btn-menu-close.svg">
+				</button>
+			</div>
+			<!-- Content -->
+			<div class="mobile__content">
+				<!-- Main content -->
+				<div class="mobile__nav">
+					<ul class="mobile__nav-list scr-list">
+						<!-- About us -->
+						<li class="mobile__nav-li">
+							<a href="#about" class="scr-link mobile__title wm alone">О нас</a>
+						</li>
+						<!-- Logistics management system -->
+						<li class="mobile__nav-li">
+							<a href="#system" class="scr-link mobile__title wm alone">Возможности</a>
+						</li>
+						<!-- Products -->
+						<li class="mobile__nav-li">
+							<p class="mobile__title wm">
+								Продукты
+								<span class="mobile__open"></span>
+							</p>
+							<div class="mobile__sub-list">
+								<a href="/products/" class="mobile__link">
+									Управление цепочками поставок
+								</a>
+								<a href="/products/transport-management/" class="mobile__link">
+									Transport Management
+								</a>
+								<a href="/products/warehouse-management/" class="mobile__link">
+									Warehouse Management
+								</a>
+								<a href="/products/yard-logistic/" class="mobile__link">
+									Yard Logistic
+								</a>
+							</div>
+							</p>
+						</li>
+						<!-- Contacts -->
+						<li class="mobile__nav-li">
+							<a href="#contacts" class="scr-link mobile__title wm alone">Контакты</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Contacts -->
+				<div class="mobile__contacts">
+					<a href="tel:+7(800)101-26-96" class="fxs cw wm">8 (800) 101-26-96</a>
+					<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<main class="page__content content">
 		<section class="content__intro intro" id="intro">
 			<!-- Main -->
 			<div class="intro__main container">
@@ -166,14 +208,18 @@
 							</p>
 						</div>
 					</div>
+					<div class="intro__pic-mobile">
+						<img src="/resources/images/main-page/intro/planet-full.png"
+							alt="Авиа, авто, морские, Ж/Д и речные перевозки">
+					</div>
 					<div class="intro__buttons">
-						<button class="button req-btn">Связаться с нами</button>
-						<a href="/documents/it-vectura_presentation_ru.pdf" target="_blank" class="button-border">
-							<div class="text">Смотреть презентацию</div>
-						</a>
+						<button class="btn btn__accent">Связаться с нами</button>
+						<div class="btn btn__clear">
+							<a target="_blank" href="/documents/it-vectura_presentation_ru.pdf">Смотреть презентацию</a>
+						</div>
 					</div>
 				</div>
-				<!-- Background -->
+				<!-- Picture -->
 				<div class="intro__pic">
 					<img src="/resources/images/main-page/intro/planet-full.png"
 						alt="Авиа, авто, морские, Ж/Д и речные перевозки">
@@ -205,17 +251,17 @@
 				</div>
 			</div>
 		</section>
-
-		<!-- About -->
-		<section class="content__about about" id="about">
+		<section class="content__about content__default-section about" id="about">
 			<!-- Title -->
-			<div class="about__title title container">
-				<h2>О компании</h2>
-				<div class="title__hr"></div>
-				<p class="fm">
-					IT Vectura предоставляет услуги по оптимизации, автоматизации и трансформации логистических
-					бизнес-процессов, используя собственные разработки.
-				</p>
+			<div class="entry container">
+				<h2 class="entry__title">О компании</h2>
+				<hr class="entry__line">
+				<div class="entry__description">
+					<p class="fm">
+						IT Vectura предоставляет услуги по оптимизации, автоматизации и трансформации логистических
+						бизнес-процессов, используя собственные разработки.
+					</p>
+				</div>
 			</div>
 			<!-- Content -->
 			<div class="about__main container">
@@ -223,33 +269,40 @@
 					<img src="/resources/images/main-page/about-our-team.png" alt="Команда IT Vectura">
 				</div>
 				<div class="about__content">
-					<div class="about__text title">
-						<h3 class="wb">Принципы</h3>
-						<div class="title__hr"></div>
-						<p class="fxs">
-							Мы следуем тенденциям развития современных технологий, чтобы привести клиентов в цифровое будущее
-						</p>
+					<!-- Principles -->
+					<div class="entry">
+						<h3 class="entry__title fl wb">Принципы</h3>
+						<hr class="entry__line">
+						<div class="entry__description">
+							<p class="fxs">
+								Мы следуем тенденциям развития современных технологий, чтобы привести клиентов в цифровое будущее
+							</p>
+						</div>
 					</div>
-					<div class="about__text title">
-						<h3 class="wb">Ценности</h3>
-						<div class="title__hr"></div>
-						<p class="fxs">
-							Наша команда несет ответственность за&nbsp;проделанную работу и достижение поставленных целей и задач
-						</p>
+					<!-- Values -->
+					<div class="entry">
+						<h3 class="entry__title fl wb">Ценности</h3>
+						<hr class="entry__line">
+						<div class="entry__description">
+							<p class="fxs">
+								Наша команда несет ответственность за&nbsp;проделанную работу и достижение поставленных целей и задач
+							</p>
+						</div>
 					</div>
-					<div class="about__text title">
-						<h3 class="wb">Миссия</h3>
-						<div class="title__hr"></div>
-						<p class="fxs">
-							Мы стремимся раскрыть потенциал наших клиентов через инновационные решения, которые закрывают сложнейшие
-							бизнес-задачи
-						</p>
+					<!-- Mission -->
+					<div class="entry">
+						<h3 class="entry__title fl wb">Миссия</h3>
+						<hr class="entry__line">
+						<div class="entry__description">
+							<p class="fxs">
+								Мы стремимся раскрыть потенциал наших клиентов через инновационные решения, которые закрывают сложнейшие
+								бизнес-задачи
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- Features -->
 		<div class="content__features features">
 			<div class="features__main container">
 				<!-- Digitalization of logistics -->
@@ -284,8 +337,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Cards -->
 		<div class="content__cards cards">
 			<div class="cards__main container">
 				<!-- Maintenance and development of the system -->
@@ -310,106 +361,11 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Logistics management system -->
-		<section class="content__system system" id="system">
+		<section class="content__solutions content__default-section solutions">
 			<!-- Title -->
-			<div class="system__title title container">
-				<h2>Система управления логистикой</h2>
-				<div class="title__hr"></div>
-			</div>
-			<!-- Content -->
-			<div class="system__main container">
-				<!-- Centralized approach -->
-				<div class="system__item">
-					<div class="system__shape orange first"></div>
-					<p class="fm wsb">
-						Централизованный подход к развитию управления транспортом, двором и складом
-					</p>
-				</div>
-				<!-- Creation models -->
-				<div class="system__item">
-					<div class="system__shape blue"></div>
-					<p class="fm wsb">
-						Создание и реализация инфраструктурной модели транспортной логистики
-					</p>
-				</div>
-				<!-- Operational monitoring -->
-				<div class="system__item">
-					<div class="system__shape purple"></div>
-					<p class="fm wsb">
-						Оперативный мониторинг ситуации на складе и транспортной площадке
-					</p>
-				</div>
-				<!-- Transparent control -->
-				<div class="system__item">
-					<div class="system__shape pink"></div>
-					<p class="fm wsb">
-						Оперативный и прозрачный контроль исполнения в единой системе
-					</p>
-				</div>
-				<!-- Park management -->
-				<div class="system__item">
-					<div class="system__shape purple"></div>
-					<p class="fm wsb">
-						Управление парком собственного и привлеченного транспорта
-					</p>
-				</div>
-				<!-- Automatic planning -->
-				<div class="system__item">
-					<div class="system__shape blue"></div>
-					<p class="fm wsb">
-						Автоматическое планирование и расчет стоимости перевозок
-					</p>
-				</div>
-				<!-- Improving Efficiency -->
-				<div class="system__item">
-					<div class="system__shape orange"></div>
-					<p class="fm wsb">
-						Повышение эффективности взаимодействия с партнерами
-					</p>
-				</div>
-				<!-- End-to-end reporting -->
-				<div class="system__item">
-					<div class="system__shape blue"></div>
-					<p class="fm wsb">
-						Сквозная отчетность по всем процессам логистики
-					</p>
-				</div>
-				<!-- Reducing operating costs -->
-				<div class="system__item">
-					<div class="system__shape purple last"></div>
-					<p class="fm wsb">
-						Сокращение операционных затрат
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- Solutions -->
-		<section class="content__solutions solutions">
-			<!-- Title -->
-			<div class="solutions__title title container">
-				<h2>Особенности решения и сопровождения</h2>
-				<div class="title__hr"></div>
-			</div>
-			<!-- Hangs -->
-			<div class="solutions__hangs hangs container">
-				<!-- Top text -->
-				<div class="hangs__row">
-					<p class="fm wsb">Запуск за 2 недели</p>
-					<p class="fm wsb">Гибкая система скидок при комплексной покупке решения</p>
-				</div>
-				<!-- Shape -->
-				<div class="hangs__row">
-					<img src="/resources/images/main-page/shape-logistics-system.svg" alt="Особенности решения и сопровождения"
-						class="hangs__shape">
-				</div>
-				<!-- Bottom text -->
-				<div class="hangs__row">
-					<p class="fm wsb">Для любого вида перевозок</p>
-					<p class="fm wsb">Решение-конструктор</p>
-				</div>
+			<div class="entry container">
+				<h2 class="entry__title">Особенности решения и&nbsp;сопровождения</h2>
+				<hr class="entry__line">
 			</div>
 			<!-- Decisions -->
 			<div class="solutions__decisions decisions container">
@@ -421,26 +377,26 @@
 							<p class="fxs wsb cw">Подробнее</p>
 						</div>
 						<div class="decisions__card-row">
-							<p class="fl wb cw">Решение для малого бизнеса</p>
-							<img src="/resources/images/icons/btn-down-light.svg" alt="Подробнее">
+							<p class="fl wm cw">Решение для малого бизнеса</p>
+							<img src="/resources/images/icons/btn-down-light.svg">
 						</div>
 					</div>
 					<div class="decisions__item-arrow">
-						<img src="/resources/images/icons/arrow-left-dark.svg" alt="Подробнее">
+						<img src="/resources/images/icons/arrow-left-dark.svg">
 					</div>
 				</div>
 				<!-- Advanced -->
 				<div class="decisions__item">
 					<div class="decisions__item-arrow right">
-						<img src="/resources/images/icons/arrow-left-dark.svg" alt="Подробнее">
+						<img src="/resources/images/icons/arrow-left-dark.svg">
 					</div>
 					<div class="decisions__card">
 						<div class="decisions__card-row">
 							<div class="decisions__card-title">Advanced</div>
 						</div>
 						<div class="decisions__card-row">
-							<p class="fl wb">Решение для среднего бизнеса</p>
-							<img src="/resources/images/icons/btn-down-dark.svg" alt="Подробнее">
+							<p class="fl wm">Решение для среднего бизнеса</p>
+							<img src="/resources/images/icons/btn-down-dark.svg">
 						</div>
 					</div>
 				</div>
@@ -451,48 +407,51 @@
 							<div class="decisions__card-title">Enterprise</div>
 						</div>
 						<div class="decisions__card-row">
-							<p class="fl wb">Решение для крупного бизнеса</p>
-							<img src="/resources/images/icons/btn-down-dark.svg" alt="Подробнее">
+							<p class="fl wm">Решение для крупного бизнеса</p>
+							<img src="/resources/images/icons/btn-down-dark.svg">
 						</div>
 					</div>
 					<div class="decisions__item-arrow">
-						<img src="/resources/images/icons/arrow-left-dark.svg" alt="Подробнее">
+						<img src="/resources/images/icons/arrow-left-dark.svg">
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!-- Request -->
-		<article class="content__request request">
+		<article class="content__request content__default-section request">
 			<!-- Title -->
-			<div class="request__title title container">
-				<h2>Свяжитесь с нами</h2>
-				<div class="title__hr"></div>
-				<p class="fl">Будем рады ответить на ваш вопрос</p>
+			<div class="entry container">
+				<h2 class="entry__title">Система управления логистикой</h2>
+				<hr class="entry__line">
+				<div class="entry__description">
+					<p class="fl">Будем рады ответить на Ваш вопрос</p>
+				</div>
 			</div>
 			<!-- Content -->
-			<form class="request__main container">
-				<div class="request__inputs">
-					<input type="text" class="input" placeholder="Ваше имя">
-					<input type="email" class="input" placeholder="E-mail">
-					<input type="text" class="input" placeholder="Компания">
-					<input type="text" class="input" placeholder="Должность">
+			<form class="request__main form container">
+				<div class="form__main">
+					<!-- Main inputs -->
+					<div class="form__grid">
+						<input type="text" class="form__inp" placeholder="Ваше имя">
+						<input type="email" class="form__inp" placeholder="E-mail">
+						<input type="text" class="form__inp" placeholder="Компания">
+						<input type="text" class="form__inp" placeholder="Должность">
+					</div>
+					<!-- Question input -->
+					<textarea class="form__area" maxlength="370" placeholder="Ваш вопрос"></textarea>
+					<!-- Send button -->
+					<input type="submit" value="Отправить" class="btn btn__fill">
 				</div>
-				<input type="text" class="input" placeholder="Ваш вопрос">
-				<input type="submit" value="Отправить" class="button-fill">
-				<p class="fs">
+				<p class="form__commerce-info">
 					Нажимая на кнопку *Отправить*, даю согласие на
 					<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
 				</p>
 			</form>
 		</article>
-
-		<!-- Contacts -->
-		<article class="content__contacts contacts" id="contacts">
+		<article class="content__contacts content__default-section contacts" id="contacts">
 			<!-- Title -->
-			<div class="contacts__title title container">
-				<h2>Контакты</h2>
-				<div class="title__hr"></div>
+			<div class="entry container">
+				<h2 class="entry__title">Контакты</h2>
+				<hr class="entry__line">
 			</div>
 			<!-- Content -->
 			<div class="contacts__main container">
@@ -503,36 +462,36 @@
 				</div>
 				<div class="contacts__props props">
 					<!-- Button -->
-					<button class="button-fill props__button">Наши реквизиты</button>
+					<button class="btn btn__fill props__button">Наши реквизиты</button>
 					<!-- Props -->
 					<div class="props__main">
 						<div class="props__row">
 							<div class="props__item">
-								<p class="fm wm cbm">ИНН</p>
-								<p class="fxs">9701217858</p>
+								<p class="fm wb cbm">ИНН</p>
+								<p class="fm">9701217858</p>
 							</div>
 							<div class="props__item">
-								<p class="fm wm cbm">КПП</p>
-								<p class="fxs">770101001</p>
+								<p class="fm wb cbm">КПП</p>
+								<p class="fm">770101001</p>
 							</div>
 							<div class="props__item">
-								<p class="fm wm cbm">ОГРН</p>
-								<p class="fxs">1227700541518</p>
+								<p class="fm wb cbm">ОГРН</p>
+								<p class="fm">1227700541518</p>
 							</div>
 							<div class="props__item">
-								<p class="fm wm cbm">ОКВЭД</p>
-								<p class="fxs">62.01 Разработка компьютерного программного обеспечения</p>
+								<p class="fm wb cbm">ОКВЭД</p>
+								<p class="fm">62.01 Разработка компьютерного программного обеспечения</p>
 							</div>
 						</div>
 						<div class="props__row">
 							<div class="props__item">
-								<p class="fm wm cbm">Юридический адрес</p>
-								<p class="fxs">105066, город Москва, Нижняя Красносельская ул, д. 40/12 к. 20, офис 710
+								<p class="fm wb cbm">Юридический адрес</p>
+								<p class="fm">105066, город Москва, Нижняя Красносельская ул, д. 40/12 к. 20, офис 710
 								</p>
 							</div>
 							<div class="props__item">
-								<p class="fm wm cbm">ЕГРЮЛ</p>
-								<a href="/documents/it-vectura_egrul.pdf" target="_blank" class="fxs link">
+								<p class="fm wb cbm">ЕГРЮЛ</p>
+								<a href="/documents/it-vectura_egrul.pdf" target="_blank" class="fm link">
 									Смотреть документ (PDF)
 								</a>
 							</div>
@@ -541,10 +500,8 @@
 				</div>
 			</div>
 		</article>
-
 	</main>
 
-	<!-- Footer -->
 	<footer class="page__footer footer">
 		<!-- Content -->
 		<div class="footer__container container">
@@ -566,15 +523,15 @@
 					<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
 				</div>
 				<!-- Mavigation -->
-				<div class="footer__col">
+				<div class="footer__col scr-list">
 					<!-- Logistics management system -->
-					<a href="#system" class="fxs cw">Возможности</a>
+					<a href="#system" class="scr-link fxs cw">Возможности</a>
 					<!-- Contacts -->
-					<a href="#contacts" class="fxs cw">Контакты</a>
+					<a href="#contacts" class="scr-link fxs cw">Контакты</a>
 					<!-- Main link to Products -->
 					<a href="/products/" class="fxs cw">Продукты</a>
 					<!-- About -->
-					<a href="#about" class="fxs cw">О нас</a>
+					<a href="#about" class="scr-link fxs cw">О нас</a>
 				</div>
 			</div>
 		</div>
@@ -585,36 +542,6 @@
 			</a>
 		</div>
 	</footer>
-
-	<!-- Modal request -->
-	<div class="mod" id="request-modal">
-		<!-- Modal header -->
-		<div class="mod__header">
-			<div class="mod__title">
-				<h1>Свяжитесь с нами</h1>
-				<div class="mod__close" data-izimodal-close="#request-modal">
-					<img src="/resources/images/icons/btn-close-light.svg" alt="Закрыть">
-				</div>
-			</div>
-			<p class="fl wsb">Будем рады ответить на ваш вопрос</p>
-		</div>
-		<!-- Modal content -->
-		<form class="mod__main">
-			<div class="mod__inputs">
-				<input type="text" class="input" placeholder="Ваше имя">
-				<input type="email" class="input" placeholder="E-mail">
-				<input type="text" class="input" placeholder="Компания">
-				<input type="text" class="input" placeholder="Должность">
-			</div>
-			<input type="text" class="input" placeholder="Ваш вопрос">
-			<input type="submit" value="Отправить" class="button-fill">
-			<p class="fs">
-				Нажимая на кнопку *Отправить*, даю согласие на
-				<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
-			</p>
-		</form>
-	</div>
-
 </body>
 
 </html>

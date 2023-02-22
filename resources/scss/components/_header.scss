@@ -1,4 +1,9 @@
 .header {
+	@include flex (center, center, row);
+	z-index: 50;
+
+	will-change: background-color, height, border-bottom, backdrop-filter;
+	transition: background-color $trans-3, height $trans-3, border-bottom $trans-3, backdrop-filter $trans-3;
 
 	// Blocks
 	&__container {
@@ -6,38 +11,52 @@
 	}
 
 	&__logo {
-		@include flex(flex-start, flex-start, row);
+		@include flex(flex-start, center, row);
+		min-height: 50px;
+		max-height: 50px;
+		height: 100%;
 
-		transition: all .2s ease-in-out 0s;
-		min-height: 55px;
+		will-change: max-height, min-height;
+		transition: max-height $trans-3, min-height $trans-3;
 
-		&>img.logo {
+		img.logo {
+			min-height: 50px;
+			max-height: 50px;
 			height: 100%;
-			width: auto;
-			object-fit: contain;
+
+			will-change: max-height, min-height;
+			transition: max-height $trans-3, min-height $trans-3;
 
 			&.light {
-				display: block;
+				display: flex;
+				visibility: visible;
+				pointer-events: all;
 			}
 
 			&.dark {
 				display: none;
+				visibility: hidden;
+				pointer-events: none;
 			}
 		}
 	}
 
 	&__nav {
 		@include flex(center, flex-start, row);
-
-		transition: all .2s ease-in-out 0s;
 		min-height: 55px;
+
+		will-change: min-height;
+		transition: min-height $trans-3;
 	}
 
 	&__contacts {
 		@include flex(space-between, flex-end, column);
+		min-height: 50px;
+		max-height: 50px;
+		height: 100%;
 
-		min-height: 55px;
-		transition: all .2s ease-in-out 0s;
+		will-change: max-height, min-height;
+		transition: max-height $trans-3, min-height $trans-3;
 
 		&>a {
 			@include link-hover($ACM);
@@ -47,7 +66,7 @@
 	// Navigation components
 	&__main-list {
 		@include flex(center, top, row);
-		@include gap(0, 50px);
+		@include gap(0, 40px);
 	}
 
 	&__sub-list {
@@ -149,8 +168,8 @@
 
 		position: relative;
 
-		width: 17px;
-		height: 17px;
+		width: 14px;
+		height: 14px;
 
 		background: url('/resources/images/icons/icon-down-light.svg') center no-repeat;
 		background-size: 100%;
@@ -178,12 +197,64 @@
 		}
 	}
 
+	// Mobile buttons
+	&__mobile-menu {
+		@include flex(center, center, row);
+		width: 40px;
+		height: 40px;
+
+		border: 1px $WHT solid;
+		border-radius: $radius-s;
+
+		backdrop-filter: blur(10px);
+		background-color: rgba(0, 0, 0, 0.53);
+
+		display: none;
+		visibility: hidden;
+
+		img {
+			width: 20px;
+			height: 20px;
+			pointer-events: none;
+
+			&.btn-menu-light {
+				display: flex;
+				visibility: visible;
+			}
+
+			&.btn-menu-dark {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
 	// Mods
 	&.stick-dark {
+		backdrop-filter: blur(10px);
+		background-color: rgba(0, 0, 0, 0.53);
+
+		// Blocks
+		.header__logo {
+			min-height: 42px;
+			max-height: 42px;
+
+			img.logo {
+				min-height: 42px;
+				max-height: 42px;
+			}
+		}
+
 		.header__nav {
 			min-height: 0;
 		}
 
+		.header__contacts {
+			min-height: 42px;
+			max-height: 42px;
+		}
+
+		// Navigation components
 		.header__sub-list {
 			background: rgba(0, 0, 0, 0.7);
 		}
@@ -200,34 +271,37 @@
 	}
 
 	&.stick-light {
-		.header__logo {
-			min-height: 45px;
+		backdrop-filter: none;
+		box-shadow: $card-shadow;
+		background-color: $GRY;
+		// border-bottom: $bla-border;
 
-			&>img.logo {
+		// Blocks
+		.header__logo>img.logo {
 
-				&.light {
-					display: none;
-				}
+			&.light {
+				display: none;
+				visibility: hidden;
+				pointer-events: none;
+			}
 
-				&.dark {
-					display: block;
-				}
+			&.dark {
+				display: flex;
+				visibility: visible;
+				pointer-events: all;
 			}
 		}
 
-		.header__contacts {
-			min-height: 45px;
-
-			&>a {
-				color: $BLA;
-				@include link-hover($ACM);
-			}
+		.header__contacts>a {
+			color: $BLA;
+			@include link-hover($ACM);
 		}
 
 		// Navigation components
 		.header__sub-list {
 			border: $bla-border;
 			background: $GRY;
+			box-shadow: $card-shadow;
 		}
 
 		.header__main-link {
@@ -276,6 +350,61 @@
 
 			&::before {
 				background: $BLA;
+			}
+		}
+	}
+
+	@media (max-width: $xl) {
+
+		&__logo,
+		&__nav,
+		&__contacts {
+			min-height: 42px;
+			max-height: 42px;
+		}
+
+		&__logo>img.logo {
+			min-height: 42px;
+			max-height: 42px;
+		}
+
+		&__main-list {
+			@include gap(0, 20px);
+		}
+	}
+
+	@media (max-width: $lg) {
+		&__nav {
+			display: none;
+		}
+
+		&__contacts {
+			display: none;
+		}
+
+		&__mobile-menu {
+			display: flex;
+			visibility: visible;
+		}
+
+		&.stick-light {
+			.header__mobile-menu {
+				border: 1px $BLA solid;
+
+				backdrop-filter: none;
+				background-color: transparent;
+
+				img {
+					&.btn-menu-light {
+						display: none;
+						visibility: hidden;
+					}
+
+					&.btn-menu-dark {
+						display: flex;
+						visibility: visible;
+					}
+				}
 			}
 		}
 	}

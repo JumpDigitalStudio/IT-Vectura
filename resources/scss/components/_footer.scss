@@ -1,9 +1,9 @@
 .footer {
+	@include flex(center, center, column);
 
 	&__container {
-		margin: 30px 0;
-
 		@include flex(space-between, space-between, row);
+		margin: 30px 0;
 	}
 
 	&__col {
@@ -20,10 +20,10 @@
 	}
 
 	&__content {
-		width: 50%;
+		@include flex(space-between, flex-start, row);
+		@include gap(0, 30px);
 
-		@include flex(space-between, top, row);
-		@include gap(0, 20px);
+		width: 50%;
 	}
 
 	&__button {
@@ -41,6 +41,49 @@
 
 			&>img {
 				height: 25px;
+			}
+		}
+	}
+
+	@media (max-width: $lg) {
+		&__col.commerce {
+			img {
+				max-width: 190px;
+			}
+		}
+
+		&__content {
+			@include gap(0, 0);
+			width: auto;
+		}
+	}
+
+	@media (max-width: $md) {
+		&__container {
+			@include flex(flex-start, center, column);
+			@include gap(50px, 0);
+		}
+
+		&__col.commerce {
+			align-items: center;
+		}
+
+		&__col {
+			@include flex(flex-start, center, column);
+			@include gap(15px, 0);
+			width: 100%;
+
+			text-align: center;
+		}
+
+		&__content {
+			@include flex(flex-start, center, column);
+			@include gap(50px, 0);
+		}
+
+		&__button {
+			&>a {
+				height: 70px;
 			}
 		}
 	}

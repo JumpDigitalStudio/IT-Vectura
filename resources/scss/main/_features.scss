@@ -16,8 +16,19 @@
 			height: 50px;
 			width: auto;
 		}
+	}
 
-		// background: url('/resources/images/main-page/features/pentagon-vector.svg') center no-repeat;
-		// background-size: 100%;
+	@media (max-width: $md) {
+		&__main {
+			@include grid(repeat(3, 1fr), repeat(2, 1fr));
+			@include gap(30px, 15px);
+		}
+	}
+
+	@media (max-width: $sm) {
+		&__main {
+			@include grid(repeat(2, 1fr), repeat(3, 1fr));
+			@include gap(30px, 30px);
+		}
 	}
 }

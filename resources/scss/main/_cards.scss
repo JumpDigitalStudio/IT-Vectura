@@ -6,19 +6,29 @@
 	}
 
 	&__card {
-		padding: 30px;
+		padding: 25px;
 		border-radius: $radius-m;
 
 		@include flex(space-between, flex-start, column);
-		@include gap(40px, 0);
+		@include gap(30px, 0);
 
 		box-shadow: $card-shadow;
 		background: $card-gradient;
 
 		transition: box-shadow .2s ease-in-out 0s;
+	}
 
-		&:hover {
-			box-shadow: $card-shadow-hover;
+	@media (max-width: $md) {
+		&__main {
+			@include grid(1fr, repeat(4, 1fr));
+			@include gap(15px, 0);
+		}
+	}
+
+	@media (max-width: $sm) {
+		&__card {
+			@include gap(15px, 0);
+			padding: 20px;
 		}
 	}
 }
