@@ -82,10 +82,12 @@
 	&__nav-li {
 		@include flex(center, flex-start, column);
 		width: calc(100% - 2px);
+		border: 0px $WHT solid;
 		border-radius: $radius-s;
 
 		cursor: pointer;
-		transition: all .2s ease-in-out 0s;
+		will-change: border;
+		transition: border $trans-3;
 
 		&.active {
 			border: 1px $WHT solid;
