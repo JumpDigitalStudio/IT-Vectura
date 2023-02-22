@@ -1071,7 +1071,7 @@ html::-webkit-scrollbar-track {
   border: 1px transparent solid;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
 }
 .mobile__nav-li.active {
   border: 1px #FFFFFF solid;
