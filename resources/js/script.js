@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	if (document.querySelector('.intro')) {
 		const intro = document.querySelector('.intro');
 		introHeight = getComputedStyle(intro).height;
+		alert(introHeight);
 	};
 
 	if (document.querySelector('.page__header')) {
