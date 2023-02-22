@@ -234,10 +234,10 @@ h2 {
 	}
 
 	&__clear {
-		outline: 2px $WHT solid;
-		outline-offset: -2px;
+		border: 2px $WHT solid;
 
-		min-width: 260px;
+		height: 42px;
+		min-width: 256px;
 
 		background-color: rgba(236, 236, 236, 0.1);
 		backdrop-filter: blur(10px);
@@ -256,9 +256,10 @@ h2 {
 
 		&__clear {
 			min-width: fit-content;
+			width: calc(100% - 2px);
 
 			a {
-				padding: 0 30px;
+				padding: 0 29px;
 			}
 		}
 	}

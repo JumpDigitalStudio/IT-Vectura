@@ -321,9 +321,9 @@ h2 {
   background-color: #384FCA;
 }
 .btn__clear {
-  outline: 2px #FFFFFF solid;
-  outline-offset: -2px;
-  min-width: 260px;
+  border: 2px #FFFFFF solid;
+  height: 42px;
+  min-width: 256px;
   background-color: rgba(236, 236, 236, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -340,9 +340,10 @@ h2 {
   .btn__clear {
     min-width: -moz-fit-content;
     min-width: fit-content;
+    width: calc(100% - 2px);
   }
   .btn__clear a {
-    padding: 0 30px;
+    padding: 0 29px;
   }
 }
 
@@ -1066,14 +1067,13 @@ html::-webkit-scrollbar-track {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - 2px);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out 0s;
 }
 .mobile__nav-li.active {
-  outline: 1px #FFFFFF solid;
-  outline-offset: -1px;
+  border: 1px #FFFFFF solid;
 }
 .mobile__nav-li.active .mobile__sub-list {
   display: flex;
