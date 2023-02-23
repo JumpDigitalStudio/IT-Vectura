@@ -15,6 +15,9 @@
 	<meta name="author" content="IT Vectura">
 
 	<!-- Styles -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.min.css"
+		integrity="sha512-3c5WiuZUnVWCQGwVBf8XFg/4BKx48Xthd9nXi62YK0xnf39Oc2FV43lIEIdK50W+tfnw2lcVThJKmEAOoQG84Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="/resources/css/normalize.css?1">
 	<link rel="stylesheet" href="/resources/css/style.css?1">
 
@@ -26,6 +29,9 @@
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
 		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"
+		integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 	<script src="/resources/js/script.js" defer></script>
 
 	<!-- Favicon -->
@@ -213,7 +219,7 @@
 							alt="Авиа, авто, морские, Ж/Д и речные перевозки">
 					</div>
 					<div class="intro__buttons">
-						<button class="btn btn__accent">Связаться с нами</button>
+						<button class="btn btn__accent btn-modal" data-izimodal-open="#modal">Связаться с нами</button>
 						<div class="btn btn__clear">
 							<a target="_blank" href="/documents/it-vectura_presentation_ru.pdf">Смотреть презентацию</a>
 						</div>
@@ -361,6 +367,76 @@
 				</div>
 			</div>
 		</div>
+		<section class="content__system content__default-section system" id="system">
+			<!-- Title -->
+			<div class="entry container">
+				<h2 class="entry__title">Система управления логистикой</h2>
+				<hr class="entry__line">
+			</div>
+			<!-- Main -->
+			<div class="system__main container">
+				<div class="system__row">
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/auto-planing.svg">
+						</div>
+						<p class="fm">Автоматическое планирование</p>
+					</div>
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/cost-reduction.svg">
+						</div>
+						<p class="fm">Сокращение затрат</p>
+					</div>
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/execution-control.svg">
+						</div>
+						<p class="fm">Контроль исполнения</p>
+					</div>
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/effective-communication.svg">
+						</div>
+						<p class="fm">Эффективное взаимодействие</p>
+					</div>
+				</div>
+				<div class="system__row">
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/graphic-model.svg">
+						</div>
+						<p class="fm">Графическая инфраструктурная модель</p>
+					</div>
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/centralized-tool.svg">
+						</div>
+						<p class="fm">Централизованный инструмент</p>
+					</div>
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/operational-monitoring.svg">
+						</div>
+						<p class="fm">Оперативный мониторинг</p>
+					</div>
+				</div>
+				<div class="system__row">
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/calculation-of-cost.svg">
+						</div>
+						<p class="fm">Расчет стоимости перевозок</p>
+					</div>
+					<div class="system__item">
+						<div class="system__icon">
+							<img src="/resources/images/main-page/system/end-to-end-reporting.svg">
+						</div>
+						<p class="fm">Сквозная отчетность</p>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="content__solutions content__default-section solutions">
 			<!-- Title -->
 			<div class="entry container">
@@ -420,7 +496,7 @@
 		<article class="content__request content__default-section request">
 			<!-- Title -->
 			<div class="entry container">
-				<h2 class="entry__title">Система управления логистикой</h2>
+				<h2 class="entry__title">Свяжитесь с нами</h2>
 				<hr class="entry__line">
 				<div class="entry__description">
 					<p class="fl">Будем рады ответить на Ваш вопрос</p>
@@ -542,6 +618,44 @@
 			</a>
 		</div>
 	</footer>
+
+	<div id="modal">
+		<div class="modal-window">
+			<!-- Title -->
+			<div class="entry">
+				<div class="modal-window__header">
+					<h2 class="entry__title">Свяжитесь с нами</h2>
+					<div data-izimodal-close="modal" class="modal-window__close">
+						<img src="/resources/images/icons/btn-close-light.svg">
+					</div>
+				</div>
+				<hr class="entry__line">
+				<div class="entry__description">
+					<p class="fl">Будем рады ответить на Ваш вопрос</p>
+				</div>
+			</div>
+			<!-- Content -->
+			<form class="form">
+				<div class="form__main">
+					<!-- Main inputs -->
+					<div class="form__grid">
+						<input type="text" class="form__inp" placeholder="Ваше имя">
+						<input type="email" class="form__inp" placeholder="E-mail">
+						<input type="text" class="form__inp" placeholder="Компания">
+						<input type="text" class="form__inp" placeholder="Должность">
+					</div>
+					<!-- Question input -->
+					<textarea class="form__area" maxlength="370" placeholder="Ваш вопрос"></textarea>
+					<!-- Send button -->
+					<input type="submit" value="Отправить" class="btn btn__fill">
+				</div>
+				<p class="form__commerce-info">
+					Нажимая на кнопку *Отправить*, даю согласие на
+					<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
+				</p>
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>

@@ -67,6 +67,32 @@ document.addEventListener("DOMContentLoaded", () => {
 		elem.classList.toggle(modifier);
 	};
 
+	$("#modal").iziModal({
+		width: 600,
+		borderBottom: true,
+		padding: 30,
+		radius: 20,
+		zindex: 100,
+	});
+
+	$("#license").iziModal({
+		width: 600,
+		borderBottom: true,
+		padding: 30,
+		radius: 20,
+		zindex: 100,
+	});
+
+	$(document).on('click', '.btn-modal', function (event) {
+		event.preventDefault();
+		$('#modal').iziModal('open');
+	});
+
+	$(document).on('click', '.btn-license', function (event) {
+		event.preventDefault();
+		$('#license').iziModal('open');
+	});
+
 	if (document.querySelector('.page__header')) {
 		const header = document.querySelector('.page__header');
 		const hMenuBtn = header.querySelector('.header__mobile-menu');

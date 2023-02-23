@@ -23,6 +23,12 @@
 			@include grid(repeat(3, 1fr), repeat(2, 1fr));
 			@include gap(30px, 15px);
 		}
+
+		&__item {
+			&>img {
+				height: 60px;
+			}
+		}
 	}
 
 	@media (max-width: $sm) {

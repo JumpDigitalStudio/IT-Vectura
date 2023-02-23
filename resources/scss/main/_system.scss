@@ -1,89 +1,110 @@
 .system {
-
 	&__main {
-		@include flex(flex-start, flex-start, column);
+		@include grid(1fr, 1fr);
+		@include gap(40px, 0);
+	}
+
+	&__row {
+		@include gap(0, 40px);
+		justify-content: center;
+
+		&:nth-child(1) {
+			@include grid(repeat(4, auto), 1fr);
+		}
+
+		&:nth-child(2) {
+			@include grid(repeat(3, auto), 1fr);
+		}
+
+		&:nth-child(3) {
+			@include grid(repeat(2, auto), 1fr);
+		}
 	}
 
 	&__item {
-		@include flex(flex-start, center, row);
-		flex-wrap: nowrap;
-		@include gap(0, 40px);
-		min-height: 55px;
-		height: 100%;
+		@include flex(flex-start, center, column);
+		@include gap(15px, 0);
+		width: 100%;
+		text-align: center;
+
+		p {
+			width: 250px;
+			max-width: 100%
+		}
 	}
 
-	&__shape {
-		min-height: 55px;
-		width: 21px;
+	&__icon {
+		@include flex(center, center, row);
+		width: 100px;
+		height: 100px;
 
-		position: relative;
-
-		&::before {
-			@include pseudo;
-			top: 50%;
-			left: 50%;
-
-			transform: translate(-50%, -50%);
-			width: 11px;
-			height: 11px;
-
-			border-radius: 50%;
-
-			z-index: 2;
+		img {
+			width: auto;
+			height: 50px;
 		}
 
-		&::after {
-			@include pseudo;
-			top: 50%;
-			left: 50%;
+		border-radius: 50%;
+		border: 2px $BLA solid;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	}
 
-			transform: translate(-50%, -50%);
-			width: 1px;
-			height: 100%;
+	@media (max-width: $xl) {
+		&__item {
 
-			background: $BLA;
-		}
-
-		&.first::after {
-			bottom: 0;
-			height: 50%;
-
-			transform: translate(-50%, 0);
-		}
-
-		&.last::after {
-			top: 0;
-			height: 50%;
-
-			transform: translate(-50%, 0);
-		}
-
-		&.first,
-		&.last {
-			&::before {
-				width: 20px;
-				height: 20px;
+			p {
+				width: 200px;
 			}
-		}
-
-		&.orange::before {
-			background: $ORN;
-		}
-
-		&.blue::before {
-			background: $ACD;
-		}
-
-		&.purple::before {
-			background: $PRD;
-		}
-
-		&.pink::before {
-			background: $PND;
 		}
 	}
 
 	@media (max-width: $lg) {
-		display: none;
+		&__item {
+
+			p {
+				width: 120px;
+			}
+		}
+	}
+
+	@media (max-width: $md) {
+		&__main {
+			@include gap(30px, 0);
+		}
+
+		&__row {
+			@include gap(30px, 40px);
+			justify-content: center;
+
+			&:nth-child(1) {
+				order: 1;
+				@include grid(repeat(2, 1fr), 1fr);
+			}
+
+			&:nth-child(2) {
+				order: 3;
+				@include grid(repeat(2, 1fr), 1fr);
+			}
+
+			&:nth-child(3) {
+				order: 2;
+				@include grid(repeat(2, 1fr), 1fr);
+			}
+		}
+
+		&__item {
+			p {
+				width: 100%;
+			}
+		}
+
+		&__icon {
+			width: 90px;
+			height: 90px;
+
+			img {
+				width: auto;
+				height: 45px;
+			}
+		}
 	}
 }

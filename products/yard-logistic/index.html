@@ -15,6 +15,9 @@
 	<meta name="author" content="IT Vectura">
 
 	<!-- Styles -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.min.css"
+		integrity="sha512-3c5WiuZUnVWCQGwVBf8XFg/4BKx48Xthd9nXi62YK0xnf39Oc2FV43lIEIdK50W+tfnw2lcVThJKmEAOoQG84Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="/resources/css/normalize.css?1">
 	<link rel="stylesheet" href="/resources/css/style.css?1">
 
@@ -26,6 +29,9 @@
 	<!-- Scripts -->
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
 		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"
+		integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 	<script src="/resources/js/script.js" defer></script>
 
 	<!-- Favicon -->
@@ -204,7 +210,7 @@
 					</div>
 					<div class="intro__buttons">
 						<div class="btn btn__clear">
-							<a href="#">Запросить демонстрацию</a>
+							<a href="#" class="btn-modal" data-izimodal-open="#modal">Запросить демонстрацию</a>
 						</div>
 					</div>
 				</div>
@@ -352,7 +358,7 @@
 					<!-- Buttons -->
 					<div class="func__buttons">
 						<!-- Buttons -->
-						<button class="btn btn__fill">
+						<button class="btn btn__fill btn-license" data-izimodal-open="#license">
 							Лицензирование и распространение IT Vectura Yard Logistic
 						</button>
 					</div>
@@ -432,69 +438,115 @@
 		</div>
 	</footer>
 
-	<!-- Modal licensing Transport -->
-	<!-- <div class="mod" id="licensing-modal">
-		<div class="mod__header">
-			<div class="mod__title">
-				<h1>IT Vectura YL</h1>
-				<div class="mod__close" data-izimodal-close="#licensing-modal">
-					<img src="/resources/images/icons/btn-close-light.svg" alt="Закрыть">
+	<div id="modal">
+		<div class="modal-window">
+			<!-- Title -->
+			<div class="entry">
+				<div class="modal-window__header">
+					<h2 class="entry__title">Свяжитесь с нами</h2>
+					<div data-izimodal-close="modal" class="modal-window__close">
+						<img src="/resources/images/icons/btn-close-light.svg">
+					</div>
+				</div>
+				<hr class="entry__line">
+				<div class="entry__description">
+					<p class="fl">Будем рады ответить на Ваш вопрос</p>
 				</div>
 			</div>
-			<p class="fl wm cbl">Лицензирование и распространение</p>
+			<!-- Content -->
+			<form class="form">
+				<div class="form__main">
+					<!-- Main inputs -->
+					<div class="form__grid">
+						<input type="text" class="form__inp" placeholder="Ваше имя">
+						<input type="email" class="form__inp" placeholder="E-mail">
+						<input type="text" class="form__inp" placeholder="Компания">
+						<input type="text" class="form__inp" placeholder="Должность">
+					</div>
+					<!-- Question input -->
+					<textarea class="form__area" maxlength="370" placeholder="Ваш вопрос"></textarea>
+					<!-- Send button -->
+					<input type="submit" value="Отправить" class="btn btn__fill">
+				</div>
+				<p class="form__commerce-info">
+					Нажимая на кнопку *Отправить*, даю согласие на
+					<a href="/documents/privacy-policy.pdf" target="_blank" class="link">обработку своих персональных данных</a>
+				</p>
+			</form>
 		</div>
-		<div class="mod__main">
-			<p class="fxs">
-				Распространение и внедрение программных продуктов, содержащих конфигурацию "Управление внутренним двором
-				ITVectura YL", ведется лицензионными партнерами фирмы компании ООО "ИТ ВЕКТУРА". Обязательных требований по
-				наличию сертифицированных специалистов нет.
-			</p>
-			<p class="fxs">
-				Количество приобретаемых лицензий на использование конфигурации "Управление внутренним двором ITVectura YL"
-				определяется, исходя из потребности:
-			</p>
-			<p class="fxs">
-				&mdash; в максимальном количестве одновременно работающих пользователей с данной конфигурацией
-			</p>
-			<p class="fxs">
-				&mdash; в максимальном количестве одновременно работающих мобильных клиентов с данной конфигурацией
-			</p>
-			<p class="fxs">
-				&mdash; в максимальном количестве зарегистрированных в системе уникальных транспортных средств (определяется по
-				уникальному регистрационному номеру транспортного средства, прицепы и иные пассивные транспортные средства не
-				требуют отдельного лицензирования)
-			</p>
-			<p class="fxs">
-				&mdash; в максимальном количестве зарегистрированных в системе уникальных единиц мощности
-				погрузочно-разгрузочной зоны
-			</p>
-			<p class="fxs">
-				Расширение количества автоматизированных рабочих мест осуществляется приобретением клиентских лицензий на
-				платформу “Управление внутренним двором ITVectura YL” на:
-			</p>
-			<p class="fxs">
-				&mdash; 1, 5, 10, 20, 50, 100, 300, 500 рабочих мест
-			</p>
-			<p class="fxs">
-				&mdash; 1, 5, 10, 20, 50, 100, 300, 500 мобильных клиентов
-			</p>
-			<p class="fxs">
-				&mdash; 1, 5, 10, 20, 50, 100, 300, 500 уникальных, используемых в течение 1 календарного года, транспортных
-				средств
-			</p>
-			<p class="fxs">
-				&mdash; 1, 5, 10, 20, 50, 100, 300, 500 рабочих мест уникальных единиц мощности погрузочно-разгрузочной зоны
-			</p>
-			<p class="fxs">
-				Приобретение программных продуктов, содержащих конфигурацию "Управление внутренним двором ITVectura YL" не
-				включает в себя лицензии и не может быть использовано без приобретения лицензий, количество которых
-				рассчитывается при покупке, исходя из потребности в максимальном количестве одновременно работающих
-				пользователей, одновременно работающих мобильных клиентов, количестве зарегистрированных в системе уникальных
-				транспортных средств, количестве зарегистрированных в системе уникальных единиц мощности погрузочно-разгрузочной
-				зоны.
-			</p>
+	</div>
+
+	<div id="license" class="modal">
+		<div class="modal-window">
+			<!-- Title -->
+			<div class="entry">
+				<div class="modal-window__header">
+					<h2 class="entry__title">IT Vectura Yard Logistic</h2>
+					<div data-izimodal-close="modal" class="modal-window__close">
+						<img src="/resources/images/icons/btn-close-light.svg">
+					</div>
+				</div>
+				<hr class="entry__line">
+				<div class="entry__description">
+					<p class="fl wm cbm">Лицензирование и распространение</p>
+				</div>
+			</div>
+			<!-- Content -->
+			<div class="modal-window__content">
+				<p class="fxs">
+					Распространение и внедрение программных продуктов, содержащих конфигурацию "Управление внутренним двором
+					ITVectura YL", ведется лицензионными партнерами фирмы компании ООО "ИТ ВЕКТУРА". Обязательных требований по
+					наличию сертифицированных специалистов нет.
+				</p>
+				<p class="fxs">
+					Количество приобретаемых лицензий на использование конфигурации "Управление внутренним двором ITVectura YL"
+					определяется, исходя из потребности:
+				</p>
+				<p class="fxs">
+					&mdash; в максимальном количестве одновременно работающих пользователей с данной конфигурацией
+				</p>
+				<p class="fxs">
+					&mdash; в максимальном количестве одновременно работающих мобильных клиентов с данной конфигурацией
+				</p>
+				<p class="fxs">
+					&mdash; в максимальном количестве зарегистрированных в системе уникальных транспортных средств (определяется
+					по
+					уникальному регистрационному номеру транспортного средства, прицепы и иные пассивные транспортные средства не
+					требуют отдельного лицензирования)
+				</p>
+				<p class="fxs">
+					&mdash; в максимальном количестве зарегистрированных в системе уникальных единиц мощности
+					погрузочно-разгрузочной зоны
+				</p>
+				<p class="fxs">
+					Расширение количества автоматизированных рабочих мест осуществляется приобретением клиентских лицензий на
+					платформу “Управление внутренним двором ITVectura YL” на:
+				</p>
+				<p class="fxs">
+					&mdash; 1, 5, 10, 20, 50, 100, 300, 500 рабочих мест
+				</p>
+				<p class="fxs">
+					&mdash; 1, 5, 10, 20, 50, 100, 300, 500 мобильных клиентов
+				</p>
+				<p class="fxs">
+					&mdash; 1, 5, 10, 20, 50, 100, 300, 500 уникальных, используемых в течение 1 календарного года, транспортных
+					средств
+				</p>
+				<p class="fxs">
+					&mdash; 1, 5, 10, 20, 50, 100, 300, 500 рабочих мест уникальных единиц мощности погрузочно-разгрузочной зоны
+				</p>
+				<p class="fxs">
+					Приобретение программных продуктов, содержащих конфигурацию "Управление внутренним двором ITVectura YL" не
+					включает в себя лицензии и не может быть использовано без приобретения лицензий, количество которых
+					рассчитывается при покупке, исходя из потребности в максимальном количестве одновременно работающих
+					пользователей, одновременно работающих мобильных клиентов, количестве зарегистрированных в системе уникальных
+					транспортных средств, количестве зарегистрированных в системе уникальных единиц мощности
+					погрузочно-разгрузочной
+					зоны.
+				</p>
+			</div>
 		</div>
-	</div> -->
+	</div>
 </body>
 
 </html>

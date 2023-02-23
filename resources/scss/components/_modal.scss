@@ -1,0 +1,32 @@
+.modal-window {
+	@include grid(1fr, 1fr);
+	@include gap(30px, 0);
+
+	&__header {
+		@include flex(space-between, center, row);
+		@include gap(0, 15px);
+		width: 100%;
+	}
+
+	&__close {
+		@include flex(center, center, row);
+		cursor: pointer;
+
+		img {
+			pointer-events: none;
+			height: 46px;
+			width: 46px;
+		}
+	}
+
+	&__content {
+		@include grid(1fr, auto);
+		@include gap(10px, 0);
+	}
+}
+
+.modal {
+	::-webkit-scrollbar {
+		display: none;
+	}
+}
