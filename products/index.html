@@ -72,59 +72,59 @@
 </head>
 
 <body class="page">
-	<div class="preloader">
-		<img src="/resources/images/icons/preloader-light.svg" alt="Загрузка сайта" class="preloader__image">
-	</div>
-
 	<header class="page__header header">
-		<div class="header__container container">
+		<div class="header__body container">
 			<!-- Logo -->
-			<div class="header__logo">
-				<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura" class="logo light">
-				<img src="/resources/images/logo/logo-dark.svg" alt="Логотип IT Vectura" class="logo dark">
+			<div class="header__logos">
+				<img src="/resources/images/logo/logo-light.svg" alt="Логотип IT Vectura"
+					class="header__logo header__logo_theme-light">
+				<img src="/resources/images/logo/logo-dark.svg" alt="Логотип IT Vectura"
+					class="header__logo header__logo_theme-dark">
 			</div>
 			<!-- Navigation -->
 			<nav class="header__nav">
-				<ul class="header__main-list scr-list">
+				<ul class="header__nav-body scr-list">
 					<!-- Main page -->
-					<li class="header__main-link">
+					<li class="header__item">
 						<a href="/" class="fxs wm cw">Главная</a>
 					</li>
+					<!-- Products catalog -->
+					<li class="header__item">
+						<a href="#catalog" class="scr-link fxs wm cw">Решения</a>
+					</li>
 					<!-- Products -->
-					<li class="header__main-link sub-link">
+					<li class="header__item-category">
 						<!-- Main link to Products -->
-						<p class="fxs wm cw sub"><span class="header__open"></span>Продукты</p>
+						<p class="fxs wm cw"><span class="header__open"></span>Продукты</p>
 						<!-- Our products -->
-						<ul class="header__sub-list">
-							<div class="header__sub-link sub-title">
+						<ul class="header__category">
+							<div class="header__category-item header__category-item_title">
 								<a href="/products/" class="fxs cw wm">Управление цепочками поставок</a>
 							</div>
-							<li class="header__sub-link">
+							<li class="header__category-item">
 								<a href="/products/transport-management/" class="fxs cw">Transport Management</a>
 							</li>
-							<li class="header__sub-link">
+							<li class="header__category-item">
 								<a href="/products/warehouse-management/" class="fxs cw">Warehouse Management</a>
 							</li>
-							<li class="header__sub-link">
+							<li class="header__category-item">
 								<a href="/products/yard-logistic/" class="fxs cw">Yard Logistic</a>
 							</li>
 						</ul>
-					</li>
-					<!-- Contacts -->
-					<li class="header__main-link">
-						<a href="/" class="fxs wm cw">Связаться с нами</a>
 					</li>
 				</ul>
 			</nav>
 			<!-- Contacts -->
 			<div class="header__contacts">
-				<a href="tel:+7(800)101-26-96" class="fl cw wm">8 (800) 101-26-96</a>
-				<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
+				<a href="tel:+7(800)101-26-96" class="header__contact-link fl cw wm">8 (800) 101-26-96</a>
+				<a href="mailto:info@itvectura.com" class="header__contact-link fxs cw">info@itvectura.com</a>
 			</div>
 			<!-- Mobile buttons -->
-			<div class="header__mobile-menu">
-				<img src="/resources/images/icons/mobile/btn-menu-open-light.svg" class="btn-menu-light">
-				<img src="/resources/images/icons/mobile/btn-menu-open-dark.svg" class="btn-menu-dark">
+			<div class="header__mobile">
+				<img src="/resources/images/icons/mobile/btn-menu-open-light.svg"
+					class="header__mobile-burger header__mobile-burger_theme-light">
+				<img src="/resources/images/icons/mobile/btn-menu-open-dark.svg"
+					class="header__mobile-burger header__mobile-burger_theme-dark">
 			</div>
 		</div>
 	</header>
@@ -134,7 +134,7 @@
 	<div class="page__mobile mobile">
 		<div class="mobile__body">
 			<!-- Top bar -->
-			<div class="mobile__bar">
+			<div class="mobile__head">
 				<button class="mobile__button">
 					<img src="/resources/images/icons/mobile/btn-menu-close.svg">
 				</button>
@@ -143,46 +143,51 @@
 			<div class="mobile__content">
 				<!-- Main content -->
 				<div class="mobile__nav">
-					<ul class="mobile__nav-list">
-						<!-- Main page -->
-						<li class="mobile__nav-li">
-							<a href="/" class="mobile__title wm alone">Главная</a>
+					<ul class="mobile__nav-body scr-list">
+						<!-- About us -->
+						<li class="mobile__item">
+							<a href="/" class="wm">
+								<img src="/resources/images/icons/mobile/menu-about.svg">
+								Главная
+							</a>
+						</li>
+						<!-- Logistics management system -->
+						<li class="mobile__item">
+							<a href="#catalog" class="scr-link wm">
+								<img src="/resources/images/icons/mobile/menu-system.svg">
+								Решения
+							</a>
 						</li>
 						<!-- Products -->
-						<li class="mobile__nav-li">
-							<!-- Main link -->
-							<p class="mobile__title wm">
-								Продукты
-								<span class="mobile__open"></span>
-							</p>
-							<!-- Submenu -->
-							<div class="mobile__sub-list">
-								<a href="/products/" class="mobile__link">
+						<li class="mobile__item mobile__item_type-category">
+							<!-- Title of category -->
+							<div class="mobile__category-title wm">
+								<img src="/resources/images/icons/mobile/menu-products.svg">
+								<p class="wm">Продукты<span class="mobile__open"></span></p>
+							</div>
+							<!-- Category -->
+							<div class="mobile__category">
+								<a href="/products/" class="mobile__category-item">
 									Управление цепочками поставок
 								</a>
-								<a href="/products/transport-management/" class="mobile__link">
+								<a href="/products/transport-management/" class="mobile__category-item">
 									Transport Management
 								</a>
-								<a href="/products/warehouse-management/" class="mobile__link">
+								<a href="/products/warehouse-management/" class="mobile__category-item">
 									Warehouse Management
 								</a>
-								<a href="/products/yard-logistic/" class="mobile__link">
+								<a href="/products/yard-logistic/" class="mobile__category-item">
 									Yard Logistic
 								</a>
 							</div>
 							</p>
 						</li>
-						<!-- Contacts -->
-						<li class="mobile__nav-li">
-							<!-- Main link -->
-							<a href="/" class="mobile__title wm alone">Связаться с нами</a>
-						</li>
 					</ul>
 				</div>
 				<!-- Contacts -->
 				<div class="mobile__contacts">
-					<a href="tel:+7(800)101-26-96" class="fxs cw wm">8 (800) 101-26-96</a>
-					<a href="mailto:info@itvectura.com" class="fxs cw">info@itvectura.com</a>
+					<a href="tel:+7(800)101-26-96" class="mobile__contact fxs cw wm">8 (800) 101-26-96</a>
+					<a href="mailto:info@itvectura.com" class="mobile__contact fxs cw">info@itvectura.com</a>
 				</div>
 			</div>
 		</div>
@@ -272,7 +277,7 @@
 				</a>
 			</div>
 		</section>
-		<section class="content__catalog content__big-section catalog">
+		<section class="content__catalog content__big-section catalog" id="catalog">
 			<!-- Title -->
 			<div class="entry container">
 				<h2 class="entry__title">Откройте для себя решение</h2>

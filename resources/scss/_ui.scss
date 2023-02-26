@@ -65,9 +65,9 @@ a {
 	}
 
 	&.link {
-		color: $ACM;
+		color: $ACD;
 		text-decoration: underline;
-		@include link-hover($ACD);
+		@include link-hover($ACM);
 
 		&.cw {
 			color: $WHT;

@@ -1,6 +1,7 @@
 // Color pallete
 $WHT: #FFFFFF;
 $GRY: #ECECEC;
+$GRD: #363636;
 $BLA: #232323;
 
 $ACL: #3C84C6;
@@ -22,6 +23,7 @@ $xl: 1200px;
 $lg: 950px;
 $md: 750px;
 $sm: 550px;
+$xsm: 400px;
 
 // UI Variables
 $radius-s: 10px;
@@ -30,8 +32,8 @@ $radius-l: 20px;
 
 // Shadows
 $bla-border: 1px $BLA solid;
-$card-shadow: rgba(0, 0, 0, 0.15) 3px 3px 3.5px;
-$card-shadow-hover: rgba(0, 0, 0, 0.25) 3px 3px 3.5px;
+$card-shadow: rgba(0, 0, 0, 0.15) 3px 3px 5.5px;
+$card-shadow-hover: rgba(0, 0, 0, 0.2) 3px 3px 5.5px;
 
 // Transitions
 $trans-2: .2s ease-in-out 0s;

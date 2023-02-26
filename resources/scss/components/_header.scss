@@ -1,16 +1,31 @@
 .header {
+	$header: &;
+
 	@include flex (center, center, row);
 	z-index: 50;
 
 	will-change: background-color, height, border-bottom, backdrop-filter;
-	transition: background-color $trans-3, height $trans-3, border-bottom $trans-3, backdrop-filter $trans-3;
+	transition: background-color $trans-2, height $trans-2, border-bottom $trans-2, backdrop-filter $trans-2;
 
-	// Blocks
-	&__container {
+	// Mods
+	&.theme-dark {
+		backdrop-filter: blur(10px);
+		background-color: rgba(0, 0, 0, 0.53);
+	}
+
+	&.theme-light {
+		backdrop-filter: none;
+		box-shadow: $card-shadow;
+		background-color: $GRY;
+	}
+
+	// Main container
+	&__body {
 		@include flex (space-between, center, row);
 	}
 
-	&__logo {
+	// Logos
+	&__logos {
 		@include flex(flex-start, center, row);
 		min-height: 50px;
 		max-height: 50px;
@@ -19,67 +34,143 @@
 		will-change: max-height, min-height;
 		transition: max-height $trans-3, min-height $trans-3;
 
-		img.logo {
-			min-height: 50px;
-			max-height: 50px;
-			height: 100%;
+		#{$header}.theme-dark & {
+			min-height: 42px;
+			max-height: 42px;
+		}
+	}
 
-			will-change: max-height, min-height;
-			transition: max-height $trans-3, min-height $trans-3;
+	&__logo {
+		min-height: 50px;
+		max-height: 50px;
 
-			&.light {
-				display: flex;
-				visibility: visible;
-				pointer-events: all;
-			}
+		will-change: max-height, min-height;
+		transition: max-height $trans-2, min-height $trans-2;
 
-			&.dark {
+		&_theme-light {
+			display: flex;
+			visibility: visible;
+			pointer-events: all;
+		}
+
+		&_theme-dark {
+			display: none;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		#{$header}.theme-dark &,
+		#{$header}.theme-light & {
+			min-height: 42px;
+			max-height: 42px;
+		}
+
+		#{$header}.theme-light & {
+			&_theme-light {
 				display: none;
 				visibility: hidden;
 				pointer-events: none;
 			}
+
+			&_theme-dark {
+				display: flex;
+				visibility: visible;
+				pointer-events: all;
+			}
 		}
 	}
 
+	// Contacts
+	&__contacts {
+		@include flex(space-between, flex-end, column);
+		min-height: 50px;
+		max-height: 50px;
+
+		will-change: max-height, min-height;
+		transition: max-height $trans-2, min-height $trans-2;
+
+		#{$header}.theme-dark &,
+		#{$header}.theme-light & {
+			min-height: 42px;
+			max-height: 42px;
+		}
+	}
+
+	&__contact-link {
+		@include link-hover($BLL);
+		color: $WHT;
+
+		#{$header}.theme-light & {
+			@include link-hover($ACD);
+			color: $BLA;
+		}
+	}
+
+	// Navigation
 	&__nav {
 		@include flex(center, flex-start, row);
 		min-height: 55px;
 
 		will-change: min-height;
-		transition: min-height $trans-3;
-	}
+		transition: min-height $trans-2;
 
-	&__contacts {
-		@include flex(space-between, flex-end, column);
-		min-height: 50px;
-		max-height: 50px;
-		height: 100%;
-
-		will-change: max-height, min-height;
-		transition: max-height $trans-3, min-height $trans-3;
-
-		&>a {
-			@include link-hover($ACM);
+		#{$header}.theme-dark &,
+		#{$header}.theme-light & {
+			min-height: 0;
 		}
 	}
 
-	// Navigation components
-	&__main-list {
-		@include flex(center, top, row);
-		@include gap(0, 40px);
+	&__nav-body {
+		@include flex(center, center, row);
+		@include gap(0, 30px);
 	}
 
-	&__sub-list {
+	// Main navigation catalog
+	&__item>a {
+		@include link-hover($BLL);
+
+		#{$header}.theme-light & {
+			color: $BLA;
+			@include link-hover($ACD);
+		}
+	}
+
+	&__item-category {
+		position: relative;
+
+		p {
+			position: relative;
+			@include flex(center, center, row);
+			@include gap(0, 5px);
+
+			@include link-hover($WHT);
+			cursor: pointer;
+
+			&::after {
+				@include pseudo;
+				top: 100%;
+				left: 0;
+				right: 0;
+
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		#{$header}.theme-light &>p {
+			color: $BLA;
+			@include link-hover($BLA);
+		}
+	}
+
+	// Sub-category catalog
+	&__category {
 		position: absolute;
-		top: 30px;
+		top: 28px;
 		left: 0;
 
 		overflow: hidden;
 		width: max-content;
-
-		transform: translateZ(0);
-		will-change: opacity;
-		transition: all .2s ease-in-out 0s;
 
 		opacity: 0;
 		visibility: hidden;
@@ -87,98 +178,88 @@
 
 		border-radius: $radius-s;
 		border: 1px $WHT solid;
+		background-color: rgba(236, 236, 236, 0.3);
 
-		backdrop-filter: blur(10px);
-		background: rgba(236, 236, 236, 0.2);
-	}
+		will-change: opacity, visibility, background-color;
+		transition: opacity $trans-2, visibility $trans-2, background-color $trans-2;
 
-	&__main-link {
-		position: relative;
-
-		&.sub-link {
-			&>p {
-				@include link-hover($WHT);
-				@include flex(center, center, row);
-				@include gap(0, 7px);
-
-				position: relative;
-
-				&::after {
-					@include pseudo;
-					top: 100%;
-					left: 0;
-					right: 0;
-
-					width: 100%;
-					height: 100%;
-				}
-			}
-
-			&:hover {
-				.header__open {
-					background-color: $WHT;
-
-					-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
-					-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
-					box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
-
-					&::before {
-						opacity: 1;
-						transform: translate(-50%, 50%);
-					}
-				}
-
-				.header__sub-list {
-					opacity: 1;
-					visibility: visible;
-					pointer-events: all;
-				}
-			}
+		#{$header}__item-category:hover & {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
 		}
 
-		&>a {
-			@include link-hover($ACM);
+		#{$header}.theme-dark & {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		#{$header}.theme-light & {
+			border: 1px $BLA solid;
+			background-color: $GRY;
+			box-shadow: $card-shadow;
 		}
 	}
 
-	&__sub-link {
+	&__category-item {
 		@include flex(flex-start, center, row);
 
 		will-change: background-color;
-		transition: all .2s ease-in-out 0s;
+		transition: background-color $trans-2;
 
-		&.sub-title {
+		&_title {
 			background-color: rgba(236, 236, 236, 0.2);
 			border-bottom: 1px $WHT solid;
 		}
 
-		&>a {
+		a {
+			@include link-hover($WHT);
 			width: 100%;
-			padding: 15px;
+			padding: 14px;
 		}
 
 		&:hover {
-			background-color: rgba(236, 236, 236, 0.3);
+			background-color: rgba(236, 236, 236, 0.4);
+		}
+
+		#{$header}.theme-dark & {
+			&_title {
+				background-color: rgba(236, 236, 236, 0.1);
+			}
+
+			&:hover {
+				background-color: rgba(236, 236, 236, 0.2);
+			}
+		}
+
+		#{$header}.theme-light & {
+			&_title {
+				background-color: transparent;
+				border-bottom: 1px $BLA solid;
+			}
+
+			a {
+				@include link-hover($BLA);
+				color: $BLA;
+			}
+
+			&:hover {
+				background-color: $WHT;
+			}
 		}
 	}
 
 	&__open {
-		will-change: background-color, box-shadow;
-		transition: all .2s ease-in-out 0s;
-
 		position: relative;
+		border-radius: 50%;
 
-		width: 14px;
-		height: 14px;
+		width: 13px;
+		height: 13px;
 
 		background: url('/resources/images/icons/icon-down-light.svg') center no-repeat;
 		background-size: 100%;
 
-		border-radius: 50%;
-
-		-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.0);
-		-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.0);
-		box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.0);
+		will-change: background-color, box-shadow;
+		transition: background-color $trans-2, box-shadow $trans-2;
 
 		&::before {
 			@include pseudo;
@@ -186,7 +267,7 @@
 			left: 50%;
 
 			will-change: opacity;
-			transition: all .2s ease-in-out 0s;
+			transition: opacity $trans-2;
 			transform: translate(-50%, -50%);
 
 			width: 1px;
@@ -195,10 +276,40 @@
 			opacity: 0;
 			background: $WHT;
 		}
+
+		#{$header}__item-category:hover & {
+			background-color: $WHT;
+
+			-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+			-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+			box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0.3);
+
+			&::before {
+				opacity: 1;
+				transform: translate(-50%, 50%);
+			}
+
+			#{$header}.theme-light & {
+				background-color: $BLA;
+
+				-webkit-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0);
+				-moz-box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0);
+				box-shadow: 0px 0px 7px 3px rgba(255, 255, 255, 0);
+			}
+		}
+
+		#{$header}.theme-light & {
+			background: url('/resources/images/icons/icon-down-dark.svg') center no-repeat;
+			background-size: 90%;
+
+			&::before {
+				background: $BLA;
+			}
+		}
 	}
 
 	// Mobile buttons
-	&__mobile-menu {
+	&__mobile {
 		@include flex(center, center, row);
 		width: 40px;
 		height: 40px;
@@ -209,166 +320,50 @@
 		backdrop-filter: blur(10px);
 		background-color: rgba(0, 0, 0, 0.53);
 
+		cursor: pointer;
 		display: none;
 		visibility: hidden;
 
-		img {
-			width: 20px;
-			height: 20px;
-			pointer-events: none;
+		will-change: border, backdrop-filter, background-color;
+		transition: border $trans-2, backdrop-filter $trans-2, background-color $trans-2;
 
-			&.btn-menu-light {
-				display: flex;
-				visibility: visible;
-			}
-
-			&.btn-menu-dark {
-				display: none;
-				visibility: hidden;
-			}
+		#{$header}.theme-light & {
+			border: 1px $BLA solid;
+			backdrop-filter: none;
+			background-color: transparent;
 		}
 	}
 
-	// Mods
-	&.stick-dark {
-		backdrop-filter: blur(10px);
-		background-color: rgba(0, 0, 0, 0.53);
+	&__mobile-burger {
+		width: 20px;
+		height: 20px;
+		pointer-events: none;
 
-		// Blocks
-		.header__logo {
-			min-height: 42px;
-			max-height: 42px;
-
-			img.logo {
-				min-height: 42px;
-				max-height: 42px;
-			}
+		&_theme-light {
+			display: flex;
+			visibility: visible;
 		}
 
-		.header__nav {
-			min-height: 0;
+		&_theme-dark {
+			display: none;
+			visibility: hidden;
 		}
 
-		.header__contacts {
-			min-height: 42px;
-			max-height: 42px;
-		}
-
-		// Navigation components
-		.header__sub-list {
-			background: rgba(0, 0, 0, 0.7);
-		}
-
-		.header__sub-link {
-			&.sub-title {
-				background: rgba(0, 0, 0, 0.6);
-			}
-
-			&:hover {
-				background: rgba(0, 0, 0, 0.6);
-			}
-		}
-	}
-
-	&.stick-light {
-		backdrop-filter: none;
-		box-shadow: $card-shadow;
-		background-color: $GRY;
-		// border-bottom: $bla-border;
-
-		// Blocks
-		.header__logo>img.logo {
-
-			&.light {
+		#{$header}.theme-light & {
+			&_theme-light {
 				display: none;
 				visibility: hidden;
-				pointer-events: none;
 			}
 
-			&.dark {
+			&_theme-dark {
 				display: flex;
 				visibility: visible;
-				pointer-events: all;
-			}
-		}
-
-		.header__contacts>a {
-			color: $BLA;
-			@include link-hover($ACM);
-		}
-
-		// Navigation components
-		.header__sub-list {
-			border: $bla-border;
-			background: $GRY;
-			box-shadow: $card-shadow;
-		}
-
-		.header__main-link {
-
-			&.sub-link {
-				&>p {
-					@include link-hover($BLA);
-					color: $BLA;
-				}
-
-				&:hover {
-					.header__open {
-						background-color: $BLA;
-
-						-webkit-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0);
-						-moz-box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0);
-						box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0);
-					}
-				}
-			}
-
-			&>a {
-				color: $BLA;
-				@include link-hover($ACM);
-			}
-		}
-
-		.header__sub-link {
-			&.sub-title {
-				background: unset;
-				border-bottom: $bla-border;
-			}
-
-			&>a {
-				color: $BLA;
-			}
-
-			&:hover {
-				background: $WHT;
-			}
-		}
-
-		.header__open {
-			background: url('/resources/images/icons/icon-down-dark.svg') center no-repeat;
-			background-size: 100%;
-
-			&::before {
-				background: $BLA;
 			}
 		}
 	}
 
 	@media (max-width: $xl) {
-
-		&__logo,
-		&__nav,
-		&__contacts {
-			min-height: 42px;
-			max-height: 42px;
-		}
-
-		&__logo>img.logo {
-			min-height: 42px;
-			max-height: 42px;
-		}
-
-		&__main-list {
+		&__nav-body {
 			@include gap(0, 20px);
 		}
 	}
@@ -376,36 +371,44 @@
 	@media (max-width: $lg) {
 		&__nav {
 			display: none;
+			pointer-events: none;
+			visibility: hidden;
 		}
 
 		&__contacts {
 			display: none;
+			pointer-events: none;
+			visibility: hidden;
 		}
 
-		&__mobile-menu {
+		&__mobile {
 			display: flex;
 			visibility: visible;
 		}
+	}
 
-		&.stick-light {
-			.header__mobile-menu {
-				border: 1px $BLA solid;
+	@media (max-width: $md) {
 
-				backdrop-filter: none;
-				background-color: transparent;
+		&__logos,
+		&__logo {
+			min-height: 35px;
+			max-height: 35px;
 
-				img {
-					&.btn-menu-light {
-						display: none;
-						visibility: hidden;
-					}
-
-					&.btn-menu-dark {
-						display: flex;
-						visibility: visible;
-					}
-				}
+			#{$header}.theme-dark &,
+			#{$header}.theme-light & {
+				min-height: 35px;
+				max-height: 35px;
 			}
+		}
+
+		&__mobile {
+			width: 35px;
+			height: 35px;
+		}
+
+		&__mobile-burger {
+			width: 17px;
+			height: 17px;
 		}
 	}
 }

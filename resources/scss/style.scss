@@ -4,9 +4,6 @@
 @import '_mixins-variables';
 @import '_ui';
 
-// Main components
-@import 'components/_preloader';
-
 // Main settings
 html {
 	padding: 0;
@@ -35,7 +32,7 @@ html {
 		background-color: $BLD;
 	}
 
-	@media (max-width: $sm) {
+	@media (max-width: $md) {
 		&::-webkit-scrollbar {
 			display: none;
 		}
@@ -62,51 +59,26 @@ html {
 		}
 	}
 
-	&.loaded {
-		padding-right: 0;
-
-		.preloader {
-			display: none;
-		}
-	}
-
-	&.loaded-hiding {
-		overflow: hidden;
-		touch-action: none;
-		-ms-touch-action: none;
-
-		padding-right: 10px;
-
-		.preloader {
-			transition: 0.3s opacity;
-			opacity: 0;
-		}
-
-		@media (max-width: $sm) {
-			padding-right: 0;
-		}
-	}
-
 	// Components
 	&__header {
 		position: fixed;
 		left: 0;
 		top: 0;
 
-		width: 100%;
 		height: 130px;
+		width: 100%;
 
-		&.stick-dark,
-		&.stick-light {
+		&.theme-dark,
+		&.theme-light {
 			height: 75px;
 		}
 
 		@media (max-width: $md) {
 			height: 100px;
 
-			&.stick-dark,
-			&.stick-light {
-				height: 70px;
+			&.theme-dark,
+			&.theme-light {
+				height: 60px;
 			}
 		}
 	}
@@ -116,9 +88,13 @@ html {
 		right: 0;
 		top: 0;
 
-		width: 350px;
+		width: 370px;
 		max-width: 100%;
 		height: 100vh;
+
+		@media (max-width: $xsm) {
+			width: 345px;
+		}
 	}
 
 	&__blackout {
@@ -195,10 +171,12 @@ html {
 
 	@media (max-width: $md) {
 		max-width: 500px;
+		padding: 0 20px;
 	}
 
 	@media (max-width: $sm) {
-		max-width: calc(100% - 50px);
+		max-width: calc(100% - 30px);
+		padding: 0 15px;
 	}
 }
 
