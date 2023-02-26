@@ -26,14 +26,13 @@
 }
 
 .modal {
-	border-radius: $radius-l;
-	overflow: hidden;
+	border-radius: $radius-l !important;
 
 	::-webkit-scrollbar {
 		display: none;
 	}
 
 	@media (max-width: $sm) {
-		margin: auto 15px;
+		margin: 50px 15px;
 	}
 }

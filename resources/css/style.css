@@ -1240,15 +1240,14 @@ html::-webkit-scrollbar-track {
 }
 
 .modal {
-  border-radius: 20px;
-  overflow: hidden;
+  border-radius: 20px !important;
 }
 .modal ::-webkit-scrollbar {
   display: none;
 }
 @media (max-width: 550px) {
   .modal {
-    margin: auto 15px;
+    margin: 50px 15px;
   }
 }
 
