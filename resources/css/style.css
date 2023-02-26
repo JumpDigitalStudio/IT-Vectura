@@ -1246,11 +1246,8 @@ html::-webkit-scrollbar-track {
   display: none;
 }
 @media (max-width: 550px) {
-  .modal #modal {
-    margin: 60px 15px;
-  }
-  .modal #license {
-    margin: auto 15px;
+  .modal {
+    margin: auto 15px !important;
   }
 }
 

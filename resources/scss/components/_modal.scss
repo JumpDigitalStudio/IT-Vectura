@@ -33,12 +33,6 @@
 	}
 
 	@media (max-width: $sm) {
-		#modal {
-			margin: 60px 15px;
-		}
-
-		#license {
-			margin: auto 15px;
-		}
+		margin: auto 15px !important;
 	}
 }
