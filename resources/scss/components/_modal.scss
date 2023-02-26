@@ -26,6 +26,9 @@
 }
 
 .modal {
+	border-radius: $radius-l;
+	overflow: hidden;
+
 	::-webkit-scrollbar {
 		display: none;
 	}

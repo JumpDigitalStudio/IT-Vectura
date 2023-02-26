@@ -1239,6 +1239,10 @@ html::-webkit-scrollbar-track {
        column-gap: 0;
 }
 
+.modal {
+  border-radius: 20px;
+  overflow: hidden;
+}
 .modal ::-webkit-scrollbar {
   display: none;
 }
