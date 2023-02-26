@@ -119,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
 				width: 600,
 				borderBottom: true,
 				padding: 30,
-				radius: 20,
 				zindex: 100,
 				transitionIn: 'fadeInUp',
 				transitionOut: 'fadeOutDown'
