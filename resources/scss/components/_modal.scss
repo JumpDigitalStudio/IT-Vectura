@@ -27,13 +27,18 @@
 
 .modal {
 	border-radius: $radius-l !important;
-	overflow: hidden !important;
 
 	::-webkit-scrollbar {
 		display: none;
 	}
 
 	@media (max-width: $sm) {
-		margin: 60px 15px;
+		#modal {
+			margin: 60px 15px;
+		}
+
+		#license {
+			margin: auto 15px;
+		}
 	}
 }
