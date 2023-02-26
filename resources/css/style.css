@@ -1557,6 +1557,7 @@ html::-webkit-scrollbar-track {
   row-gap: 0px;
   -moz-column-gap: 30px;
        column-gap: 30px;
+  justify-content: space-between;
 }
 .intro__card {
   display: flex;

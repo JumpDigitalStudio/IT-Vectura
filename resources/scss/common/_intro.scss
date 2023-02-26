@@ -135,6 +135,8 @@
 	&__cards {
 		@include grid(repeat(4, auto), 1fr);
 		@include gap(0px, 30px);
+
+		justify-content: space-between;
 	}
 
 	&__card {
