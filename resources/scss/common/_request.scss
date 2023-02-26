@@ -17,4 +17,11 @@
 			width: 100%;
 		}
 	}
+
+	@media (max-width: $sm) {
+		&__card {
+			width: calc(100% - 40px);
+			padding: 20px;
+		}
+	}
 }

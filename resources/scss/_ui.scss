@@ -12,6 +12,27 @@ a {
 
 	color: $BLA;
 
+	// Font size
+	&.fs {
+		font-size: 12px;
+	}
+
+	&.fxs {
+		font-size: 14px;
+	}
+
+	&.fm {
+		font-size: 16px;
+	}
+
+	&.fl {
+		font-size: 18px;
+	}
+
+	&.fxl {
+		font-size: 22px;
+	}
+
 	// Font weight
 	&.wsb {
 		font-weight: 500;
@@ -36,27 +57,6 @@ a {
 
 	&.cw {
 		color: $WHT;
-	}
-
-	// Font size
-	&.fs {
-		font-size: 12px;
-	}
-
-	&.fxs {
-		font-size: 14px;
-	}
-
-	&.fm {
-		font-size: 16px;
-	}
-
-	&.fl {
-		font-size: 18px;
-	}
-
-	&.fxl {
-		font-size: 22px;
 	}
 
 	// Font types
@@ -110,7 +110,7 @@ h1 {
 	}
 
 	@media (max-width: $md) {
-		font-size: 22px;
+		font-size: 24px;
 	}
 }
 
@@ -187,7 +187,7 @@ h2 {
 	transition: border-radius $trans-2, background-color $trans-2;
 
 	color: $WHT;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 600;
 	line-height: 100%;
 
@@ -197,7 +197,7 @@ h2 {
 		height: 100%;
 
 		color: $WHT;
-		font-size: 16px;
+		font-size: 15px;
 		font-weight: 600;
 		text-align: center;
 		line-height: 100%;
@@ -219,7 +219,7 @@ h2 {
 		background: $btn-gradient;
 		white-space: nowrap;
 
-		min-width: 240px;
+		min-width: 230px;
 	}
 
 	&__fill {
@@ -237,7 +237,7 @@ h2 {
 		border: 2px $WHT solid;
 
 		height: 42px;
-		min-width: 256px;
+		min-width: 240px;
 
 		background-color: rgba(236, 236, 236, 0.1);
 		backdrop-filter: blur(10px);
@@ -295,7 +295,7 @@ h2 {
 		border: $bla-border;
 		outline: none;
 
-		font-size: 16px;
+		font-size: 15px;
 		font-weight: 500;
 		color: $BLA;
 
@@ -314,7 +314,7 @@ h2 {
 		border: $bla-border;
 		outline: none;
 
-		font-size: 16px;
+		font-size: 15px;
 		font-weight: 500;
 		color: $BLA;
 

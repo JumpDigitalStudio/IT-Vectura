@@ -13,10 +13,21 @@ html {
 	font-family: 'Montserrat', sans-serif;
 	color: $BLA;
 
-	background-color: $BLD;
-
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
+
+	will-change: background-color;
+	transition: background-color $trans-2;
+	background-color: #04000F;
+
+	// Mods
+	&.theme-light {
+		background-color: $GRY;
+
+		&::-webkit-scrollbar-thumb {
+			border: 3px $GRY solid;
+		}
+	}
 
 	// Page scrollbar
 	&::-webkit-scrollbar {
@@ -26,10 +37,11 @@ html {
 	&::-webkit-scrollbar-thumb {
 		background-color: $BLL;
 		border-radius: 10px;
+		border: 3px #04000F solid;
 	}
 
 	&::-webkit-scrollbar-track {
-		background-color: $BLD;
+		background-color: transparent;
 	}
 
 	@media (max-width: $md) {
@@ -45,7 +57,7 @@ html {
 	margin: 0 auto;
 	padding: 0;
 
-	// Element states
+	// Mods
 	&.lock {
 		overflow: hidden;
 		touch-action: none;
@@ -147,6 +159,8 @@ html {
 		z-index: 1;
 
 		width: 100%;
+
+		background-color: $BLD;
 	}
 }
 
@@ -225,6 +239,32 @@ html {
 
 	&__functionality {
 		padding: 50px 0 0 0;
+	}
+
+	@media (max-width: $md) {
+		&__intro {
+			margin-top: -100px;
+			background-color: $BLA;
+		}
+
+		&__about,
+		&__cards,
+		&__system,
+		&__solutions,
+		&__request,
+		&__request.modal,
+		&__contacts,
+		&__catalog {
+			padding: 40px 0;
+		}
+
+		&__features {
+			padding: 40px 0 30px 0;
+		}
+
+		&__functionality {
+			padding: 40px 0 0 0;
+		}
 	}
 }
 

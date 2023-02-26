@@ -29,4 +29,8 @@
 	::-webkit-scrollbar {
 		display: none;
 	}
+
+	@media (max-width: $sm) {
+		margin: auto 15px;
+	}
 }

@@ -1,56 +1,13 @@
 .intro {
+	$intro: &;
+
 	@include flex(flex-start, center, column);
 	position: relative;
 	overflow: hidden;
 
-	background: url('/resources/images/common/intro/back-intro.png') center no-repeat;
+	background: url('/resources/images/common/intro/back-intro.jpg') no-repeat;
 	background-position: bottom;
-
 	background-size: cover;
-
-	&.type-products {
-		background-position: center;
-
-		.intro__main {
-			padding: 165px 0 55px 0;
-			min-height: fit-content;
-			height: auto;
-		}
-
-		.intro__content {
-			@include gap(30px, 0);
-		}
-
-		.intro__buttons>.btn {
-			min-width: 300px;
-		}
-	}
-
-	&.type-product {
-		background-position: center;
-
-		.intro__main {
-			min-height: calc(100vh - 305px);
-		}
-
-		.intro__content {
-			@include gap(80px, 0);
-			max-width: 570px;
-		}
-
-		.intro__text {
-			max-width: 520px;
-		}
-
-		.intro__buttons>.btn {
-			min-width: 300px;
-		}
-
-		.intro__products {
-			display: none;
-			visibility: hidden;
-		}
-	}
 
 	&::before {
 		@include pseudo;
@@ -60,22 +17,47 @@
 		width: 100%;
 		height: 100%;
 
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.634) 0%, rgba(0, 0, 0, 0.7) 100%);
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.7) 100%);
 	}
 
+	// Mods
+	&.type-products,
+	&.type-product {
+		background-position: center;
+	}
+
+	// Main container
 	&__main {
 		@include flex (space-between, center, row);
-		padding: 205px 0 100px 0;
+		padding: 210px 0 100px 0;
 
 		min-height: fit-content;
 		height: auto;
+
+		#{$intro}.type-products & {
+			padding: 165px 0 55px 0;
+		}
+
+		#{$intro}.type-product & {
+			min-height: calc(100vh - 310px);
+		}
 	}
 
 	&__content {
 		@include flex(center, flex-start, column);
 		@include gap(50px, 0);
 
-		max-width: 550px;
+		max-width: 500px;
+
+		#{$intro}.type-products & {
+			@include gap(30px, 0);
+			max-width: 550px;
+		}
+
+		#{$intro}.type-product & {
+			@include gap(60px, 0);
+			max-width: 550px;
+		}
 	}
 
 	&__text {
@@ -86,13 +68,23 @@
 	&__description {
 		@include flex(center, flex-start, column);
 		@include gap(10px, 0);
+
+		#{$intro}.type-product & {
+			max-width: 500px;
+		}
 	}
 
 	&__buttons {
 		@include flex(flex-start, center, row);
 		@include gap(0, 20px);
+
+		#{$intro}.type-products &>.btn,
+		#{$intro}.type-product &>.btn {
+			min-width: 300px;
+		}
 	}
 
+	// Pictures
 	&__pic {
 		position: relative;
 		width: 400px;
@@ -100,7 +92,7 @@
 
 		&>img {
 			position: absolute;
-			top: 55%;
+			top: 52%;
 			left: 50%;
 			transform: translate(-50%, -53%);
 
@@ -132,7 +124,7 @@
 
 	// Features
 	&__features {
-		padding: 25px 0 45px 0;
+		padding: 20px 0 35px 0;
 		width: 100%;
 		z-index: 2;
 
@@ -154,13 +146,22 @@
 		}
 	}
 
+	// Products catalog
+	&__products {
+		#{$intro}.type-product & {
+			display: none;
+			visibility: hidden;
+		}
+	}
+
 	@media (max-width: $xl) {
 		&__pic {
 			width: 200px;
 			height: 200px;
 
 			&>img {
-				width: 430px;
+				left: 20%;
+				width: 500px;
 			}
 		}
 
@@ -197,11 +198,28 @@
 
 	@media (max-width: $md) {
 		&__main {
-			height: fit-content;
-			padding: 180px 0 80px 0;
+			min-height: fit-content;
+			height: auto;
+			padding: 120px 0 60px 0;
+
+			#{$intro}.type-products &,
+			#{$intro}.type-product & {
+				padding: 120px 0 30px 0;
+				min-height: fit-content;
+				height: auto;
+			}
 		}
 
 		&__content {
+			max-width: none;
+
+			#{$intro}.type-product & {
+				@include gap(30px, 0);
+				max-width: none;
+			}
+		}
+
+		&__text {
 			max-width: none;
 		}
 
@@ -209,29 +227,8 @@
 			@include gap(30px, 50px);
 		}
 
-		&.type-products {
-			.intro__main {
-				padding: 180px 0 30px 0;
-			}
-		}
-
-		&.type-product {
-			.intro__main {
-				padding: 180px 0 30px 0;
-				min-height: fit-content;
-				height: auto;
-			}
-
-			.intro__content {
-				@include gap(30px, 0);
-				max-width: none;
-			}
-
-			.intro__text {
-				max-width: none;
-			}
-
-			.intro__products {
+		&__products {
+			#{$intro}.type-product & {
 				display: grid;
 				visibility: visible;
 			}
@@ -241,19 +238,15 @@
 	@media (max-width: $sm) {
 		background-position: top;
 
-		&__main {
-			padding: 180px 0 30px 0;
+		&__buttons {
+			@include flex(flex-start, flex-start, column);
+			@include gap(30px, 0);
+			width: 100%;
 		}
 
 		&__pic-mobile {
 			display: flex;
 			visibility: visible;
-		}
-
-		&__buttons {
-			@include flex(flex-start, flex-start, column);
-			@include gap(15px, 0);
-			width: 100%;
 		}
 
 		&__features {

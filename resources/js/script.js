@@ -4,6 +4,7 @@ let scrollPoint1;
 let scrollPoint2;
 
 // Components initialization
+const site = document.querySelector('html');
 let page;
 let blackout;
 let intro;
@@ -85,25 +86,46 @@ document.addEventListener("DOMContentLoaded", () => {
 		mMenuNavigation = mobile.querySelector('.mobile__nav-body');
 		mMenuLinks = mobile.querySelectorAll('.mobile__item');
 	};
-	if (document.querySelectorAll('.modal-window')) {
-		$("#modal").iziModal({
-			width: 600,
-			borderBottom: true,
-			padding: 30,
-			radius: 20,
-			zindex: 100,
-			transitionIn: 'fadeInUp',
-			transitionOut: 'fadeOutDown'
-		});
-		$("#license").iziModal({
-			width: 600,
-			borderBottom: true,
-			padding: 30,
-			radius: 20,
-			zindex: 100,
-			transitionIn: 'fadeInUp',
-			transitionOut: 'fadeOutDown'
-		});
+	if (document.querySelectorAll('.modal')) {
+		if (isMobile === true) {
+			$("#modal").iziModal({
+				width: 600,
+				borderBottom: true,
+				padding: 20,
+				radius: 20,
+				zindex: 100,
+				transitionIn: 'fadeInUp',
+				transitionOut: 'fadeOutDown'
+			});
+			$("#license").iziModal({
+				width: 600,
+				borderBottom: true,
+				padding: 20,
+				radius: 20,
+				zindex: 100,
+				transitionIn: 'fadeInUp',
+				transitionOut: 'fadeOutDown'
+			});
+		} else {
+			$("#modal").iziModal({
+				width: 600,
+				borderBottom: true,
+				padding: 30,
+				radius: 20,
+				zindex: 100,
+				transitionIn: 'fadeInUp',
+				transitionOut: 'fadeOutDown'
+			});
+			$("#license").iziModal({
+				width: 600,
+				borderBottom: true,
+				padding: 30,
+				radius: 20,
+				zindex: 100,
+				transitionIn: 'fadeInUp',
+				transitionOut: 'fadeOutDown'
+			});
+		};
 		$(document).on('click', '.btn-modal', function (event) {
 			event.preventDefault();
 			$('#modal').iziModal('open');
@@ -134,6 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			let scroll = Math.round(window.pageYOffset);
 			scroll >= scrollPoint1 ? add(header, 'theme-dark') : rem(header, 'theme-dark');
 			scroll >= scrollPoint2 ? add(header, 'theme-light') : rem(header, 'theme-light');
+
+			scroll >= scrollPoint2 ? add(site, 'theme-light') : rem(site, 'theme-light');
 		});
 	};
 	if (mobile) {
