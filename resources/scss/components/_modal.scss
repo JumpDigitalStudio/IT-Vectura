@@ -25,6 +25,27 @@
 	}
 }
 
+table {
+	border-collapse: collapse;
+
+	thead {
+		background-color: $ACM;
+	}
+
+	td,
+	th {
+		font-size: 14px;
+		text-align: left;
+		border: 1px solid $BLA;
+		padding: 5px;
+	}
+
+	th {
+		color: $WHT;
+		font-weight: 600;
+	}
+}
+
 .modal {
 	border-radius: $radius-l !important;
 

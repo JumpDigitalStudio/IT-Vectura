@@ -105,6 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
 				transitionIn: 'fadeInUp',
 				transitionOut: 'fadeOutDown'
 			});
+			$("#components").iziModal({
+				width: 600,
+				borderBottom: true,
+				padding: 20,
+				zindex: 100,
+				transitionIn: 'fadeInUp',
+				transitionOut: 'fadeOutDown'
+			});
 		} else {
 			$("#modal").iziModal({
 				width: 600,
@@ -123,6 +131,16 @@ document.addEventListener("DOMContentLoaded", () => {
 				transitionIn: 'fadeInUp',
 				transitionOut: 'fadeOutDown'
 			});
+
+			$("#components").iziModal({
+				width: 600,
+				borderBottom: true,
+				padding: 20,
+				radius: 20,
+				zindex: 100,
+				transitionIn: 'fadeInUp',
+				transitionOut: 'fadeOutDown'
+			});
 		};
 		$(document).on('click', '.btn-modal', function (event) {
 			event.preventDefault();
@@ -131,6 +149,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		$(document).on('click', '.btn-license', function (event) {
 			event.preventDefault();
 			$('#license').iziModal('open');
+		});
+		$(document).on('click', '.btn-components', function (event) {
+			event.preventDefault();
+			$('#components').iziModal('open');
 		});
 	};
 
