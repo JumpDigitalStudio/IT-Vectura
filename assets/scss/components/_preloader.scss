@@ -14,7 +14,6 @@
   // Logo
   & > img {
     width: 200px;
-    padding-bottom: 60px;
   }
 
   &__pace {
@@ -30,11 +29,10 @@
   user-select: none;
 
   z-index: 501;
-  position: relative;
   position: fixed;
-  margin: 0;
-  top: 50% !important;
-  left: 50%;
+  margin: 430px auto;
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
   height: 5px;
@@ -42,8 +40,6 @@
   background: $WHT;
   border-radius: $radius-m;
   border: 1px solid $BLL;
-
-  transform: translateX(-50%);
 
   overflow: hidden;
 
