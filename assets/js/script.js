@@ -51,20 +51,6 @@ const deviceType = {
 // Device definition
 deviceType.any() || windowWidth <= 767 ? (isMobile = true) : (isMobile = false);
 
-if (
-  navigator.userAgent.indexOf("Google") != -1 ||
-  navigator.userAgent.indexOf("Yandex") != -1
-) {
-  document.querySelector(".preloader").classList.remove("iOS");
-}
-
-if (
-  navigator.userAgent.indexOf("Safari") != -1 &&
-  navigator.userAgent.indexOf("Chrome") == -1
-) {
-  document.querySelector(".preloader").classList.add("iOS");
-}
-
 // Preloader animation
 // paceOptions = {
 //   ajax: true,

@@ -688,20 +688,15 @@ h2 {
 .preloader.hidden {
   visibility: visible;
 }
-.preloader.iOS {
-  background-color: green;
-}
-.preloader__picture {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: row;
+.preloader > img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
   width: 200px;
-  height: 80px;
-  border: 1px dashed red;
+  transform: translateX(-50%);
 }
-.preloader__picture > img {
-  width: 200px;
+.preloader__pace {
+  background-color: #384FCA;
 }
 
 .pace {
@@ -711,6 +706,7 @@ h2 {
   -moz-user-select: none;
   user-select: none;
   z-index: 501;
+  position: relative;
   position: fixed;
   margin: 0;
   top: 50%;

@@ -11,21 +11,19 @@
     visibility: visible;
   }
 
-  &.iOS {
-    background-color: green;
+  // Logo
+  & > img {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+
+    width: 200px;
+
+    transform: translateX(-50%);
   }
 
-  // Logo
-  &__picture {
-    @include flex(center, flex-start, row);
-    width: 200px;
-    height: 80px;
-
-    border: 1px dashed red;
-
-    & > img {
-      width: 200px;
-    }
+  &__pace {
+    background-color: $ACD;
   }
 }
 .pace {
@@ -37,6 +35,7 @@
   user-select: none;
 
   z-index: 501;
+  position: relative;
   position: fixed;
   margin: 0;
   top: 50%;
