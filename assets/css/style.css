@@ -709,9 +709,9 @@ h2 {
   user-select: none;
   z-index: 501;
   position: fixed;
-  margin: auto;
-  top: 0;
-  left: 0;
+  margin: 0;
+  top: 50%;
+  left: 50%;
   right: 0;
   bottom: 0;
   height: 5px;
@@ -719,6 +719,7 @@ h2 {
   background: #FFFFFF;
   border-radius: 15px;
   border: 1px solid #00B2FF;
+  transform: translateX(-50%);
   overflow: hidden;
 }
 .pace.pace-inactive {
