@@ -680,17 +680,25 @@ h2 {
   overflow: hidden;
   position: fixed;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 .preloader.hidden {
-  visibility: hidden;
+  visibility: visible;
 }
-.preloader__img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.preloader__picture {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
   width: 200px;
-  height: auto;
+  height: 80px;
+  border: 1px dashed red;
+}
+.preloader__picture > img {
+  width: 200px;
 }
 
 .pace {
@@ -714,7 +722,7 @@ h2 {
   overflow: hidden;
 }
 .pace.pace-inactive {
-  display: none;
+  display: flex;
 }
 .pace > .pace-progress {
   -webkit-box-sizing: border-box;
