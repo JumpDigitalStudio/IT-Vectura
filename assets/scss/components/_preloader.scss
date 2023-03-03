@@ -4,6 +4,12 @@
   position: fixed;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 
+  // Mods
+  &.hidden {
+    visibility: hidden;
+  }
+
+  // Logo
   &__img {
     position: absolute;
     top: 50%;
@@ -12,10 +18,6 @@
     transform: translate(-50%, -50%);
     width: 200px;
     height: auto;
-  }
-
-  &.hidden {
-    visibility: hidden;
   }
 }
 .pace {

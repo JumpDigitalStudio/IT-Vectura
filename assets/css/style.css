@@ -681,6 +681,9 @@ h2 {
   position: fixed;
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
+.preloader.hidden {
+  visibility: hidden;
+}
 .preloader__img {
   position: absolute;
   top: 50%;
@@ -688,9 +691,6 @@ h2 {
   transform: translate(-50%, -50%);
   width: 200px;
   height: auto;
-}
-.preloader.hidden {
-  visibility: hidden;
 }
 
 .pace {

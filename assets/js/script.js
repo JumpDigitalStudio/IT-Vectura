@@ -59,16 +59,16 @@ paceOptions = {
 };
 
 Pace.on("done", function () {
-  // $('.preloader__img').delay(150).animate({opacity: '0'}, 700, $.bez([0.19, 1, 0.22,1]));
-  // $('.preloader').delay(250).animate({ opacity: '0' }, 1200, $.bez([0.19, 1, 0.22, 1]));
+  // $(".preloader__img").delay(150).animate({ opacity: "0" }, 700);
+  $(".preloader").delay(250).animate({ opacity: "0" }, 600);
 
   setTimeout(() => {
     $(".page").removeClass("lock");
   }, 250);
 
-  // setTimeout(() => {
-  // 	$('.preloader').addClass('hidden');
-  // }, 500);
+  setTimeout(() => {
+    $(".preloader").addClass("hidden");
+  }, 850);
 });
 
 // Functions
