@@ -52,23 +52,24 @@ const deviceType = {
 deviceType.any() || windowWidth <= 767 ? (isMobile = true) : (isMobile = false);
 
 // Preloader animation
-// paceOptions = {
-// 	ajax: true,
-// 	document: true,
-// 	eventLag: false
-// };
-// Pace.on('done', function () {
-// 	$('.preloader__img').delay(150).animate({opacity: '0'}, 700, $.bez([0.19, 1, 0.22,1]));
-// 	$('.preloader').delay(250).animate({ opacity: '0' }, 1200, $.bez([0.19, 1, 0.22, 1]));
+paceOptions = {
+  ajax: true,
+  document: true,
+  eventLag: false,
+};
 
-// 	setTimeout(() => {
-// 		$('.page').removeClass('lock');
-// 	}, 250);
+Pace.on("done", function () {
+  // $('.preloader__img').delay(150).animate({opacity: '0'}, 700, $.bez([0.19, 1, 0.22,1]));
+  // $('.preloader').delay(250).animate({ opacity: '0' }, 1200, $.bez([0.19, 1, 0.22, 1]));
 
-// 	setTimeout(() => {
-// 		$('.preloader').addClass('hidden');
-// 	}, 500);
-// });
+  setTimeout(() => {
+    $(".page").removeClass("lock");
+  }, 250);
+
+  // setTimeout(() => {
+  // 	$('.preloader').addClass('hidden');
+  // }, 500);
+});
 
 // Functions
 function add(elem, modifier) {
