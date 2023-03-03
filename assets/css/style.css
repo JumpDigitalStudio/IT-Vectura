@@ -689,11 +689,8 @@ h2 {
   visibility: visible;
 }
 .preloader > img {
-  position: absolute;
-  top: 45%;
-  left: 50%;
   width: 200px;
-  transform: translateX(-50%);
+  padding-bottom: 60px;
 }
 .preloader__pace {
   background-color: #384FCA;

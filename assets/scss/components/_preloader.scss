@@ -13,13 +13,8 @@
 
   // Logo
   & > img {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-
     width: 200px;
-
-    transform: translateX(-50%);
+    padding-bottom: 60px;
   }
 
   &__pace {
