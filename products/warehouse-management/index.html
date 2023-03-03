@@ -18,26 +18,16 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.min.css"
 		integrity="sha512-3c5WiuZUnVWCQGwVBf8XFg/4BKx48Xthd9nXi62YK0xnf39Oc2FV43lIEIdK50W+tfnw2lcVThJKmEAOoQG84Q=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="/assets/css/normalize.css?1">
-	<link rel="stylesheet" href="/assets/css/style.css?1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+		integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="/assets/css/normalize.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
 
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
-		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-	<!-- <script src="/assets/js/jquery.bez.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
-crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"
-		integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="/assets/js/script.js"></script>
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
@@ -55,7 +45,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Open Graph -->
-	<!-- Facebook Meta Tags -->
 	<meta property="og:url" content="https://itvectura.ru/">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Централизованный подход к управления транспортом, двором и складом">
@@ -66,8 +55,6 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<meta property="og:image:width" content="900" />
 	<meta property="og:image:height" content="598" />
 	<meta property="og:image:alt" content="IT Vectura" />
-
-	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="twitter:domain" content="itvectura.ru">
 	<meta property="twitter:url" content="https://itvectura.ru/">
@@ -76,11 +63,17 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<meta name="twitter:image" content="https://i.yapx.ru/VguuY.jpg">
 </head>
 
-<body class="page">
+<body class="page lock">
 
 
 	<!-- *** Start page components *** -->
 	<div class="page__blackout blackout"></div>
+	<div class="page__preloader preloader">
+		<div class="preloader__inner">
+			<img class="preloader__pic" src="/assets/images/logo/logo-preloader.svg" alt="Logo">
+			<p style="color: gray;">С любовью к команде маркетинга &#128158;</p>
+		</div>
+	</div>
 
 
 	<!-- *** Navigation components *** -->
@@ -640,6 +633,24 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	</div>
 
 
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+		</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"
+		integrity="sha512-bUg5gaqBVaXIJNuebamJ6uex//mjxPk8kljQTdM1SwkNrQD7pjS+PerntUSD+QRWPNJ0tq54/x4zRV8bLrLhZg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
+		</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+		integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
+		</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"
+		integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
+		</script>
+	<!-- <script src="/assets/js/translate.js" defer></script> -->
+	<script src="/assets/js/script.js"></script>
 </body>
 
 </html>

@@ -2292,12 +2292,12 @@ h2 {
   will-change: transform;
   transition: transform 0.3s ease-in-out 0s ease-in-out 0s;
   transform: rotate(-90deg);
-  background: url("/resources/images/icons/btn-down-dark.svg") center no-repeat;
+  background: url("/assets/images/icons/btn-down-dark.svg") center no-repeat;
   background-size: 100%;
   background-position: center;
 }
 .decisions__card.active .decisions__card-icon {
-  background: url("/resources/images/icons/btn-down-light.svg") center no-repeat;
+  background: url("/assets/images/icons/btn-down-light.svg") center no-repeat;
   background-size: 100%;
   background-position: center;
   transform: rotate(90deg);
