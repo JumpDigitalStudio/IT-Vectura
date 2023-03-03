@@ -690,7 +690,7 @@ h2 {
 }
 .preloader > img {
   position: absolute;
-  top: 20%;
+  top: 45%;
   left: 50%;
   width: 200px;
   transform: translateX(-50%);
@@ -709,7 +709,7 @@ h2 {
   position: relative;
   position: fixed;
   margin: 0;
-  top: 50%;
+  top: 50% !important;
   left: 50%;
   right: 0;
   bottom: 0;
