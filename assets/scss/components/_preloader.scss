@@ -11,6 +11,10 @@
     visibility: visible;
   }
 
+  &.iOS {
+    background-color: green;
+  }
+
   // Logo
   &__picture {
     @include flex(center, flex-start, row);

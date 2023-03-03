@@ -688,6 +688,9 @@ h2 {
 .preloader.hidden {
   visibility: visible;
 }
+.preloader.iOS {
+  background-color: green;
+}
 .preloader__picture {
   display: flex;
   justify-content: center;
