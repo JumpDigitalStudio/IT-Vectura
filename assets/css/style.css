@@ -683,63 +683,21 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 .preloader.hidden {
-  visibility: visible;
+  visibility: hidden;
 }
-.preloader > img {
-  width: 200px;
-}
-.preloader__pace {
-  background-color: #384FCA;
-}
-
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  z-index: 501;
-  position: fixed;
-  margin: 430px auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5px;
-  width: 200px;
-  background: #FFFFFF;
-  border-radius: 15px;
-  border: 1px solid #00B2FF;
-  overflow: hidden;
-}
-.pace.pace-inactive {
+.preloader__inner {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 15px;
+  column-gap: 0;
 }
-.pace > .pace-progress {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  max-width: 200px;
-  position: fixed;
-  z-index: 503;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 100%;
-  border-radius: 15px;
-  background: #00B2FF;
+.preloader__pic {
+  width: 230px;
 }
 
 .header {

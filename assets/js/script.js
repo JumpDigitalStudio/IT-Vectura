@@ -51,26 +51,6 @@ const deviceType = {
 // Device definition
 deviceType.any() || windowWidth <= 767 ? (isMobile = true) : (isMobile = false);
 
-// Preloader animation
-// paceOptions = {
-//   ajax: true,
-//   document: true,
-//   eventLag: false,
-// };
-
-// Pace.on("done", function () {
-//   // $(".preloader__img").delay(150).animate({ opacity: "0" }, 700);
-//   $(".preloader").delay(250).animate({ opacity: "0" }, 600);
-
-//   setTimeout(() => {
-//     $(".page").removeClass("lock");
-//   }, 250);
-
-//   setTimeout(() => {
-//     $(".preloader").addClass("hidden");
-//   }, 850);
-// });
-
 // Functions
 function add(elem, modifier) {
   elem.classList.add(modifier);
@@ -82,8 +62,9 @@ function tog(elem, modifier) {
   elem.classList.toggle(modifier);
 }
 
-// Main functionallity
+// Inilialize functionallity
 document.addEventListener("DOMContentLoaded", () => {
+  NProgress.start();
   // All components
   if (document.querySelector(".page")) {
     page = document.querySelector(".page");
@@ -360,4 +341,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+// Done preloader on full loading
+window.addEventListener("load", () => {
+  this.setTimeout(function () {
+    NProgress.done();
+
+    $(".preloader__inner").animate({ opacity: "0" }, 500);
+    $(".preloader").delay(150).animate({ opacity: "0" }, 500);
+
+    $(".page").removeClass("lock");
+    setTimeout(function () {
+      $(".preloader").addClass("hidden");
+    }, 650);
+  }, 500);
 });
