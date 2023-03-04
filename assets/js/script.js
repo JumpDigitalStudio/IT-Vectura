@@ -7,6 +7,8 @@ let scrollPoint2;
 const site = document.querySelector("html");
 let page;
 let blackout;
+let preloader;
+
 let intro;
 let introHeight;
 
@@ -64,7 +66,9 @@ function tog(elem, modifier) {
 
 // Inilialize functionallity
 document.addEventListener("DOMContentLoaded", () => {
+  // Preloader
   NProgress.start();
+
   // All components
   if (document.querySelector(".page")) {
     page = document.querySelector(".page");
@@ -348,12 +352,11 @@ window.addEventListener("load", () => {
   this.setTimeout(function () {
     NProgress.done();
 
-    $(".preloader__inner").animate({ opacity: "0" }, 500);
-    $(".preloader").delay(150).animate({ opacity: "0" }, 500);
+    $(".preloader__inner").animate({ opacity: "0" }, 300);
+    $(".preloader").delay(200).animate({ opacity: "0" }, 600);
 
-    $(".page").removeClass("lock");
     setTimeout(function () {
       $(".preloader").addClass("hidden");
-    }, 650);
-  }, 500);
+    }, 600);
+  }, 1000);
 });
