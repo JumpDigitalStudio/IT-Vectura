@@ -699,6 +699,11 @@ h2 {
 .preloader__pic {
   width: 400px;
 }
+@media (max-width: 550px) {
+  .preloader__pic {
+    width: 300px;
+  }
+}
 
 .header {
   display: flex;

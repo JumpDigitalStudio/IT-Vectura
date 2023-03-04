@@ -19,4 +19,10 @@
   &__pic {
     width: 400px;
   }
+
+  @media (max-width: $sm) {
+    &__pic {
+      width: 300px;
+    }
+  }
 }
