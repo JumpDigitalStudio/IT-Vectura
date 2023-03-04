@@ -69,6 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Preloader
   NProgress.start();
 
+  preloader = document.getElementById("preloader");
+  preloader.play();
+
+  preloader.addEventListener("ended", function () {
+    preloader.pause();
+  });
+
   // All components
   if (document.querySelector(".page")) {
     page = document.querySelector(".page");
