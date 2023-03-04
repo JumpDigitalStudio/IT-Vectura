@@ -2,7 +2,6 @@
 
 // Settings and values
 @import "_mix-var";
-@import "_common";
 
 // Start page components
 @import "components/_preloader";
@@ -14,6 +13,8 @@
 // Final page components
 @import "components/_modal";
 @import "components/_footer";
+
+@import "_common";
 
 // Main page components
 @import "general/_intro";
