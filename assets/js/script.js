@@ -19,6 +19,7 @@ let mobile;
 let mMenuBtn;
 let mMenuNavigation;
 let mMenuLinks;
+let mMenuLangs;
 
 // Device client size initialization
 const windowHeight = document.documentElement.clientHeight;
@@ -96,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mMenuBtn = mobile.querySelector(".mobile__button");
     mMenuNavigation = mobile.querySelector(".mobile__nav-body");
     mMenuLinks = mobile.querySelectorAll(".mobile__item");
+    mMenuLangs = mobile.querySelector(".mobile__langs");
   }
   if (document.querySelectorAll(".modal")) {
     $(".modal").iziModal({
@@ -187,6 +189,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       }
+    });
+
+    // On langs choise click
+    mMenuLangs.addEventListener("click", () => {
+      mMenuLangs.classList.toggle("open");
     });
   }
   if (blackout && mobile) {

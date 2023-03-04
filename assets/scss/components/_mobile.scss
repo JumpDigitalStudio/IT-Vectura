@@ -1,205 +1,334 @@
 .mobile {
-	$mobile: &;
+  $mobile: &;
 
-	@include flex(flex-start, center, column);
-	z-index: 60;
+  @include flex(flex-start, center, column);
+  z-index: 60;
 
-	visibility: hidden;
-	transform: translateX(100%);
-	pointer-events: none;
+  visibility: hidden;
+  transform: translateX(100%);
+  pointer-events: none;
 
-	background-color: $BLA;
+  background-color: #04000f;
 
-	will-change: transform, visibility;
-	transition: transform $trans-3, visibility $trans-3;
+  will-change: transform, visibility;
+  transition: transform $trans-3, visibility $trans-3;
 
-	// Mods
-	&.open {
-		visibility: visible;
-		transform: translateX(0);
-		pointer-events: all;
-	}
+  // Mods
+  &.open {
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: all;
+  }
 
-	// Main container
-	&__body {
-		height: calc(100% - 50px);
-		width: calc(100% - 60px);
-		padding: 25px 30px;
+  // Main container
+  &__body {
+    height: calc(100% - 60px);
+    width: calc(100% - 60px);
+    padding: 30px;
 
-		@include flex(flex-start, center, column);
-		@include gap(20px, 0);
-	}
+    @include flex(flex-start, center, column);
+  }
 
-	// Header
-	&__head {
-		@include flex(flex-end, center, row);
-		width: 100%;
-	}
+  // Header
+  &__head {
+    @include flex(flex-end, center, row);
+    width: 100%;
+  }
 
-	&__button {
-		@include flex(center, center, row);
-		width: 36px;
-		height: fit-content;
+  &__hr {
+    width: 100%;
+    margin: 30px 0;
+  }
 
-		cursor: pointer;
-		border: none;
-		background-color: transparent;
+  &__button {
+    @include flex(center, center, row);
 
-		img {
-			width: 35px;
-			height: 35px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
 
-			pointer-events: none;
-		}
-	}
+    img {
+      width: 22px;
+      height: 22px;
 
-	// Main content
-	&__content {
-		@include flex(space-between, center, column);
-		@include gap(50px, 0);
+      pointer-events: none;
+    }
+  }
 
-		width: 100%;
-		height: calc(100% - 100px);
+  // Main navigation list
+  &__content {
+    @include flex(flex-start, center, column);
 
-		overflow-y: scroll;
-		overflow-x: hidden;
+    width: 100%;
+    height: calc(100% - 100px);
 
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+    overflow-y: scroll;
+    overflow-x: hidden;
 
-	&__nav {
-		width: 100%;
-	}
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
-	&__nav-body {
-		width: 100%;
+  &__nav {
+    width: 100%;
+  }
 
-		margin: 0;
-		padding: 0;
-	}
+  &__nav-body {
+    width: 100%;
 
-	&__item {
-		@include flex(center, flex-start, column);
-		width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-		&>a {
-			@include flex(flex-start, center, row);
-			@include gap(0, 15px);
-			padding: 15px 0;
-			width: 100%;
+  &__item {
+    @include flex(center, flex-start, column);
+    width: 100%;
 
-			color: $WHT;
-			font-size: 18px;
-		}
+    & > a {
+      @include flex(flex-start, center, row);
+      @include gap(0, 15px);
+      padding: 15px 0;
+      width: 100%;
 
-		img {
-			height: 30px;
-			width: 30px;
-		}
-	}
+      color: $WHT;
+      font-size: 18px;
+    }
+  }
 
-	// Navigation sub-lists
-	&__category-title {
-		@include flex(flex-start, center, row);
-		@include gap(0, 15px);
-		position: relative;
-		width: 100%;
+  // Navigation sub-lists
+  &__category-title {
+    @include flex(flex-start, center, row);
+    @include gap(0, 15px);
+    position: relative;
+    width: 100%;
 
-		pointer-events: none;
+    pointer-events: none;
 
-		&>p {
-			@include flex(space-between, center, row);
-			@include gap(0, 30px);
-			padding: 15px 0;
-			width: 100%;
+    & > p {
+      @include flex(space-between, center, row);
+      @include gap(0, 30px);
+      padding: 15px 0;
+      width: 100%;
 
-			color: $WHT;
-			font-size: 18px;
-			pointer-events: none;
-		}
-	}
+      color: $WHT;
+      font-size: 18px;
+      pointer-events: none;
+    }
+  }
 
-	&__open {
-		@include flex(center, center, row);
-		position: relative;
-		height: 15px;
-		width: 15px;
+  &__open {
+    @include flex(center, center, row);
+    position: relative;
+    height: 15px;
+    width: 15px;
 
-		pointer-events: none;
+    pointer-events: none;
 
-		&::before {
-			@include pseudo;
-			@include flex(center, center, row);
-			top: 20%;
+    &::before {
+      @include pseudo;
+      @include flex(center, center, row);
+      top: 20%;
 
-			border-style: solid;
-			border-width: 1.5px 1.5px 0 0;
-			border-color: $WHT;
+      border-style: solid;
+      border-width: 1.5px 1.5px 0 0;
+      border-color: $WHT;
 
-			height: 10px;
-			width: 10px;
+      height: 10px;
+      width: 10px;
 
-			will-change: transform, top;
-			transition: transform $trans-3, top $trans-3;
-			transform: rotate(45deg);
+      will-change: transform, top;
+      transition: transform $trans-3, top $trans-3;
+      transform: rotate(45deg);
 
-			#{$mobile}__item.open & {
-				top: 0;
-				transform: rotate(135deg);
-			}
-		}
-	}
+      #{$mobile}__item.open & {
+        top: 0;
+        transform: rotate(135deg);
+      }
 
-	&__category {
-		@include flex(flex-start, flex-start, column);
-		margin-left: 45px;
-		width: 100%;
+      #{$mobile}__langs.open & {
+        top: 0;
+        transform: rotate(135deg);
+      }
+    }
+  }
 
-		opacity: 0;
-		max-height: 0px;
-		visibility: hidden;
-		pointer-events: none;
+  &__category {
+    @include flex(flex-start, flex-start, column);
+    width: 100%;
 
-		will-change: max-height, opacity, visibility;
-		transition: max-height $trans-3, opacity $trans-3, visibility $trans-4;
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+    pointer-events: none;
 
-		#{$mobile}__item.open & {
-			max-height: 1000px;
-			opacity: 1;
-			visibility: visible;
-			pointer-events: all;
-		}
-	}
+    will-change: max-height, opacity, visibility;
+    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
 
-	&__category-item {
-		padding: 15px 0;
-		font-size: 14px;
-		color: $GRY;
-		width: 100%;
-		border-bottom: 1px $GRD solid;
+    #{$mobile}__item.open & {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
 
-		&:nth-last-child(1) {
-			margin-bottom: 15px;
-		}
-	}
+  &__category-item {
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: $GRY;
+    width: 100%;
 
-	// Contacts
-	&__contacts {
-		@include flex(space-between, center, row);
-		width: 100%;
-	}
+    border-bottom: 1px $GRD solid;
 
-	&__contact {
-		@include link-hover($BLL);
-	}
+    &:nth-last-child(1) {
+      margin-bottom: 15px;
+    }
+  }
 
-	@media (max-width: $lg) {
-		display: flex;
-	}
+  // Commerce info part
+  &__commerce {
+    @include flex(flex-start, flex-start, column);
+    @include gap(20px, 0);
+    width: 100%;
+  }
 
-	@media (min-width: $lg) {
-		display: none;
-	}
+  &__commerce-item {
+    width: 100%;
+
+    color: $WHT;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  // Langs-switcher
+  &__langs {
+    @include flex(center, flex-start, column);
+  }
+
+  &__lang-title {
+    @include flex(space-between, center, row);
+    width: 100%;
+
+    & > .lang-flag {
+      @include flex(flex-start, center, row);
+      @include gap(0, 10px);
+
+      & > img {
+        height: 15px;
+      }
+    }
+  }
+
+  &__langs-choise {
+    @include flex(flex-start, flex-start, column);
+    width: 100%;
+
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+    pointer-events: none;
+
+    will-change: max-height, opacity, visibility;
+    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
+
+    #{$mobile}__langs.open & {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__langs-item {
+    @include flex(flex-start, center, row);
+    @include gap(0, 10px);
+    width: 100%;
+    padding: 15px 0;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: $GRY;
+    border-bottom: 1px $GRD solid;
+
+    & > img {
+      height: 12px;
+    }
+
+    &:nth-child(1) {
+      margin-top: 15px;
+    }
+
+    &:nth-last-child(1) {
+      margin-bottom: 10px;
+    }
+  }
+
+  // Contacts
+  &__contacts {
+    @include flex(flex-start, flex-start, column);
+    @include gap(20px, 0);
+    width: 100%;
+  }
+
+  &__contacts-item {
+    @include flex(flex-start, flex-start, row);
+    @include gap(0, 10px);
+    width: 100%;
+
+    & > p {
+      @include flex(flex-start, center, row);
+      color: $WHT;
+      font-size: 16px;
+      height: 100%;
+      font-weight: 400;
+    }
+
+    & > img {
+      pointer-events: none;
+      height: 20px;
+    }
+  }
+
+  // Partners
+  &__partners {
+    @include flex(flex-start, flex-start, column);
+    @include gap(20px, 0);
+    width: 100%;
+  }
+
+  &__partners-item {
+    @include flex(flex-start, flex-start, row);
+    @include gap(0, 10px);
+    width: 100%;
+
+    color: $WHT;
+    font-size: 16px;
+    height: 100%;
+    font-weight: 400;
+
+    & > img {
+      pointer-events: none;
+      height: 20px;
+    }
+  }
+
+  // Copyright
+  &__copyright {
+    width: 100%;
+
+    text-align: left;
+    color: $BLA;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  @media (max-width: $lg) {
+    display: flex;
+  }
+
+  @media (min-width: $lg) {
+    display: none;
+  }
 }
