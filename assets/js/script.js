@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".mobile")) {
     mobile = document.querySelector(".mobile");
     mMenuBtn = mobile.querySelector(".mobile__button");
-    mMenuNavigation = mobile.querySelector(".mobile__nav-body");
+    mMenuNavigation = mobile.querySelector(".mobile__nav");
     mMenuLinks = mobile.querySelectorAll(".mobile__item");
-    mMenuLangs = mobile.querySelector(".mobile__langs");
+    mMenuLangs = mobile.querySelector(".lang-switch");
   }
   if (document.querySelectorAll(".modal")) {
     $(".modal").iziModal({
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mMenuNavigation.addEventListener("click", function (e) {
       let target = e.target;
 
-      if (target.classList.contains("mobile__item_type-category")) {
+      if (target.classList.contains("sub-cat")) {
         if (!target.classList.contains("open")) {
           for (let i = 0; i < mMenuLinks.length; i++) {
             rem(mMenuLinks[i], "open");

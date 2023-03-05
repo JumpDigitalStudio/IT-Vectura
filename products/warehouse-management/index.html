@@ -143,65 +143,70 @@
 					<img src="/assets/images/icons/mobile/btn-menu-close.svg">
 				</button>
 			</div>
+			<!-- Separator -->
 			<hr class="mobile__hr" noshade size="1" color="#232323">
 			<!-- Content -->
 			<div class="mobile__content">
 				<!-- Navigation -->
-				<div class="mobile__nav">
-					<ul class="mobile__nav-body scr-list">
-						<!-- About us -->
-						<li class="mobile__item">
-							<a href="/index.html" class="wm">О нас</a>
-						</li>
-						<!-- Logistics management system -->
-						<li class="mobile__item">
-							<a href="/index.html" class="wm">Возможности</a>
-						</li>
-						<!-- Products -->
-						<li class="mobile__item mobile__item_type-category">
-							<!-- Title of category -->
-							<div class="mobile__category-title wm">
-								<p class="wm">Продукты<span class="mobile__open"></span></p>
-							</div>
-							<!-- Category -->
-							<div class="mobile__category">
-								<a href="/products/" class="mobile__category-item">
-									Управление цепочками поставок
-								</a>
-								<a href="/products/transport-management/" class="mobile__category-item">
-									Transport Management
-								</a>
-								<a href="/products/warehouse-management/" class="mobile__category-item">
-									Warehouse Management
-								</a>
-								<a href="/products/yard-logistic/" class="mobile__category-item">
-									Yard Logistic
-								</a>
-							</div>
-							</p>
-						</li>
-						<!-- Contacts -->
-						<li class="mobile__item">
-							<a href="/index.html" class="wm">Контакты</a>
-						</li>
-					</ul>
-				</div>
-				<hr class="mobile__hr" noshade size="1" color="#232323">
-				<!-- Commerce info -->
-				<div class="mobile__commerce">
-					<div class="mobile__commerce-item mobile__langs">
-						<div class="mobile__lang-title">
-							<div class="lang-flag"><img src="/assets/images/flags/flag_ru.svg">Русский</div>
-							<span class="mobile__open"></span>
-						</div>
-						<div class="mobile__langs-choise">
-							<div class="mobile__langs-item"><img src="/assets/images/flags/flag_en.svg">Английский</div>
-							<div class="mobile__langs-item"><img src="/assets/images/flags/falg_ae.svg">Арабский</div>
-							<div class="mobile__langs-item"><img src="/assets/images/flags/flag_tr.svg">Турецкий</div>
+				<nav class="mobile__nav scr-list" aria-labelledby="secondary-navigation">
+					<a href="/index.html" class="mobile__item">Главная</a>
+					<a href="#functionallity" class="mobile__item scr-link">Функциональность</a>
+					<div class="mobile__item sub-cat">
+						<!-- Title of category -->
+						<button class="sub-cat__title">Продукты<span class="mobile__open"></span></button>
+						<!-- Category -->
+						<div class="sub-cat__list">
+							<a href="/products/" class="sub-cat__item">
+								Управление цепочками поставок
+							</a>
+							<a href="/products/transport-management/" class="sub-cat__item">
+								Transport Management
+							</a>
+							<a href="/products/warehouse-management/" class="sub-cat__item">
+								Warehouse Management
+							</a>
+							<a href="/products/yard-logistic/" class="sub-cat__item">
+								Yard Logistic
+							</a>
 						</div>
 					</div>
-					<a href="tel:+7(800)101-26-96" class="mobile__commerce-item">Политика конфиденциальности</a>
+					<a href="/index.html" class="mobile__item wm">Контакты</a>
+				</nav>
+				<!-- Separator -->
+				<hr class="mobile__hr" noshade size="1" color="#232323">
+				<!-- Commerce info -->
+				<div class="mobile__com">
+					<!-- Langs switcher -->
+					<div class="mobile__com-item lang-switch">
+						<div id="ytWidget" style="display: none;"></div>
+						<!-- Active lang -->
+						<div class="lang-switch__active" data-lang-active>
+							<button class="lang-switch__item active">
+								<img src="/assets/images/flags/flag_ru.svg">Русский
+							</button>
+							<span class="mobile__open"></span>
+						</div>
+						<!-- All langs -->
+						<div class="lang-switch__all" data-lang-list>
+							<div class="lang-switch__item" data-ya-lang="ru">
+								<img src="/assets/images/flags/flag_ru.svg">Руccкий
+							</div>
+							<div class="lang-switch__item" data-ya-lang="en">
+								<img src="/assets/images/flags/flag_en.svg">English
+							</div>
+							<div class="lang-switch__item" data-ya-lang="ar">
+								<img src="/assets/images/flags/flag_ar.svg">اللغة العربية
+							</div>
+							<div class="lang-switch__item" data-ya-lang="tr">
+								<img src="/assets/images/flags/flag_tr.svg">Türkçe
+							</div>
+						</div>
+					</div>
+					<a href="/documents/privacy-policy.pdf" target="_blank" class="mobile__com-item">
+						Политика конфиденциальности
+					</a>
 				</div>
+				<!-- Separator -->
 				<hr class="mobile__hr" noshade size="1" color="#232323">
 				<!-- Contacts -->
 				<div class="mobile__contacts">
@@ -220,6 +225,7 @@
 						<p>105066, г. Москва, ул. Нижняя Красносельская 40/12 к.20</p>
 					</a>
 				</div>
+				<!-- Separator -->
 				<hr class="mobile__hr" noshade size="1" color="#232323">
 				<!-- Partners -->
 				<div class="mobile__partners">
@@ -232,6 +238,7 @@
 						I1 CONSULTING
 					</a>
 				</div>
+				<!-- Separator -->
 				<hr class="mobile__hr" noshade size="1" color="#232323">
 				<!-- Copyright -->
 				<p class="mobile__copyright">&#169 ITVECTURA 2023. Все права защищены</p>
@@ -326,7 +333,7 @@
 				</a>
 			</div>
 		</section>
-		<section class="content__functionality content__default-section functionality">
+		<section class="content__functionality content__default-section functionality" id="functionallity">
 			<!-- Title -->
 			<div class="entry container">
 				<h2 class="entry__title">Программное обеспечение для управления складом</h2>
@@ -693,7 +700,7 @@
 		integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww=="
 		crossorigin="anonymous" referrerpolicy="no-referrer">
 		</script>
-	<!-- <script src="/assets/js/translate.js" defer></script> -->
+	<script src="/assets/js/translate.js"></script>
 	<script src="/assets/js/script.js"></script>
 </body>
 

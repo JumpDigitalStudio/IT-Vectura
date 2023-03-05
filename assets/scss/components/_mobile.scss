@@ -29,17 +29,17 @@
     @include flex(flex-start, center, column);
   }
 
+  // Separator
+  &__hr {
+    width: 100%;
+    margin: 20px 0 !important;
+  }
+
   // Header
   &__head {
     @include flex(flex-end, center, row);
     width: 100%;
   }
-
-  &__hr {
-    width: 100%;
-    margin: 30px 0;
-  }
-
   &__button {
     @include flex(center, center, row);
 
@@ -55,12 +55,12 @@
     }
   }
 
-  // Main navigation list
+  // Content wrapper
   &__content {
-    @include flex(flex-start, center, column);
-
+    @include grid(1fr, auto);
+    @include gap(0, 0);
     width: 100%;
-    height: 100%;
+    height: max-content;
 
     overflow-y: scroll;
     overflow-x: hidden;
@@ -70,53 +70,24 @@
     }
   }
 
-  &__nav {
-    width: 100%;
-  }
-
-  &__nav-body {
-    width: 100%;
-
+  // Navigation
+  &__nav,
+  &__com,
+  &__contacts,
+  &__partners {
+    @include grid(1fr, auto);
+    @include gap(0, 0);
     margin: 0;
     padding: 0;
   }
-
   &__item {
     @include flex(center, flex-start, column);
-    width: 100%;
+    height: 50px;
 
-    & > a {
-      @include flex(flex-start, center, row);
-      @include gap(0, 15px);
-      padding: 15px 0;
-      width: 100%;
-
-      color: $WHT;
-      font-size: 18px;
-    }
+    color: $WHT;
+    font-size: 16px;
+    font-weight: 600;
   }
-
-  // Navigation sub-lists
-  &__category-title {
-    @include flex(flex-start, center, row);
-    @include gap(0, 15px);
-    position: relative;
-    width: 100%;
-
-    pointer-events: none;
-
-    & > p {
-      @include flex(space-between, center, row);
-      @include gap(0, 30px);
-      padding: 15px 0;
-      width: 100%;
-
-      color: $WHT;
-      font-size: 18px;
-      pointer-events: none;
-    }
-  }
-
   &__open {
     @include flex(center, center, row);
     position: relative;
@@ -146,167 +117,63 @@
         transform: rotate(135deg);
       }
 
-      #{$mobile}__langs.open & {
+      .lang-switch.open & {
         top: 0;
         transform: rotate(135deg);
       }
     }
   }
 
-  &__category {
-    @include flex(flex-start, flex-start, column);
-    width: 100%;
-
-    opacity: 0;
-    max-height: 0px;
-    visibility: hidden;
-    pointer-events: none;
-
-    will-change: max-height, opacity, visibility;
-    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
-
-    #{$mobile}__item.open & {
-      max-height: 1000px;
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-    }
-  }
-
-  &__category-item {
-    padding: 15px 0;
-    font-size: 14px;
-    font-weight: 400;
-    color: $GRY;
-    width: 100%;
-
-    border-bottom: 1px $GRD solid;
-
-    &:nth-last-child(1) {
-      margin-bottom: 15px;
-    }
-  }
-
   // Commerce info part
-  &__commerce {
-    @include flex(flex-start, flex-start, column);
-    @include gap(20px, 0);
-    width: 100%;
-  }
-
-  &__commerce-item {
-    width: 100%;
+  &__com-item {
+    @include flex(center, flex-start, column);
+    height: 50px;
 
     color: $WHT;
     font-size: 16px;
     font-weight: 400;
   }
 
-  // Langs-switcher
-  &__langs {
-    @include flex(center, flex-start, column);
-  }
-
-  &__lang-title {
-    @include flex(space-between, center, row);
-    width: 100%;
-
-    & > .lang-flag {
-      @include flex(flex-start, center, row);
-      @include gap(0, 10px);
-
-      & > img {
-        height: 15px;
-      }
-    }
-  }
-
-  &__langs-choise {
-    @include flex(flex-start, flex-start, column);
-    width: 100%;
-
-    opacity: 0;
-    max-height: 0px;
-    visibility: hidden;
-    pointer-events: none;
-
-    will-change: max-height, opacity, visibility;
-    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
-
-    #{$mobile}__langs.open & {
-      max-height: 1000px;
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
-    }
-  }
-
-  &__langs-item {
-    @include flex(flex-start, center, row);
-    @include gap(0, 10px);
-    width: 100%;
-    padding: 15px 0;
-
-    font-size: 14px;
-    font-weight: 400;
-    color: $GRY;
-    border-bottom: 1px $GRD solid;
-
-    & > img {
-      height: 12px;
-    }
-
-    &:nth-child(1) {
-      margin-top: 15px;
-    }
-
-    &:nth-last-child(1) {
-      margin-bottom: 10px;
-    }
-  }
-
   // Contacts
   &__contacts {
-    @include flex(flex-start, flex-start, column);
-    @include gap(20px, 0);
-    width: 100%;
+    @include gap(30px, 0);
   }
-
   &__contacts-item {
     @include flex(flex-start, flex-start, row);
-    @include gap(0, 10px);
+    @include gap(0, 12px);
     width: 100%;
 
     & > p {
       @include flex(flex-start, center, row);
+      min-height: 20px;
+      height: fit-content;
+      max-height: max-content;
+      width: 100%;
+
       color: $WHT;
       font-size: 16px;
-      height: 100%;
       font-weight: 400;
     }
 
     & > img {
       pointer-events: none;
       height: 20px;
+      width: 20px;
     }
   }
 
   // Partners
   &__partners {
-    @include flex(flex-start, flex-start, column);
     @include gap(20px, 0);
-    width: 100%;
   }
-
   &__partners-item {
-    @include flex(flex-start, flex-start, row);
-    @include gap(0, 10px);
-    width: 100%;
+    @include flex(flex-start, center, row);
+    @include gap(0, 12px);
 
     color: $WHT;
     font-size: 16px;
     height: 100%;
-    font-weight: 400;
+    font-weight: 600;
 
     & > img {
       pointer-events: none;
@@ -316,19 +183,146 @@
 
   // Copyright
   &__copyright {
-    width: 100%;
-
-    text-align: left;
-    color: $BLA;
+    text-align: center;
+    color: $GRY;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   @media (max-width: $lg) {
     display: flex;
   }
-
   @media (min-width: $lg) {
     display: none;
+  }
+}
+
+.sub-cat {
+  $sub-cat: &;
+
+  @include grid(1fr, auto);
+  min-height: 50px;
+  height: auto;
+
+  &__title {
+    @include flex(space-between, center, row);
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+
+    height: 50px;
+
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+
+    color: $WHT;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__list {
+    @include grid(1fr, 1fr);
+
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+    pointer-events: none;
+
+    will-change: max-height, opacity, visibility;
+    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
+
+    #{$sub-cat}.open & {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    & > a {
+      @include flex(flex-start, center, row);
+      height: 45px;
+      color: $WHT;
+      font-size: 14px;
+      font-weight: 400;
+
+      border-bottom: 1px $BLA solid;
+
+      &:nth-last-child(1) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.lang-switch {
+  $lang-switch: &;
+
+  @include grid(1fr, auto);
+  min-height: 50px;
+  height: auto;
+
+  &__active {
+    @include flex(space-between, center, row);
+    padding: 0;
+    margin: 0;
+
+    height: 50px;
+
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+  &__all {
+    @include grid(1fr, 1fr);
+
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+    pointer-events: none;
+
+    will-change: max-height, opacity, visibility;
+    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
+
+    #{$lang-switch}.open & {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__item {
+    @include flex(flex-start, center, row);
+    @include gap(0, 10px);
+    position: relative;
+    width: 100%;
+    height: 45px;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: $GRY;
+    border-bottom: 1px $GRD solid;
+
+    &:nth-last-child(1) {
+      margin-bottom: 15px;
+    }
+
+    &.active {
+      @include flex(flex-start, center, row);
+      @include gap(0, 12px);
+      pointer-events: none;
+      padding: 0;
+      margin: 0;
+
+      height: 50px;
+
+      background: none !important;
+      border: none !important;
+      outline: none !important;
+
+      color: $WHT;
+      font-size: 16px;
+    }
   }
 }
