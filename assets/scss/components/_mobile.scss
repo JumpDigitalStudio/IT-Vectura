@@ -60,7 +60,7 @@
     @include flex(flex-start, center, column);
 
     width: 100%;
-    height: calc(100% - 100px);
+    height: 100%;
 
     overflow-y: scroll;
     overflow-x: hidden;

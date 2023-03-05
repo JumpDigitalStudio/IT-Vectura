@@ -1551,7 +1551,7 @@ h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  height: calc(100% - 100px);
+  height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
 }
