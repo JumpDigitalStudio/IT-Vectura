@@ -26,10 +26,18 @@ function yaTranslateInit() {
 
   // Показываем текущий язык в меню
   yaTranslateHtmlHandler(code);
+  yaTranslatePCHtmlHandler(code);
 
   // Вешаем событие клик на флаги
   yaTranslateEventHandler("click", "[data-ya-lang]", function (el) {
     yaTranslateSetLang(el.getAttribute("data-ya-lang"));
+    // Перезагружаем страницу
+    window.location.reload();
+  });
+
+  // Вешаем событие клик на флаги
+  yaTranslateEventHandler("click", "[data-pc-ya-lang]", function (el) {
+    yaTranslateSetLang(el.getAttribute("data-pc-ya-lang"));
     // Перезагружаем страницу
     window.location.reload();
   });
@@ -82,6 +90,35 @@ function yaTranslateHtmlHandler(code) {
 	<img src="/assets/images/flags/flag_${code}.svg">${langName}</button>
 	<span class="mobile__open"></span>`;
   document.querySelector(`[data-ya-lang="${code}"]`).remove();
+}
+
+function yaTranslatePCHtmlHandler(code) {
+  let langName;
+
+  switch (code) {
+    case "ru":
+      langName = "Русский";
+      break;
+    case "en":
+      langName = "Английский";
+      break;
+    case "ar":
+      langName = "Арабский";
+      break;
+    case "tr":
+      langName = "Турецкий";
+      break;
+    default:
+      langName = "Выбор языка недоступен";
+      break;
+  }
+
+  document.querySelector(
+    "[data-pc-lang-active]"
+  ).innerHTML = `<div class="lang-modal__item">
+	<img src="/assets/images/flags/flag_${code}.svg">${langName}</div>
+ <div class="lang-modal__open"></div>`;
+  document.querySelector(`[data-pc-ya-lang="${code}"]`).remove();
 }
 
 function yaTranslateEventHandler(event, selector, handler) {

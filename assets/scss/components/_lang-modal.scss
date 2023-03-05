@@ -1,0 +1,110 @@
+.lang-modal {
+  $lang-modal: &;
+
+  @include grid(1fr, auto);
+  padding: 20px 25px;
+  cursor: pointer;
+
+  visibility: visible;
+  pointer-events: all;
+
+  width: 150px;
+  height: fit-content;
+  border-radius: $radius-l;
+  background-color: $WHT;
+
+  will-change: box-shadow;
+  transition: box-shadow $trans-3;
+  box-shadow: $card-shadow;
+
+  &:hover {
+    box-shadow: $card-shadow-hover;
+  }
+
+  &__active {
+    @include flex(space-between, center, row);
+
+    #{$lang-modal}__item {
+      pointer-events: none;
+    }
+  }
+
+  &__all {
+    @include grid(1fr, 1fr);
+    @include gap(15px, 0);
+
+    opacity: 0;
+    max-height: 0px;
+    visibility: hidden;
+    pointer-events: none;
+
+    will-change: max-height, opacity, visibility;
+    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
+
+    #{$lang-modal}__item:nth-child(1) {
+      margin-top: 30px;
+    }
+
+    #{$lang-modal}:hover & {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &__item {
+    @include flex(flex-start, center, row);
+    @include gap(0, 10px);
+    color: $BLA;
+    font-weight: 500;
+    font-size: 16px;
+
+    will-change: color;
+    transition: color $trans-2;
+
+    & > img {
+      width: auto;
+      height: 16px;
+      border-radius: 3px;
+      border: 1px $BLA solid;
+    }
+  }
+
+  &__open {
+    @include flex(center, center, row);
+    position: relative;
+    height: 15px;
+    width: 15px;
+
+    pointer-events: none;
+
+    &::before {
+      @include pseudo;
+      @include flex(center, center, row);
+      top: 20%;
+
+      border-style: solid;
+      border-width: 1.5px 1.5px 0 0;
+      border-color: $BLA;
+
+      height: 10px;
+      width: 10px;
+
+      will-change: transform, top;
+      transition: transform $trans-3, top $trans-3;
+      transform: rotate(45deg);
+
+      #{$lang-modal}:hover & {
+        top: 0;
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  @media (max-width: $lg) {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
