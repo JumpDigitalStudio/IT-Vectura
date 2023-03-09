@@ -1,5 +1,6 @@
 const block = document.querySelector(".lang-modal");
 const list = block.querySelector(".lang-modal__all");
+let isOpen = false;
 
 const dropDownFadeIn = () => {
   const listHeight = list.getBoundingClientRect().height;
@@ -65,5 +66,17 @@ const dropDownFadeOut = () => {
   });
 };
 
+const toggleDropDown = () => {
+  if (isOpen) {
+    dropDownFadeOut();
+  } else {
+    dropDownFadeIn();
+  }
+  isOpen = !isOpen;
+};
+
+// добавляем обработчик касания на мобильные устройства
+block.addEventListener("touchstart", toggleDropDown);
+// добавляем обработчик на наведение мыши для десктопов
 block.addEventListener("mouseenter", dropDownFadeIn);
 block.addEventListener("mouseleave", dropDownFadeOut);
