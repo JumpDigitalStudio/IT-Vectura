@@ -86,8 +86,8 @@
     }
   }
 
-  // @media (max-width: $lg) {
-  //   display: none !important;
-  //   pointer-events: none !important;
-  // }
+  @media (max-width: $lg) {
+    display: none !important;
+    pointer-events: none !important;
+  }
 }
