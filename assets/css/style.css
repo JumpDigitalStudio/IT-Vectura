@@ -915,14 +915,12 @@ h2 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  padding: 20px 25px;
   cursor: pointer;
-  visibility: visible;
+  overflow: hidden;
   pointer-events: all;
   width: 150px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  padding: 25px 20px;
+  height: 20px;
   border-radius: 20px;
   background-color: #ffffff;
   will-change: box-shadow;
@@ -965,22 +963,9 @@ h2 {
      -moz-column-gap: 0;
           column-gap: 0;
   opacity: 0;
-  max-height: 0px;
-  visibility: hidden;
-  pointer-events: none;
-  will-change: max-height, opacity, visibility;
-  -webkit-transition: max-height 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, visibility 0.4s ease-in-out 0s;
-  -o-transition: max-height 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, visibility 0.4s ease-in-out 0s;
-  transition: max-height 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s, visibility 0.4s ease-in-out 0s;
 }
 .lang-modal__all .lang-modal__item:nth-child(1) {
   margin-top: 30px;
-}
-.lang-modal:hover .lang-modal__all {
-  max-height: 1000px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
 }
 .lang-modal__item {
   display: -webkit-box;
@@ -1074,9 +1059,8 @@ h2 {
 }
 @media (max-width: 950px) {
   .lang-modal {
-    display: none;
-    visibility: hidden;
-    pointer-events: none;
+    display: none !important;
+    pointer-events: none !important;
   }
 }
 

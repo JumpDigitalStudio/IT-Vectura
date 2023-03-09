@@ -2,14 +2,14 @@
   $lang-modal: &;
 
   @include grid(1fr, auto);
-  padding: 20px 25px;
   cursor: pointer;
 
-  visibility: visible;
+  overflow: hidden;
   pointer-events: all;
 
   width: 150px;
-  height: fit-content;
+  padding: 25px 20px;
+  height: 20px;
   border-radius: $radius-l;
   background-color: $WHT;
 
@@ -28,28 +28,14 @@
       pointer-events: none;
     }
   }
-
   &__all {
     @include grid(1fr, 1fr);
     @include gap(15px, 0);
 
     opacity: 0;
-    max-height: 0px;
-    visibility: hidden;
-    pointer-events: none;
-
-    will-change: max-height, opacity, visibility;
-    transition: max-height $trans-4, opacity $trans-4, visibility $trans-4;
 
     #{$lang-modal}__item:nth-child(1) {
       margin-top: 30px;
-    }
-
-    #{$lang-modal}:hover & {
-      max-height: 1000px;
-      opacity: 1;
-      visibility: visible;
-      pointer-events: all;
     }
   }
 
@@ -62,7 +48,6 @@
 
     will-change: color;
     transition: color $trans-2;
-
     & > img {
       width: auto;
       height: 16px;
@@ -70,7 +55,6 @@
       border: 1px $BLA solid;
     }
   }
-
   &__open {
     @include flex(center, center, row);
     position: relative;
@@ -103,8 +87,7 @@
   }
 
   @media (max-width: $lg) {
-    display: none;
-    visibility: hidden;
-    pointer-events: none;
+    display: none !important;
+    pointer-events: none !important;
   }
 }
