@@ -1057,6 +1057,12 @@ h2 {
       -ms-transform: rotate(135deg);
           transform: rotate(135deg);
 }
+@media (max-width: 950px) {
+  .lang-modal {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
 
 .header {
   display: -webkit-box;
