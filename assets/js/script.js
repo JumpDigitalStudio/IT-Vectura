@@ -67,17 +67,18 @@ function tog(elem, modifier) {
 
 // Inilialize functionallity
 document.addEventListener("DOMContentLoaded", () => {
-  // Preloader
-  NProgress.start();
-
-  preloader = document.getElementById("preloader");
-  preloader.play();
-
-  preloader.addEventListener("ended", function () {
-    preloader.pause();
-  });
-
   // All components
+  if (document.querySelector(".preloader")) {
+    // Preloader
+    NProgress.start();
+
+    preloader = document.getElementById("preloader");
+    preloader.play();
+
+    preloader.addEventListener("ended", function () {
+      preloader.pause();
+    });
+  }
   if (document.querySelector(".page")) {
     page = document.querySelector(".page");
   }
@@ -366,11 +367,24 @@ window.addEventListener("load", () => {
   this.setTimeout(function () {
     NProgress.done();
 
-    $(".preloader__inner").animate({ opacity: "0" }, 300);
-    $(".preloader").delay(200).animate({ opacity: "0" }, 600);
+    anime
+      .timeline({}) // Создание новой анимационной последовательности
+      .add({
+        targets: ".preloader__inner",
+        opacity: 0, // Установка целевого значения свойства opacity
+        easing: "easeInOutQuad",
+        duration: 300, // Длительность анимации в миллисекундах
+      })
+      .add({
+        targets: ".preloader",
+        opacity: 0,
+        easing: "easeInOutQuad",
+        duration: 500,
+        delay: 100, // Задержка перед началом анимации в миллисекундах
+      });
 
     setTimeout(function () {
       $(".preloader").addClass("hidden");
-    }, 600);
-  }, 1000);
+    }, 750);
+  }, 800);
 });
