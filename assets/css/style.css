@@ -980,7 +980,7 @@ h2 {
   height: -moz-fit-content;
   height: fit-content;
 }
-.header__commerce > svg {
+.header__logo {
   min-height: 50px;
   max-height: 50px;
   will-change: max-height, min-height, fill;
@@ -988,11 +988,11 @@ h2 {
   -o-transition: max-height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s, fill 0.3s ease-in-out 0s;
   transition: max-height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s, fill 0.3s ease-in-out 0s;
 }
-.header.theme-dark .header__commerce > svg {
+.header.theme-dark .header__logo {
   min-height: 42px;
   max-height: 42px;
 }
-.header.theme-light .header__commerce > svg > #vector-logo-text {
+.header.theme-light .header__logo #vector-logo-text {
   fill: #363636;
 }
 .header__contacts {
@@ -1060,25 +1060,6 @@ h2 {
 }
 .header.theme-light .header__contact-link:hover {
   color: #384fca;
-}
-.header__langs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  row-gap: 0;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
 }
 .header__nav {
   display: -webkit-box;

@@ -28,21 +28,20 @@
   &__commerce {
     @include flex(flex-start, flex-start, row);
     height: fit-content;
+  }
+  &__logo {
+    min-height: 50px;
+    max-height: 50px;
 
-    & > svg {
-      min-height: 50px;
-      max-height: 50px;
+    will-change: max-height, min-height, fill;
+    transition: max-height $trans-3, min-height $trans-3, fill $trans-3;
 
-      will-change: max-height, min-height, fill;
-      transition: max-height $trans-3, min-height $trans-3, fill $trans-3;
-    }
-
-    #{$header}.theme-dark & > svg {
+    #{$header}.theme-dark & {
       min-height: 42px;
       max-height: 42px;
     }
 
-    #{$header}.theme-light & > svg > #vector-logo-text {
+    #{$header}.theme-light & #vector-logo-text {
       fill: $GRD;
     }
   }
@@ -74,12 +73,6 @@
       @include link-hover($ACD);
       color: $BLA;
     }
-  }
-
-  // Lang switcher
-  &__langs {
-    @include flex(flex-start, center, row);
-    @include gap(0, 5px);
   }
 
   // Navigation
