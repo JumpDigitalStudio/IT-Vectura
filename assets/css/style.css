@@ -979,10 +979,14 @@ h2 {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .header__logo {
   min-height: 50px;
   max-height: 50px;
+  width: auto;
   will-change: max-height, min-height, fill;
   -webkit-transition: max-height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s, fill 0.3s ease-in-out 0s;
   -o-transition: max-height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s, fill 0.3s ease-in-out 0s;
