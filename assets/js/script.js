@@ -65,7 +65,7 @@ function tog(elem, modifier) {
   elem.classList.toggle(modifier);
 }
 
-// Inilialize functionallity
+// Basic logic
 document.addEventListener("DOMContentLoaded", () => {
   // All components
   if (document.querySelector(".preloader")) {
@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
       scroll >= scrollPoint2
         ? add(header, "theme-light")
         : rem(header, "theme-light");
-
       scroll >= scrollPoint2
         ? add(site, "theme-light")
         : rem(site, "theme-light");

@@ -1,8 +1,6 @@
 const yatranslate = {
   /* Original language */
-  lang: "ru",
-  /* Язык, на который переводим при первом посещении */
-  langFirstVisit: "en",
+  lang: "en",
 };
 
 // Start

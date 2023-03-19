@@ -194,7 +194,7 @@
 
     &__buttons {
       @include flex(flex-start, flex-start, column);
-      @include gap(30px, 0);
+      @include gap(15px, 0);
       width: 100%;
     }
 
@@ -319,6 +319,9 @@
         border-top: 1px $WHT solid;
         border-bottom: 1px $WHT solid;
       }
+    }
+    &__header > p {
+      font-size: 18px;
     }
   }
 }

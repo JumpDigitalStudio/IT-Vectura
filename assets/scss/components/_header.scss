@@ -25,57 +25,25 @@
   }
 
   // Logos
-  &__logos {
-    @include flex(flex-start, center, row);
-    min-height: 50px;
-    max-height: 50px;
-    height: 100%;
+  &__commerce {
+    @include flex(flex-start, flex-start, row);
+    height: fit-content;
 
-    will-change: max-height, min-height;
-    transition: max-height $trans-3, min-height $trans-3;
+    & > svg {
+      min-height: 50px;
+      max-height: 50px;
 
-    #{$header}.theme-dark & {
-      min-height: 42px;
-      max-height: 42px;
-    }
-  }
-  &__logo {
-    min-height: 50px;
-    max-height: 50px;
-
-    will-change: max-height, min-height;
-    transition: max-height $trans-2, min-height $trans-2;
-
-    &_theme-light {
-      display: flex;
-      visibility: visible;
-      pointer-events: all;
+      will-change: max-height, min-height, fill;
+      transition: max-height $trans-3, min-height $trans-3, fill $trans-3;
     }
 
-    &_theme-dark {
-      display: none;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    #{$header}.theme-dark &,
-    #{$header}.theme-light & {
+    #{$header}.theme-dark & > svg {
       min-height: 42px;
       max-height: 42px;
     }
 
-    #{$header}.theme-light & {
-      &_theme-light {
-        display: none;
-        visibility: hidden;
-        pointer-events: none;
-      }
-
-      &_theme-dark {
-        display: flex;
-        visibility: visible;
-        pointer-events: all;
-      }
+    #{$header}.theme-light & > svg > #vector-logo-text {
+      fill: $GRD;
     }
   }
 
@@ -94,6 +62,10 @@
       max-height: 42px;
     }
   }
+  &__contact-grid {
+    @include flex(flex-end, center, row);
+    @include gap(0, 15px);
+  }
   &__contact-link {
     @include link-hover($BLL);
     color: $WHT;
@@ -102,6 +74,12 @@
       @include link-hover($ACD);
       color: $BLA;
     }
+  }
+
+  // Lang switcher
+  &__langs {
+    @include flex(flex-start, center, row);
+    @include gap(0, 5px);
   }
 
   // Navigation
@@ -307,51 +285,24 @@
     width: 40px;
     height: 40px;
 
-    border: 1px $WHT solid;
-    border-radius: $radius-s;
-
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.53);
-
     cursor: pointer;
     display: none;
     visibility: hidden;
 
-    will-change: border, backdrop-filter, background-color;
-    transition: border $trans-2, backdrop-filter $trans-2,
-      background-color $trans-2;
+    & > svg {
+      height: 100%;
+      width: 100%;
 
-    #{$header}.theme-light & {
-      border: 1px $BLA solid;
-      backdrop-filter: none;
-      background-color: transparent;
-    }
-  }
-  &__mobile-burger {
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-
-    &_theme-light {
-      display: flex;
-      visibility: visible;
-    }
-
-    &_theme-dark {
-      display: none;
-      visibility: hidden;
-    }
-
-    #{$header}.theme-light & {
-      &_theme-light {
-        display: none;
-        visibility: hidden;
+      & > #vector-mobile-burger {
+        will-change: fill;
+        transition: fill $trans-2;
       }
-
-      &_theme-dark {
-        display: flex;
-        visibility: visible;
-      }
+    }
+    &:active > svg > #vector-mobile-burger {
+      fill: $BLL;
+    }
+    #{$header}.theme-light & svg > #vector-mobile-burger {
+      fill: $GRD;
     }
   }
 
@@ -366,39 +317,144 @@
       pointer-events: none;
       visibility: hidden;
     }
-
     &__contacts {
       display: none;
       pointer-events: none;
       visibility: hidden;
     }
-
     &__mobile {
       display: flex;
       visibility: visible;
     }
   }
   @media (max-width: $md) {
-    &__logos,
-    &__logo {
-      min-height: 35px;
-      max-height: 35px;
+    &__commerce > svg {
+      min-height: 32px;
+      max-height: 32px;
 
       #{$header}.theme-dark &,
       #{$header}.theme-light & {
-        min-height: 35px;
-        max-height: 35px;
+        min-height: 32px;
+        max-height: 32px;
       }
     }
-
     &__mobile {
       width: 35px;
       height: 35px;
     }
+  }
+}
+.switch-lang {
+  $switch-lang: &;
+  position: relative;
 
-    &__mobile-burger {
-      width: 17px;
-      height: 17px;
+  &__list {
+    @include grid(1fr, 1fr);
+    position: absolute;
+    top: 23px;
+    left: 0;
+
+    border-radius: 0 0 5px 5px;
+    border: 1px $WHT solid;
+    background-color: rgba(236, 236, 236, 0.3);
+
+    overflow: hidden;
+
+    max-height: 0px;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+
+    will-change: max-height, visibility, opacity;
+    transition: max-height $trans-2, visibility $trans-2, opacity $trans-2;
+
+    #{$switch-lang}:hover & {
+      max-height: 200px;
+      pointer-events: all;
+      visibility: visible;
+      opacity: 1;
     }
+
+    .header.theme-dark & {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .header.theme-light & {
+      border: 1px $BLA solid;
+      background-color: $GRY;
+    }
+  }
+
+  &__item {
+    @include flex(center, center, row);
+    @include gap(0, 5px);
+    cursor: pointer;
+
+    padding: 0 4px;
+    height: 22px;
+
+    font-family: inherit;
+    font-size: 12px;
+    color: $WHT;
+
+    will-change: background-color;
+    transition: background-color $trans-2;
+
+    & > img {
+      height: 10px;
+    }
+
+    &:hover {
+      background-color: rgba(236, 236, 236, 0.4);
+    }
+
+    .header.theme-light & {
+      color: $BLA;
+
+      &:hover {
+        background-color: $WHT;
+      }
+    }
+
+    &.item-target {
+      border-radius: 5px;
+      border: 1px $WHT solid;
+      background-color: rgba(236, 236, 236, 0.5);
+
+      will-change: background-color, border-radius;
+      transition: background-color $trans-2, border-radius $trans-2;
+
+      &:hover {
+        background-color: rgba(236, 236, 236, 0.6);
+      }
+
+      #{$switch-lang}:hover & {
+        border-radius: 5px 5px 0 0;
+      }
+
+      .header.theme-dark & {
+        background-color: rgba(236, 236, 236, 0.1);
+
+        &:hover {
+          background-color: rgba(236, 236, 236, 0.2);
+        }
+      }
+
+      .header.theme-light & {
+        border: 1px $BLA solid;
+        background-color: transparent;
+
+        &:hover {
+          background-color: $WHT;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $lg) {
+    display: flex;
+  }
+  @media (max-width: $lg) {
+    display: none;
   }
 }
