@@ -1469,7 +1469,7 @@ h2 {
      -moz-column-gap: 5px;
           column-gap: 5px;
   cursor: pointer;
-  padding: 0 4px;
+  min-width: 45px;
   height: 22px;
   font-family: inherit;
   font-size: 12px;
@@ -2017,6 +2017,9 @@ h2 {
   font-weight: 400;
   color: #ececec;
   border-bottom: 1px #363636 solid;
+}
+.lang-switch__item > img {
+  height: 13px;
 }
 .lang-switch__item:nth-last-child(1) {
   margin-bottom: 15px;

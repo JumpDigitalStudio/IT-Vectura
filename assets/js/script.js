@@ -3,6 +3,11 @@ let isMobile = false;
 let scrollPoint1;
 let scrollPoint2;
 
+// Yandex Switch-lang initialize
+const yatranslate = {
+  lang: "en",
+};
+
 // Components initialization
 const site = document.querySelector("html");
 let page;
@@ -64,6 +69,95 @@ function rem(elem, modifier) {
 function tog(elem, modifier) {
   elem.classList.toggle(modifier);
 }
+// Yandex Swithc-lang functions
+function yaTranslateInit() {
+  if (yatranslate.langFirstVisit && !localStorage.getItem("yt-widget")) {
+    yaTranslateSetLang(yatranslate.langFirstVisit);
+  }
+
+  // Connect yandex translate
+  let script = document.createElement("script");
+  script.src = `https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=${yatranslate.lang}&widgetTheme=light&autoMode=false`;
+  document.getElementsByTagName("head")[0].appendChild(script);
+
+  let code = yaTranslateGetCode();
+
+  yaTranslateHtmlHandler(code);
+  yaTranslatePCHtmlHandler(code);
+
+  yaTranslateEventHandler("click", "[data-ya-lang]", function (el) {
+    yaTranslateSetLang(el.getAttribute("data-ya-lang"));
+    window.location.reload();
+  });
+
+  yaTranslateEventHandler("click", "[data-pc-ya-lang]", function (el) {
+    yaTranslateSetLang(el.getAttribute("data-pc-ya-lang"));
+    window.location.reload();
+  });
+}
+function yaTranslateSetLang(lang) {
+  localStorage.setItem(
+    "yt-widget",
+    JSON.stringify({
+      lang: lang,
+      active: true,
+    })
+  );
+}
+function yaTranslateGetCode() {
+  return localStorage["yt-widget"] != undefined &&
+    JSON.parse(localStorage["yt-widget"]).lang != undefined
+    ? JSON.parse(localStorage["yt-widget"]).lang
+    : yatranslate.lang;
+}
+function yaTranslateHtmlHandler(code) {
+  let langName;
+
+  switch (code) {
+    case "en":
+      langName = "English";
+      break;
+    case "kk":
+      langName = "Kazakh";
+      break;
+    case "az":
+      langName = "Azerbaijani";
+      break;
+    case "uz":
+      langName = "Uzbek";
+      break;
+    case "ar":
+      langName = "Arabian";
+      break;
+    case "tr":
+      langName = "Turkish";
+      break;
+    default:
+      langName = "Language selection not available";
+      break;
+  }
+
+  document.querySelector(
+    "[data-lang-active]"
+  ).innerHTML = `<button class="lang-switch__item active">
+	<img src="/assets/images/flags/icon-flag-${code}.svg">${langName}</button>
+	<span class="mobile__open"></span>`;
+  document.querySelector(`[data-ya-lang="${code}"]`).remove();
+}
+function yaTranslatePCHtmlHandler(code) {
+  let langPCName = code.toUpperCase();
+
+  document.querySelector(
+    "[data-pc-lang-active]"
+  ).innerHTML = `<img src="/assets/images/flags/icon-flag-${code}.svg">${langPCName}`;
+  document.querySelector(`[data-pc-ya-lang="${code}"]`).remove();
+}
+function yaTranslateEventHandler(event, selector, handler) {
+  document.addEventListener(event, function (e) {
+    let el = e.target.closest(selector);
+    if (el) handler(el);
+  });
+}
 
 // Basic logic
 document.addEventListener("DOMContentLoaded", () => {
@@ -121,6 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#components").iziModal("open");
     });
   }
+
+  // Start Yandex Switch-lang
+  yaTranslateInit();
 
   // Header + mobile + blackout
   if (header) {

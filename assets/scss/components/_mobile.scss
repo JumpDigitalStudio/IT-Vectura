@@ -304,6 +304,10 @@
     color: $GRY;
     border-bottom: 1px $GRD solid;
 
+    & > img {
+      height: 13px;
+    }
+
     &:nth-last-child(1) {
       margin-bottom: 15px;
     }
