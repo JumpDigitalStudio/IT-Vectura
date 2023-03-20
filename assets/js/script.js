@@ -230,12 +230,11 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#components").iziModal("open");
     });
   }
+  // Start Yandex Switch-lang
+  yaTranslateInit();
 
   // Detect session time
   setInterval(updateLocalStorage, 60000);
-
-  // Start Yandex Switch-lang
-  yaTranslateInit();
 
   // Header + mobile + blackout
   if (header) {
