@@ -6,6 +6,7 @@ let scrollPoint2;
 // Yandex Switch-lang initialize
 const yatranslate = {
   lang: "en",
+  langFirstVisit: "en",
 };
 
 // Session time initialize
