@@ -87,7 +87,6 @@ function yaTranslateInit() {
   document.getElementsByTagName("head")[0].appendChild(script);
 
   let code = yaTranslateGetCode();
-  // pageLang = code.toUpperCase();
 
   yaTranslateHtmlHandler(code);
   yaTranslatePCHtmlHandler(code);
@@ -143,6 +142,9 @@ function yaTranslateHtmlHandler(code) {
       langName = "Language selection not available";
       break;
   }
+
+  console.log(code);
+  console.log(langName);
 
   document.querySelector(
     "[data-lang-active]"
@@ -230,8 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#components").iziModal("open");
     });
   }
-  // Start Yandex Switch-lang
-  yaTranslateInit();
 
   // Detect session time
   // setInterval(updateLocalStorage, 60000);
@@ -516,6 +516,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Start Yandex Switch-lang
+  yaTranslateInit();
 });
 
 // Done preloader on full loading
@@ -546,9 +549,9 @@ window.addEventListener("load", () => {
 });
 
 // Clear session time on user exit
-window.addEventListener("beforeunload", function () {
-  localStorage.removeItem("timeSpent");
-});
+// window.addEventListener("beforeunload", function () {
+//   localStorage.removeItem("timeSpent");
+// });
 
 // Clear session time first time day visit
 // let lastVisit = localStorage.getItem("lastVisit");
