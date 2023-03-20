@@ -8,8 +8,14 @@ const yatranslate = {
   lang: "en",
 };
 
+// Session time initialize
+let timeSpent = parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
+let startTime = new Date().getTime();
+
 // Components initialization
 const site = document.querySelector("html");
+const pageName = document.title;
+let pageLang;
 let page;
 let blackout;
 let preloader;
@@ -81,6 +87,7 @@ function yaTranslateInit() {
   document.getElementsByTagName("head")[0].appendChild(script);
 
   let code = yaTranslateGetCode();
+  pageLang = code.toUpperCase();
 
   yaTranslateHtmlHandler(code);
   yaTranslatePCHtmlHandler(code);
@@ -158,6 +165,14 @@ function yaTranslateEventHandler(event, selector, handler) {
     if (el) handler(el);
   });
 }
+// Session time checker
+function updateLocalStorage() {
+  let currentTime = new Date().getTime();
+  let timeElapsed = currentTime - startTime;
+  timeSpent += timeElapsed;
+  localStorage.setItem("timeSpent", timeSpent.toString());
+  startTime = currentTime;
+}
 
 // Basic logic
 document.addEventListener("DOMContentLoaded", () => {
@@ -215,6 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#components").iziModal("open");
     });
   }
+
+  // Detect session time
+  setInterval(updateLocalStorage, 60000);
 
   // Start Yandex Switch-lang
   yaTranslateInit();
@@ -410,11 +428,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let error = formValidate(form);
 
-      // If no errors send form code here
       if (error === 0) {
-        // If no errors send form code here
-        // If no errors send form code here
-        // If no errors send form code here
+        const TOKEN = "5612776289:AAG8VWNl8E8zB1MMOLE6Nxg_LAy91-MaHB4";
+        const CHAT_ID = "-813127054";
+        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+        const clientName = form.querySelector('input[name="clientName"]').value;
+        const clientMail = form.querySelector('input[name="clientMail"]').value;
+        const clientCompany = form.querySelector(
+          'input[name="clientCompany"]'
+        ).value;
+        const clientJobTitle = form.querySelector(
+          'input[name="clientJobTitle"]'
+        ).value;
+        const clientComment = form.querySelector(
+          'textarea[name="clientComment"]'
+        ).value;
+        const formBtn = form.querySelector(".form-button");
+
+        let sessionTime =
+          parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
+
+        let request = `<b>Сайта:</b> ITV (Иностранная версия)\n`;
+        request += `<b>Основная информация</b>\n`;
+        request += `Имя клиента: ${clientName}\n`;
+        request += `E-mail клиента: ${clientMail}\n`;
+        request += `Компания клиента: ${clientCompany}\n`;
+        request += `Должность клиента: ${clientJobTitle}\n`;
+        request += `Комментарий: ${clientComment}\n`;
+        request += `<b>Аналитика</b>\n`;
+        request += `Страница отправки: ${pageName}\n`;
+        request += `Установленный язык: ${pageLang}\n`;
+        request += `Длительность сессии: ${sessionTime.toFixed(0)} мин.\n`;
+
+        axios
+          .post(URI_API, {
+            chat_id: CHAT_ID,
+            parse_mode: "html",
+            text: request,
+          })
+          .then((res) => {
+            form.reset();
+            formBtn.innerHTML = "Thank you! Request has been sent";
+          })
+          .catch((err) => {
+            formBtn.innerHTML = "Server error";
+          });
       }
 
       // Validate errors
@@ -484,3 +543,16 @@ window.addEventListener("load", () => {
     }, 750);
   }, 800);
 });
+
+// Clear session time on user exit
+window.addEventListener("beforeunload", function () {
+  localStorage.removeItem("timeSpent");
+});
+
+// Clear session time first time day visit
+let lastVisit = localStorage.getItem("lastVisit");
+let today = new Date().toLocaleDateString();
+if (lastVisit !== today) {
+  localStorage.removeItem("timeSpent");
+  localStorage.setItem("lastVisit", today);
+}

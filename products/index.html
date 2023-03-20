@@ -50,20 +50,22 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
 		integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-	<!--== Anime.js ==-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
-		integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 	<!--== NProgress.js ==-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"
 		integrity="sha512-bUg5gaqBVaXIJNuebamJ6uex//mjxPk8kljQTdM1SwkNrQD7pjS+PerntUSD+QRWPNJ0tq54/x4zRV8bLrLhZg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" defer>
 		</script>
+	<!--== Axios.js ==-->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
 	<!--== IZIModal.js ==-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js"
 		integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" defer>
 		</script>
+	<!--== Anime.js ==-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+		integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 	<!--== Main script ==-->
 	<script src="/assets/js/script.js" defer></script>
 	<!--=========================================================-->
@@ -663,7 +665,6 @@
 	</footer>
 	<div id="connect-with-us" class="modal">
 		<div class="modal-window" id="modal-request">
-			<!-- Title -->
 			<div class="entry">
 				<div class="modal-window__header">
 					<h2 class="entry__title">Contact us</h2>
@@ -676,18 +677,17 @@
 					<p class="fl">We will glad to answer your question</p>
 				</div>
 			</div>
-			<!-- Content -->
-			<form class="form" method="POST" enctype="multipart/form-data">
+			<form class="form" enctype="multipart/form-data">
 				<div class="form__main">
 					<!-- Main inputs -->
 					<div class="form__grid">
-						<input type="text" class="form__inp form-input _req" placeholder="Your name">
-						<input type="email" class="form__inp form-input _req _email" placeholder="E-mail">
-						<input type="text" class="form__inp form-input _req" placeholder="Company">
-						<input type="text" class="form__inp form-input _req" placeholder="Job title">
+						<input type="text" name="clientName" class="form__inp form-input _req" placeholder="Your name">
+						<input type="email" name="clientMail" class="form__inp form-input _req _email" placeholder="E-mail">
+						<input type="text" name="clientCompany" class="form__inp form-input _req" placeholder="Company">
+						<input type="text" name="clientJobTitle" class="form__inp form-input _req" placeholder="Job title">
 					</div>
 					<!-- Question input -->
-					<textarea class="form__area form-input" maxlength="370" placeholder="Comment"></textarea>
+					<textarea name="clientComment" class="form__area form-input" maxlength="370" placeholder="Comment"></textarea>
 					<!-- Send button -->
 					<input type="submit" value="Send" class="btn btn__fill form-button">
 				</div>
