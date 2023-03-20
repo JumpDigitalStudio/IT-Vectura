@@ -106,7 +106,7 @@ function yaTranslateSetLang(lang) {
   localStorage.setItem(
     "yt-widget",
     JSON.stringify({
-      lang: lang,
+      lang: "en",
       active: true,
     })
   );
