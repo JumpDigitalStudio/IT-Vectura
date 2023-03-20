@@ -9,8 +9,8 @@ const yatranslate = {
 };
 
 // Session time initialize
-let timeSpent = parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
-let startTime = new Date().getTime();
+// let timeSpent = parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
+// let startTime = new Date().getTime();
 
 // Components initialization
 const site = document.querySelector("html");
@@ -87,7 +87,7 @@ function yaTranslateInit() {
   document.getElementsByTagName("head")[0].appendChild(script);
 
   let code = yaTranslateGetCode();
-  pageLang = code.toUpperCase();
+  // pageLang = code.toUpperCase();
 
   yaTranslateHtmlHandler(code);
   yaTranslatePCHtmlHandler(code);
@@ -166,13 +166,13 @@ function yaTranslateEventHandler(event, selector, handler) {
   });
 }
 // Session time checker
-function updateLocalStorage() {
-  let currentTime = new Date().getTime();
-  let timeElapsed = currentTime - startTime;
-  timeSpent += timeElapsed;
-  localStorage.setItem("timeSpent", timeSpent.toString());
-  startTime = currentTime;
-}
+// function updateLocalStorage() {
+//   let currentTime = new Date().getTime();
+//   let timeElapsed = currentTime - startTime;
+//   timeSpent += timeElapsed;
+//   localStorage.setItem("timeSpent", timeSpent.toString());
+//   startTime = currentTime;
+// }
 
 // Basic logic
 document.addEventListener("DOMContentLoaded", () => {
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   yaTranslateInit();
 
   // Detect session time
-  setInterval(updateLocalStorage, 60000);
+  // setInterval(updateLocalStorage, 60000);
 
   // Header + mobile + blackout
   if (header) {
@@ -428,51 +428,53 @@ document.addEventListener("DOMContentLoaded", () => {
       let error = formValidate(form);
 
       if (error === 0) {
-        const TOKEN = "5612776289:AAG8VWNl8E8zB1MMOLE6Nxg_LAy91-MaHB4";
-        const CHAT_ID = "-813127054";
-        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+        // const TOKEN = "5612776289:AAG8VWNl8E8zB1MMOLE6Nxg_LAy91-MaHB4";
+        // const CHAT_ID = "-813127054";
+        // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-        const clientName = form.querySelector('input[name="clientName"]').value;
-        const clientMail = form.querySelector('input[name="clientMail"]').value;
-        const clientCompany = form.querySelector(
-          'input[name="clientCompany"]'
-        ).value;
-        const clientJobTitle = form.querySelector(
-          'input[name="clientJobTitle"]'
-        ).value;
-        const clientComment = form.querySelector(
-          'textarea[name="clientComment"]'
-        ).value;
+        // const clientName = form.querySelector('input[name="clientName"]').value;
+        // const clientMail = form.querySelector('input[name="clientMail"]').value;
+        // const clientCompany = form.querySelector(
+        //   'input[name="clientCompany"]'
+        // ).value;
+        // const clientJobTitle = form.querySelector(
+        //   'input[name="clientJobTitle"]'
+        // ).value;
+        // const clientComment = form.querySelector(
+        //   'textarea[name="clientComment"]'
+        // ).value;
         const formBtn = form.querySelector(".form-button");
 
-        let sessionTime =
-          parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
+        // let sessionTime =
+        //   parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
 
-        let request = `<b>Сайта:</b> ITV (Иностранная версия)\n`;
-        request += `<b>Основная информация</b>\n`;
-        request += `Имя клиента: ${clientName}\n`;
-        request += `E-mail клиента: ${clientMail}\n`;
-        request += `Компания клиента: ${clientCompany}\n`;
-        request += `Должность клиента: ${clientJobTitle}\n`;
-        request += `Комментарий: ${clientComment}\n`;
-        request += `<b>Аналитика</b>\n`;
-        request += `Страница отправки: ${pageName}\n`;
-        request += `Установленный язык: ${pageLang}\n`;
-        request += `Длительность сессии: ${sessionTime.toFixed(0)} мин.\n`;
+        // let request = `<b>Сайта:</b> ITV (Иностранная версия)\n`;
+        // request += `<b>Основная информация</b>\n`;
+        // request += `Имя клиента: ${clientName}\n`;
+        // request += `E-mail клиента: ${clientMail}\n`;
+        // request += `Компания клиента: ${clientCompany}\n`;
+        // request += `Должность клиента: ${clientJobTitle}\n`;
+        // request += `Комментарий: ${clientComment}\n`;
+        // request += `<b>Аналитика</b>\n`;
+        // request += `Страница отправки: ${pageName}\n`;
+        // request += `Установленный язык: ${pageLang}\n`;
+        // request += `Длительность сессии: ${sessionTime.toFixed(0)} мин.\n`;
 
-        axios
-          .post(URI_API, {
-            chat_id: CHAT_ID,
-            parse_mode: "html",
-            text: request,
-          })
-          .then((res) => {
-            form.reset();
-            formBtn.innerHTML = "Thank you! Request has been sent";
-          })
-          .catch((err) => {
-            formBtn.innerHTML = "Server error";
-          });
+        // axios
+        //   .post(URI_API, {
+        //     chat_id: CHAT_ID,
+        //     parse_mode: "html",
+        //     text: request,
+        //   })
+        //   .then((res) => {
+        //     form.reset();
+        //     formBtn.innerHTML = "Thank you! Request has been sent";
+        //   })
+        //   .catch((err) => {
+        //     formBtn.innerHTML = "Server error";
+        //   });
+
+        formBtn.innerHTML = "Thank you! Request has been sent";
       }
 
       // Validate errors
@@ -549,9 +551,9 @@ window.addEventListener("beforeunload", function () {
 });
 
 // Clear session time first time day visit
-let lastVisit = localStorage.getItem("lastVisit");
-let today = new Date().toLocaleDateString();
-if (lastVisit !== today) {
-  localStorage.removeItem("timeSpent");
-  localStorage.setItem("lastVisit", today);
-}
+// let lastVisit = localStorage.getItem("lastVisit");
+// let today = new Date().toLocaleDateString();
+// if (lastVisit !== today) {
+//   localStorage.removeItem("timeSpent");
+//   localStorage.setItem("lastVisit", today);
+// }
