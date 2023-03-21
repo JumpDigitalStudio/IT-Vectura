@@ -3,15 +3,10 @@ let isMobile = false;
 let scrollPoint1;
 let scrollPoint2;
 
-// Yandex Switch-lang initialize
+// Target language initialization
 const yatranslate = {
   lang: "en",
-  langFirstVisit: "en",
 };
-
-// Session time initialize
-// let timeSpent = parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
-// let startTime = new Date().getTime();
 
 // Components initialization
 const site = document.querySelector("html");
@@ -62,8 +57,6 @@ const deviceType = {
     );
   },
 };
-
-// Device definition
 deviceType.any() || windowWidth <= 767 ? (isMobile = true) : (isMobile = false);
 
 // Functions
@@ -76,10 +69,13 @@ function rem(elem, modifier) {
 function tog(elem, modifier) {
   elem.classList.toggle(modifier);
 }
-// Yandex Swithc-lang functions
+
+// Yandex Switch-lang functions
 function yaTranslateInit() {
-  if (yatranslate.langFirstVisit && !localStorage.getItem("yt-widget")) {
-    yaTranslateSetLang(yatranslate.langFirstVisit);
+  const ytWidgetValidate = JSON.parse(localStorage.getItem("yt-widget"));
+
+  if (ytWidgetValidate.lang === "ru") {
+    yaTranslateSetLang("en");
   }
 
   // Connect yandex translate
@@ -88,6 +84,7 @@ function yaTranslateInit() {
   document.getElementsByTagName("head")[0].appendChild(script);
 
   let code = yaTranslateGetCode();
+  pageLang = code;
 
   yaTranslateHtmlHandler(code);
   yaTranslatePCHtmlHandler(code);
@@ -117,6 +114,12 @@ function yaTranslateGetCode() {
     ? JSON.parse(localStorage["yt-widget"]).lang
     : yatranslate.lang;
 }
+function yaTranslateEventHandler(event, selector, handler) {
+  document.addEventListener(event, function (e) {
+    let el = e.target.closest(selector);
+    if (el) handler(el);
+  });
+}
 function yaTranslateHtmlHandler(code) {
   let langName;
 
@@ -144,14 +147,9 @@ function yaTranslateHtmlHandler(code) {
       break;
   }
 
-  console.log(code);
-  console.log(langName);
-
   document.querySelector(
     "[data-lang-active]"
-  ).innerHTML = `<button class="lang-switch__item active">
-	<img src="/assets/images/flags/icon-flag-${code}.svg">${langName}</button>
-	<span class="mobile__open"></span>`;
+  ).innerHTML = `<button class="lang-switch__item active"><img src="/assets/images/flags/icon-flag-${code}.svg">${langName}</button><span class="mobile__open"></span>`;
   document.querySelector(`[data-ya-lang="${code}"]`).remove();
 }
 function yaTranslatePCHtmlHandler(code) {
@@ -162,23 +160,12 @@ function yaTranslatePCHtmlHandler(code) {
   ).innerHTML = `<img src="/assets/images/flags/icon-flag-${code}.svg">${langPCName}`;
   document.querySelector(`[data-pc-ya-lang="${code}"]`).remove();
 }
-function yaTranslateEventHandler(event, selector, handler) {
-  document.addEventListener(event, function (e) {
-    let el = e.target.closest(selector);
-    if (el) handler(el);
-  });
-}
-// Session time checker
-// function updateLocalStorage() {
-//   let currentTime = new Date().getTime();
-//   let timeElapsed = currentTime - startTime;
-//   timeSpent += timeElapsed;
-//   localStorage.setItem("timeSpent", timeSpent.toString());
-//   startTime = currentTime;
-// }
 
 // Basic logic
 document.addEventListener("DOMContentLoaded", () => {
+  // Start Yandex Switch-lang
+  yaTranslateInit();
+
   // All components
   if (document.querySelector(".preloader")) {
     // Preloader
@@ -233,9 +220,6 @@ document.addEventListener("DOMContentLoaded", () => {
       $("#components").iziModal("open");
     });
   }
-
-  // Detect session time
-  // setInterval(updateLocalStorage, 60000);
 
   // Header + mobile + blackout
   if (header) {
@@ -425,14 +409,11 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("submit", function (event) {
       event.preventDefault();
       const form = this;
+      const formBtn = form.querySelector(".form-button");
 
       let error = formValidate(form);
 
       if (error === 0) {
-        // const TOKEN = "5612776289:AAG8VWNl8E8zB1MMOLE6Nxg_LAy91-MaHB4";
-        // const CHAT_ID = "-813127054";
-        // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
-
         // const clientName = form.querySelector('input[name="clientName"]').value;
         // const clientMail = form.querySelector('input[name="clientMail"]').value;
         // const clientCompany = form.querySelector(
@@ -444,11 +425,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // const clientComment = form.querySelector(
         //   'textarea[name="clientComment"]'
         // ).value;
-        const formBtn = form.querySelector(".form-button");
-
-        // let sessionTime =
-        //   parseInt(localStorage.getItem("timeSpent")) / 60000 || 0;
-
         // let request = `<b>Сайта:</b> ITV (Иностранная версия)\n`;
         // request += `<b>Основная информация</b>\n`;
         // request += `Имя клиента: ${clientName}\n`;
@@ -459,23 +435,34 @@ document.addEventListener("DOMContentLoaded", () => {
         // request += `<b>Аналитика</b>\n`;
         // request += `Страница отправки: ${pageName}\n`;
         // request += `Установленный язык: ${pageLang}\n`;
-        // request += `Длительность сессии: ${sessionTime.toFixed(0)} мин.\n`;
+        // request += `Длительность сессии: sessionTime.toFixed(0) мин.\n`;
+        // const CHAT_ID = "-813127054";
 
-        // axios
-        //   .post(URI_API, {
-        //     chat_id: CHAT_ID,
-        //     parse_mode: "html",
-        //     text: request,
-        //   })
-        //   .then((res) => {
-        //     form.reset();
-        //     formBtn.innerHTML = "Thank you! Request has been sent";
-        //   })
-        //   .catch((err) => {
-        //     formBtn.innerHTML = "Server error";
-        //   });
+        const TOKEN = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
+        const CHAT_ID = "-1001926375810";
+        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-        formBtn.innerHTML = "Thank you! Request has been sent";
+        let message = `Test AXIOS API`;
+
+        axios
+          .post(URI_API, {
+            chat_id: CHAT_ID,
+            parse_mode: "html",
+            test: message,
+          })
+          .then((response) => {
+            form.reset();
+            formBtn.innerHTML = "Thank you! Request has been sent";
+            console.log(response.data);
+          })
+          .catch((error) => {
+            form.reset();
+            formBtn.innerHTML = "Server error";
+            console.log(error);
+          })
+          .finally(() => {
+            formBtn.innerHTML = "Done";
+          });
       }
 
       // Validate errors
@@ -517,9 +504,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // Start Yandex Switch-lang
-  yaTranslateInit();
 });
 
 // Done preloader on full loading
@@ -548,16 +532,3 @@ window.addEventListener("load", () => {
     }, 750);
   }, 800);
 });
-
-// Clear session time on user exit
-// window.addEventListener("beforeunload", function () {
-//   localStorage.removeItem("timeSpent");
-// });
-
-// Clear session time first time day visit
-// let lastVisit = localStorage.getItem("lastVisit");
-// let today = new Date().toLocaleDateString();
-// if (lastVisit !== today) {
-//   localStorage.removeItem("timeSpent");
-//   localStorage.setItem("lastVisit", today);
-// }
