@@ -3,6 +3,9 @@ let isMobile = false;
 let scrollPoint1;
 let scrollPoint2;
 
+// Start session
+const startSessionTime = Date.now();
+
 // Target language initialization
 const yatranslate = {
   lang: "en",
@@ -414,71 +417,49 @@ document.addEventListener("DOMContentLoaded", () => {
       let error = formValidate(form);
 
       if (error === 0) {
-        // const clientName = form.querySelector('input[name="clientName"]').value;
-        // const clientMail = form.querySelector('input[name="clientMail"]').value;
-        // const clientCompany = form.querySelector(
-        //   'input[name="clientCompany"]'
-        // ).value;
-        // const clientJobTitle = form.querySelector(
-        //   'input[name="clientJobTitle"]'
-        // ).value;
-        // const clientComment = form.querySelector(
-        //   'textarea[name="clientComment"]'
-        // ).value;
-        // let request = `<b>Сайта:</b> ITV (Иностранная версия)\n`;
-        // request += `<b>Основная информация</b>\n`;
-        // request += `Имя клиента: ${clientName}\n`;
-        // request += `E-mail клиента: ${clientMail}\n`;
-        // request += `Компания клиента: ${clientCompany}\n`;
-        // request += `Должность клиента: ${clientJobTitle}\n`;
-        // request += `Комментарий: ${clientComment}\n`;
-        // request += `<b>Аналитика</b>\n`;
-        // request += `Страница отправки: ${pageName}\n`;
-        // request += `Установленный язык: ${pageLang}\n`;
-        // request += `Длительность сессии: sessionTime.toFixed(0) мин.\n`;
-        // const CHAT_ID = "-813127054";
+        const clientName = form.querySelector('input[name="clientName"]').value;
+        const clientMail = form.querySelector('input[name="clientMail"]').value;
+        const clientCompany = form.querySelector(
+          'input[name="clientCompany"]'
+        ).value;
+        const clientJobTitle = form.querySelector(
+          'input[name="clientJobTitle"]'
+        ).value;
+        const clientComment = form.querySelector(
+          'textarea[name="clientComment"]'
+        ).value;
 
-        // const TOKEN = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
-        // const CHAT_ID = "-1001926375810";
-        // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+        const endSessionTime = Date.now();
+        const targetSessionTime =
+          Math.abs(startSessionTime - endSessionTime) / 60000;
+        const convertSession = targetSessionTime.toFixed(0);
 
-        // let message = `Test AXIOS API`;
-
-        // axios
-        //   .post(URI_API, {
-        //     chat_id: CHAT_ID,
-        //     parse_mode: "html",
-        //     test: message,
-        //   })
-        //   .then((response) => {
-        //     form.reset();
-        //     formBtn.innerHTML = "Thank you! Request has been sent";
-        //     console.log(response.data);
-        //   })
-        //   .catch((error) => {
-        //     form.reset();
-        //     formBtn.innerHTML = "Server error";
-        //     console.log(error);
-        //   })
-        //   .finally(() => {
-        //     formBtn.innerHTML = "Done";
-        //   });
+        let request = `<b>Сайт:</b> ITV (Иностранная версия)\n`;
+        request += `<u><b>Основная информация</b></u>\n`;
+        request += `<b>Имя:</b> ${clientName}\n`;
+        request += `<b>E-mail:</b> ${clientMail}\n`;
+        request += `<b>Компания:</b> ${clientCompany}\n`;
+        request += `<b>Должность:</b> ${clientJobTitle}\n`;
+        request += `<b>Комментарий:</b> ${clientComment}\n`;
+        request += `<u><b>Аналитика</b></u>\n`;
+        request += `<b>Язык:</b> ${pageLang}\n`;
+        request += `<b>Страница:</b> ${pageName}\n`;
+        request += `<b>Время на сайте:</b> ${convertSession}мин.`;
 
         const token = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
-        const chatId = "-868813405";
-        const message = "<b>Test Axios API</b>";
+        const chatId = "-1001525366365";
 
         axios
           .post(`https://api.telegram.org/bot${token}/sendMessage`, {
             chat_id: chatId,
             parse_mode: "html",
-            text: message,
+            text: request,
           })
           .then((response) => {
-            console.log("Message sent:", response.data);
+            formBtn.value = "Thank you! Request has been sent";
           })
           .catch((error) => {
-            console.error("Error sending message:", error.response.data);
+            formBtn.value = "Server error";
           });
       }
 
