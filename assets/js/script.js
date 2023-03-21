@@ -438,30 +438,46 @@ document.addEventListener("DOMContentLoaded", () => {
         // request += `Длительность сессии: sessionTime.toFixed(0) мин.\n`;
         // const CHAT_ID = "-813127054";
 
-        const TOKEN = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
-        const CHAT_ID = "-1001926375810";
-        const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+        // const TOKEN = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
+        // const CHAT_ID = "-1001926375810";
+        // const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-        let message = `Test AXIOS API`;
+        // let message = `Test AXIOS API`;
+
+        // axios
+        //   .post(URI_API, {
+        //     chat_id: CHAT_ID,
+        //     parse_mode: "html",
+        //     test: message,
+        //   })
+        //   .then((response) => {
+        //     form.reset();
+        //     formBtn.innerHTML = "Thank you! Request has been sent";
+        //     console.log(response.data);
+        //   })
+        //   .catch((error) => {
+        //     form.reset();
+        //     formBtn.innerHTML = "Server error";
+        //     console.log(error);
+        //   })
+        //   .finally(() => {
+        //     formBtn.innerHTML = "Done";
+        //   });
+
+        const token = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
+        const chatId = "-1001926375810";
+        const message = "Test";
 
         axios
-          .post(URI_API, {
-            chat_id: CHAT_ID,
-            parse_mode: "html",
-            test: message,
+          .post(`https://api.telegram.org/bot${token}/sendMessage`, {
+            chat_id: chatId,
+            text: message,
           })
           .then((response) => {
-            form.reset();
-            formBtn.innerHTML = "Thank you! Request has been sent";
-            console.log(response.data);
+            console.log("Message sent:", response.data);
           })
           .catch((error) => {
-            form.reset();
-            formBtn.innerHTML = "Server error";
-            console.log(error);
-          })
-          .finally(() => {
-            formBtn.innerHTML = "Done";
+            console.error("Error sending message:", error.response.data);
           });
       }
 
