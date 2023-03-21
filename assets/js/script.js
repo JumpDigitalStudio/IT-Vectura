@@ -465,12 +465,13 @@ document.addEventListener("DOMContentLoaded", () => {
         //   });
 
         const token = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
-        const chatId = "-1001926375810";
-        const message = "Test";
+        const chatId = "-868813405";
+        const message = "<b>Test Axios API</b>";
 
         axios
           .post(`https://api.telegram.org/bot${token}/sendMessage`, {
             chat_id: chatId,
+            parse_mode: "html",
             text: message,
           })
           .then((response) => {
