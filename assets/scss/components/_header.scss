@@ -32,6 +32,8 @@
   }
   &__logo {
     @include flex(flex-start, center, row);
+
+    border: 1px dashed red;
     min-height: 50px;
     max-height: 50px;
 

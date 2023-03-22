@@ -997,6 +997,7 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  border: 1px dashed red;
   min-height: 50px;
   max-height: 50px;
   min-width: 160px;
