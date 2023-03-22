@@ -172,6 +172,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Start Yandex Switch-lang
   yaTranslateInit();
 
+  const token = process.env.BOT_TOKEN;
+  const chatId = process.env.CHAT_ID;
+
+  console.log(token);
+  console.log(chatId);
+
   // All components
   if (document.querySelector(".preloader")) {
     // Preloader
@@ -448,9 +454,6 @@ document.addEventListener("DOMContentLoaded", () => {
         request += `<b>Язык:</b> ${pageLang}\n`;
         request += `<b>Страница:</b> ${pageName}\n`;
         request += `<b>Время на сайте:</b> ${convertSession}мин.`;
-
-        const token = "6245420458:AAEkQx0ziECmtjwz_Nx9sVvHEE99AD3lBBM";
-        const chatId = "-1001525366365";
 
         axios
           .post(`https://api.telegram.org/bot${token}/sendMessage`, {
