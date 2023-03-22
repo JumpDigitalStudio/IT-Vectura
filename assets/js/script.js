@@ -75,10 +75,10 @@ function tog(elem, modifier) {
 
 // Yandex Switch-lang functions
 function yaTranslateInit() {
-  const ytWidgetValidate = JSON.parse(localStorage.getItem("yt-widget"));
-  blockRegion = "ru";
+  if (localStorage.getItem("yt-widget") != null) {
+    const ytWidgetValidate = JSON.parse(localStorage.getItem("yt-widget"));
+    blockRegion = "ru";
 
-  if (ytWidgetValidate.lang) {
     if (ytWidgetValidate.lang === blockRegion) {
       yaTranslateSetLang("en");
     }
