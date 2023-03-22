@@ -3,17 +3,38 @@ let isMobile = false;
 let scrollPoint1;
 let scrollPoint2;
 
-// Start session
+// Session variables initialization
 const startSessionTime = Date.now();
-
-// Target language initialization
 const yatranslate = {
   lang: "en",
 };
+const pageTitle = document.title;
+let pageName = "";
+const pageNames = [
+  {
+    defName: "IT Vectura | Logistics management system",
+    shortName: "ITV: Главная",
+  },
+  {
+    defName: "IT Vectura | Supply chain management",
+    shortName: "ITV: Все продукты",
+  },
+  {
+    defName: "IT Vectura | Transport Management (ITV TM)",
+    shortName: "ITV: Продукт TM",
+  },
+  {
+    defName: "IT Vectura | Warehouse Management (ITV WM)",
+    shortName: "ITV: Продукт WM",
+  },
+  {
+    defName: "IT Vectura | Yard Logistic (ITV YL)",
+    shortName: "ITV: Продукт YL",
+  },
+];
 
 // Components initialization
 const site = document.querySelector("html");
-const pageName = document.title;
 let pageLang;
 let page;
 let blackout;
@@ -436,6 +457,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetSessionTime =
           Math.abs(startSessionTime - endSessionTime) / 60000;
         const convertSession = targetSessionTime.toFixed(0);
+
+        for (let i = 0; i < pageNames.length; i++) {
+          if (pageTitle.includes(pageNames[i].defName)) {
+            pageName = pageNames[i].shortName;
+            break;
+          }
+        }
 
         let request = `<b>Сайт:</b> ITV (Иностранная версия)\n`;
         request += `<u><b>Основная информация</b></u>\n`;
