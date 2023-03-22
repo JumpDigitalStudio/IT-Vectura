@@ -984,8 +984,24 @@ h2 {
   width: fit-content;
 }
 .header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   min-height: 50px;
   max-height: 50px;
+  min-width: 160px;
+  width: 100%;
+  max-width: 250px;
   will-change: max-height, min-height, fill;
   -webkit-transition: max-height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s, fill 0.3s ease-in-out 0s;
   -o-transition: max-height 0.3s ease-in-out 0s, min-height 0.3s ease-in-out 0s, fill 0.3s ease-in-out 0s;
@@ -994,7 +1010,6 @@ h2 {
 .header.theme-dark .header__logo {
   min-height: 42px;
   max-height: 42px;
-  width: 210px;
 }
 .header.theme-light .header__logo #vector-logo-text {
   fill: #363636;
@@ -1401,12 +1416,10 @@ h2 {
   .header__logo {
     min-height: 32px;
     max-height: 32px;
-    width: 160px;
   }
   .header.theme-dark .header__logo, .header.theme-light .header__logo {
     min-height: 32px;
     max-height: 32px;
-    width: 160px;
   }
   .header__mobile {
     width: 35px;
