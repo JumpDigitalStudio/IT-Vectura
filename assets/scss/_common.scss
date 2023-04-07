@@ -27,13 +27,11 @@ html {
   &::-webkit-scrollbar {
     width: 10px;
   }
-
   &::-webkit-scrollbar-thumb {
     background-color: $BLL;
     border-radius: 10px;
     border: 3px #04000f solid;
   }
-
   &::-webkit-scrollbar-track {
     background-color: transparent;
   }
