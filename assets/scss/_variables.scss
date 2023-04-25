@@ -1,0 +1,48 @@
+// THEME: VARIABLES
+// ITEM: Color pallete
+$WHT: #ffffff;
+$GRY: #ececec;
+$GRD: #363636;
+$BLA: #232323;
+$ACL: #3c84c6;
+$ACM: #4b60cc;
+$ACD: #384fca;
+$BLL: #00b2ff;
+$BLM: #012e71;
+$BLD: #00245b;
+$PRL: #a834d0;
+$PRD: #8800b8;
+$PNL: #cb416a;
+$PND: #99005c;
+$ORN: #d47300;
+
+// ITEM: Breakpoints
+$xl: 1200px;
+$lg: 950px;
+$md: 750px;
+$sm: 550px;
+$xsm: 400px;
+
+// ITEM: Corners
+$radius-s: 10px;
+$radius-m: 15px;
+$radius-l: 20px;
+
+// ITEM: Shadows
+$bla-border: 1px $BLA solid;
+$card-shadow: rgba(0, 0, 0, 0.15) 3px 3px 5.5px;
+$card-shadow-hover: rgba(0, 0, 0, 0.2) 3px 3px 5.5px;
+
+// ITEM: Transitions
+$trans-2: 0.2s ease-in-out 0s;
+$trans-3: 0.3s ease-in-out 0s;
+$trans-4: 0.4s ease-in-out 0s;
+$trans-5: 0.5s ease-in-out 0s;
+
+// ITEM: Gradients
+$btn-gradient: linear-gradient(
+  125deg,
+  rgba(12, 105, 255, 1) 30%,
+  rgba(48, 205, 255, 1) 100%
+);
+$card-gradient: linear-gradient(90deg, #384fca 0%, #445ee9 100%);

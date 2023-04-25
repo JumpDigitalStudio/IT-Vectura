@@ -1,0 +1,41 @@
+// THEME: MIXINS
+@mixin flex($jc: center, $ai: center, $fd: column) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+@mixin grid($gtc: auto, $gtr: auto) {
+  display: grid;
+  grid-template-columns: $gtc;
+  grid-template-rows: $gtr;
+}
+@mixin gap($rg, $cg) {
+  row-gap: $rg;
+  column-gap: $cg;
+}
+@mixin link-hover($cl) {
+  cursor: pointer;
+
+  will-change: color;
+  transition: color $trans-2;
+
+  &:hover {
+    color: $cl;
+  }
+}
+@mixin link-back($cl) {
+  cursor: pointer;
+
+  will-change: background-color;
+  transition: background-color $trans-3;
+
+  &:hover {
+    background-color: $cl;
+  }
+}
+@mixin pseudo($cn: "", $ds: flex, $ps: absolute) {
+  content: $cn;
+  display: $ds;
+  position: $ps;
+}
