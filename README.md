@@ -2,6 +2,7 @@
 # IT Vectura Logistics Platform 
 
 IT VECTURA logistics management system includes modules for transportation, warehouse, and internal logistics management.
+
 IT Vectura automates the processes of freight forwarders and shippers, reduces transportation costs, and increases the level of customer service.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
